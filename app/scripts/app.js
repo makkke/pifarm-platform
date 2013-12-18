@@ -4,6 +4,7 @@ var pinapleApp = angular.module('pinapleApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
+  'ngRoute',
   'ui.router'
 ])
 
@@ -11,31 +12,33 @@ var pinapleApp = angular.module('pinapleApp', [
     function ($stateProvider, $urlRouterProvider) {
 
       // checks if the user is authenticated
-      var isLoggedIn = function($q, $http, $location, Auth){
+      var isLoggedIn = function($q, $http, $location){
         var deferred = $q.defer();
 
-        $http.get( '/loggedin' ).success(
-          function (response){
-            if( response !== '0' ) {
-              // if authenticated on server then
-              if( !Auth.loggedIn ) {
-                // if not authenticated in app then
-                Auth.login( response.sid, response.auth_token ).then(
-                  function (user) {
-                    deferred.resolve( user );
-                  },
-                  function (response) {
+        // $http.get( '/loggedin' ).success(
+        //   function (response) {
+        //     if( response !== '0' ) {
+        //       // if authenticated on server then
+        //       // if( !AuthSvc.loggedIn ) {
+        //       //   // if not authenticated in app then
+        //       //   AuthSvc.login( response.sid, response.auth_token ).then(
+        //       //     function (user) {
+        //       //       deferred.resolve( user );
+        //       //     },
+        //       //     function (response) {
                     
-                  });
-              }
-              deferred.resolve( Auth.user );
-            }
-            else {
-              // not authenticated on server
-              deferred.reject();
-              $location.url( 'login' );
-            }
-          });
+        //       //     });
+        //       // }
+        //       // deferred.resolve( AuthSvc.user );
+        //     }
+        //     else {
+        //       // not authenticated on server
+        //       deferred.reject();
+        //       $location.url( 'login' );
+        //     }
+        //   });
+        deferred.resolve();
+        $location.url( 'login' );
 
         return deferred.promise;
       };
