@@ -10,7 +10,7 @@ npm install
 bower install
 ```
 
-## Run
+## Getting Started
 
 ```
 node app
