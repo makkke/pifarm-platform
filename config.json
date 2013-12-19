@@ -1,16 +1,7 @@
 {
   "api": {
-    "regular": {
-      "protocol": "http",
-      "hostname": "192.81.129.209",
-      "port": "9090",
-      "version": "/v1"
-    },
-    "admin": {
-      "protocol": "http",
-      "hostname": "192.81.129.209",
-      "port": "9091",
-      "version": ""
-    }
+    "protocol": "http",
+    "hostname": "api.pinaple.com",
+    "version": "1"
   }
 }

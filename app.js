@@ -22,15 +22,14 @@ nconf
 passport.use(new LocalStrategy(
   function (username, password, done) {
     var options = {
-      hostname: nconf.get( 'api:regular:hostname' ),
-      port: nconf.get( 'api:regular:port' ),
-      path: nconf.get( 'api:regular:version' ) + '/login',
+      hostname: nconf.get( 'api:hostname' ),
+      path: '/' + nconf.get( 'api:version' ) + '/login',
       auth: username + ':' + password
     };
 
     http.get(options, function (response) {
       if( response.statusCode === 200 ) {
-        response.setEncoding('utf8');
+        response.setEncoding( 'utf8' );
         response.on('data', function (data) {
           return done( null, data );
         });
@@ -38,7 +37,7 @@ passport.use(new LocalStrategy(
       else {
         return done( null, false );
       }
-    }).on('error', function(e) {
+    }).on('error', function (e) {
       console.log( 'Got error: ' + JSON.stringify( e ) );
       return done( null, false );
     });
@@ -52,16 +51,6 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (user, done) {
   done( null, user );
 });
-
-// define a middleware function to be used for every secured routes
-var auth = function(req, res, next) {
-  if( !req.isAuthenticated() ) {
-    res.send( 401 );
-  }
-  else {
-    next();
-  }
-};
 
 // start express application
 var app = express();
@@ -97,8 +86,7 @@ app.get( '/', routes.index );
 
 // route to test if the user is logged in or not
 app.get('/loggedin', function (req, res) {
-  return '0';
-  //res.send( req.isAuthenticated() ? req.user : '0' );
+  res.send( req.isAuthenticated() ? req.user : '0' );
 });
 
 // route to login
@@ -109,24 +97,19 @@ app.post('/login',
   });
 
 // route to test login credentials
-app.post('/testlogin', function(req, res) {
+app.post('/verify_credentials', function (req, res) {
   var username = req.body.username;
   var password = req.body.password;
 
   var options = {
-    hostname: nconf.get( 'api:regular:hostname' ),
-    port: nconf.get( 'api:regular:port' ),
-    path: nconf.get( 'api:regular:version' ) + '/testlogin',
+    hostname: nconf.get( 'api:hostname' ),
+    path: '/' + nconf.get( 'api:version' ) + '/verify_credentials',
     auth: username + ':' + password
   };
 
   http.get(options, function (httpRes) {
-    if( httpRes.statusCode === 200 ) {
-      res.send( 200 );
-    }
-    else {
-      res.send( 401 );
-    }
+    console.log( httpRes.statusCode );
+    res.send( httpRes.statusCode );
   }).on('error', function (e) {
     console.log( 'Got error: ' + JSON.stringify( e ) );
     res.send( 401, e.message );
