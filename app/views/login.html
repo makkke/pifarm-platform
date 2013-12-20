@@ -5,13 +5,13 @@
 				<h1 class="panel-title">Pinaple</h1>
 			</div>
 			<div class="panel-body">
-				<form role="form">
+				<form name="loginForm" role="form" ng-submit="login(credentials, loginForm)">
 					<div class="form-group">
-						<label for="Email">Email</label>
-						<input type="email" class="form-control" placeholder="Enter email"></div>
+						<label for="email">Email</label>
+						<input type="email" name="email" class="form-control" placeholder="Enter email" ng-model="credentials.username"></div>
 					<div class="form-group">
-						<label for="Password">Password</label>
-						<input type="password" class="form-control" placeholder="Password"></div>
+						<label for="password">Password</label>
+						<input type="password" name="password" class="form-control" placeholder="Password" ng-model="credentials.password"></div>
 					<div class="checkbox">
 						<label>
 							<input type="checkbox">Remember me
@@ -25,21 +25,20 @@
 
 					<div class="row social-buttons">
 					  <div class="col-xs-offset-3 col-xs-3">
-					    <a href="https://www.facebook.com/" target="_"><img src="images/facebook.png" alt="..." class="img-circle"></a>
+					    <a href="https://www.facebook.com/" target="_"><img src="images/facebook.png" alt="facebook logo" class="img-circle"></a>
 					  </div>
 					  <div class="col-xs-3">
-					     <a href="https://twitter.com/" target="_"><img src="images/twitter.png" alt="..." class="img-circle"></a>
+					     <a href="https://twitter.com/" target="_"><img src="images/twitter.png" alt="twitter logo" class="img-circle"></a>
 					  </div>
 					</div>
 					<div class="row">
 						<div class="col-xs-12 text-center">
-							<button type="button" class="btn btn-primary btn-lg btn-block btn-success">Log In</button>
+							<button type="submit" class="btn btn-primary btn-lg btn-block btn-success">Log In</button>
 						</div>
 						<div class="col-xs-12 text-right">
 							<button type="button" class="btn btn-link"><em>Can't log in?</em></button>
 						</div>
 					</div>
-					
 				</div>
 			</form>
 		</div>
