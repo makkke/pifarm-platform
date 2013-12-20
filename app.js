@@ -27,6 +27,7 @@ passport.use(new LocalStrategy(
       auth: username + ':' + password
     };
 
+    console.log('creating request');
     http.get(options, function (response) {
       if( response.statusCode === 200 ) {
         response.setEncoding( 'utf8' );
@@ -35,6 +36,7 @@ passport.use(new LocalStrategy(
         });
       }
       else {
+        console.log('not authorized');
         return done( null, false );
       }
     }).on('error', function (e) {
@@ -90,10 +92,29 @@ app.get('/loggedin', function (req, res) {
 });
 
 // route to login
-app.post('/login',
-  passport.authenticate( 'local' ),
+app.get('/login',
   function (req, res) {
-    res.send( req.user );
+    var options = {
+      hostname: nconf.get( 'api:hostname' ),
+      path: '/' + nconf.get( 'api:version' ) + '/login',
+      auth: req.body.username + ':' + req.body.password
+    };
+
+    http.get(options, function (httpRes) {
+      if( httpRes.statusCode === 200 ) {
+        httpRes.setEncoding( 'utf8' );
+        httpRes.on('data', function (data) {
+          return res.send( data );
+        });
+      }
+      else {
+        console.log(httpRes.statusCode, 'not authorized');
+        return res.send( 401 );
+      }
+    }).on('error', function (e) {
+      console.log( 'Got error: ' + JSON.stringify( e ) );
+      return res.send( 500 );
+    });
   });
 
 // route to test login credentials
