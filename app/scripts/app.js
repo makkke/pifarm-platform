@@ -5,11 +5,13 @@ var pinapleApp = angular.module('pinapleApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.router'
+  'pinaple.config',
+  'ui.router',
+  'restangular',
 ])
 
-  .config(['$stateProvider', '$urlRouterProvider',
-    function ($stateProvider, $urlRouterProvider) {
+  .config(['Config', '$stateProvider', '$urlRouterProvider', 'RestangularProvider',
+    function (Config, $stateProvider, $urlRouterProvider, RestangularProvider) {
 
       // checks if the user is authenticated
       var isLoggedIn = function($q, $http, $location){
@@ -80,5 +82,17 @@ var pinapleApp = angular.module('pinapleApp', [
           controller: 'DashboardCtrl',
           resolve: { loggedin: isLoggedIn }
         })
+
+      // setup Restangular
+      var url = Config.api.protocol + '://' + Config.api.hostname + '/' + Config.api.version;
+      RestangularProvider.setBaseUrl( url );
+      // RestangularProvider.setRestangularFields({
+      //   id: 'sid',
+      //   selfLink: 'uri'
+      // });
+      RestangularProvider.setResponseExtractor(function (response, operation) {
+        if( response.status === 401 ) $location.url( 'login' );
+        return response;
+      });  
 
   }]);
