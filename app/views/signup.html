@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-4 col-lg-offset-4 col-xs-6 col-sm-6 col-md-4 col-lg-4 login-container">
+  <div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-4 col-lg-offset-4 col-xs-6 col-sm-6 col-md-4 col-lg-4 pi-container">
 		<div class="panel panel-default">
 		  <div class="panel-heading">
 		    <h3 class="panel-title">Sign Up to Pinaple</h3>
@@ -8,10 +8,10 @@
 			  <form role="form">
 		  		<div class="row">
 						<div class="col-xs-6 form-group">
-			    		<input type="firstName" class="form-control input-lg" placeholder="First name">
+			    		<input type="text" class="form-control input-lg" required placeholder="First name">
 			  		</div>
 					  <div class="col-xs-6 form-group">
-					    <input type="lastName" class="form-control input-lg" placeholder="Last name">
+					    <input type="text" class="form-control input-lg" required placeholder="Last name">
 					  </div>
 					</div>
 					<div class="form-group">
@@ -24,16 +24,16 @@
 						</select>
 				  </div>
 			  	<div class="form-group">
-				    <input type="company" class="form-control input-lg" placeholder="Company name (optional)">
+				    <input type="text" class="form-control input-lg" placeholder="Company name (optional)">
 				  </div>
 				  <div class="form-group">
-				    <input type="email" class="form-control input-lg" placeholder="Email">
+				    <input type="email" class="form-control input-lg" required placeholder="Email">
 				  </div>
 				  <div class="form-group">
-				    <input type="password" class="form-control input-lg" placeholder="Password">
+				    <input type="password" class="form-control input-lg" required placeholder="Password">
 				  </div>
 				   <div class="form-group has-error ">
-				    <input type="confirmPassword" class="form-control input-lg" placeholder="Confirm password">
+				    <input type="password" class="form-control input-lg" required placeholder="Confirm password">
 				    <span class="help-block">Invalid username or password</span>
 				  </div>
 				   <div class="checkbox">
@@ -43,7 +43,7 @@
 				  </div>
 				  <div class="row">
 					  <div class="col-xs-12">
-					  	<button type="button" class="btn btn-primary btn-lg btn-block">
+					  	<button type="submit" class="btn btn-primary btn-lg btn-block">
 					  	Sign Up</button>
 					  </div>
 				  </div>
