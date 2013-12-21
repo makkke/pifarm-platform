@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res) {
-  res.render( 'index.html', { serverYear: 2013 } );
+  res.render( 'index.html', { serverCurrentYear: new Date().getFullYear() } );
 };

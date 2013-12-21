@@ -47,25 +47,29 @@ var pinapleApp = angular.module('pinapleApp', [
     
       $urlRouterProvider.otherwise( '/dashboard' );
       
-      // setup states
       $stateProvider
+        .state('auth', {
+          abstract: true,
+          templateUrl: 'views/auth.html'
+        })
+
         // user management
-        .state('login', {
+        .state('auth.login', {
           url: '/login',
           templateUrl: 'views/login.html',
           controller: 'LoginCtrl'
         })
-        .state('logout', {
+        .state('auth.logout', {
           url: '/logout',
           controller: 'LogoutCtrl',
           resolve: { loggedin: isLoggedIn }
         })
-        .state('signup', {
+        .state('auth.signup', {
           url: '/signup',
           templateUrl: 'views/signup.html',
           controller: 'SignupCtrl'
         })
-        .state('forgot', {
+        .state('auth.forgot', {
           url: '/forgot',
           templateUrl: 'views/forgot.html',
           controller: 'ForgotCtrl'

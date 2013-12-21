@@ -1,20 +1,23 @@
-.pi-container {
+.auth-box {
 	margin-top: 100px;
 }
 
+/*
+ * Login page
+ */
 .social-buttons {
 	margin-top: 10px;
 	margin-bottom: 25px;
 }
 
 .twitter-button {
-	background-color: #1BB2E9;
-	border-color: #1BB2E9;
+	background-color: #1bb2e9;
+	border-color: #1bb2E9;
 }
 	
 .facebook-button {
-	background-color: #3C599B;
-	border-color: #3C599B;
+	background-color: #3c599b;
+	border-color: #3c599b;
 }
 
 .login-text {
@@ -22,4 +25,7 @@
 	text-align: center;
 }
 
+#login .btn-link {
+	font-style: italic;
+}
 
