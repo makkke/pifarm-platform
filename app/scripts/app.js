@@ -8,10 +8,11 @@ var pinapleApp = angular.module('pinapleApp', [
   'pinaple.config',
   'ui.router',
   'restangular',
+  'angularSpinner'
 ])
 
-  .config(['Config', '$stateProvider', '$urlRouterProvider', 'RestangularProvider',
-    function (Config, $stateProvider, $urlRouterProvider, RestangularProvider) {
+  .config(['Config', '$stateProvider', '$urlRouterProvider', '$locationProvider', 'RestangularProvider',
+    function (Config, $stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
 
       // checks if the user is authenticated
       var isLoggedIn = function($q, $http, $location){
@@ -47,25 +48,30 @@ var pinapleApp = angular.module('pinapleApp', [
     
       $urlRouterProvider.otherwise( '/dashboard' );
       
-      // setup states
       $stateProvider
+        .state('auth', {
+          abstract: true,
+          templateUrl: 'views/auth.html',
+          controller: 'AuthCtrl'
+        })
+
         // user management
-        .state('login', {
+        .state('auth.login', {
           url: '/login',
           templateUrl: 'views/login.html',
           controller: 'LoginCtrl'
         })
-        .state('logout', {
+        .state('auth.logout', {
           url: '/logout',
           controller: 'LogoutCtrl',
           resolve: { loggedin: isLoggedIn }
         })
-        .state('signup', {
+        .state('auth.signup', {
           url: '/signup',
           templateUrl: 'views/signup.html',
           controller: 'SignupCtrl'
         })
-        .state('forgot', {
+        .state('auth.forgot', {
           url: '/forgot',
           templateUrl: 'views/forgot.html',
           controller: 'ForgotCtrl'
@@ -82,6 +88,8 @@ var pinapleApp = angular.module('pinapleApp', [
           controller: 'DashboardCtrl',
           resolve: { loggedin: isLoggedIn }
         })
+
+      $locationProvider.html5Mode( true );
 
       // setup Restangular
       var url = Config.api.protocol + '://' + Config.api.hostname + '/' + Config.api.version;

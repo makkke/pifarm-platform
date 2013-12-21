@@ -1,61 +1,66 @@
-<div class="row">
-  <div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-4 col-lg-offset-4 col-xs-6 col-sm-6 col-md-4 col-lg-4 pi-container">
-		<div class="panel panel-default">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">Sign Up to Pinaple</h3>
-		  </div>
-		  <div class="panel-body">
-			  <form role="form">
-		  		<div class="row">
-						<div class="col-xs-6 form-group">
-			    		<input type="text" class="form-control input-lg" required placeholder="First name">
-			  		</div>
-					  <div class="col-xs-6 form-group">
-					    <input type="text" class="form-control input-lg" required placeholder="Last name">
-					  </div>
-					</div>
-					<div class="form-group">
-					   <select class="form-control input-lg" >
-						  <option>What describes you best?</option>
-						  <option>2</option>
-						  <option>3</option>
-						  <option>4</option>
-						  <option>5</option>
-						</select>
-				  </div>
-			  	<div class="form-group">
-				    <input type="text" class="form-control input-lg" placeholder="Company name (optional)">
-				  </div>
-				  <div class="form-group">
-				    <input type="email" class="form-control input-lg" required placeholder="Email">
-				  </div>
-				  <div class="form-group">
-				    <input type="password" class="form-control input-lg" required placeholder="Password">
-				  </div>
-				   <div class="form-group has-error ">
-				    <input type="password" class="form-control input-lg" required placeholder="Confirm password">
-				    <span class="help-block">Invalid username or password</span>
-				  </div>
-				   <div class="checkbox">
-				    <label>
-				      <input type="checkbox">I agree to the <a href="">Terms &amp; Conditions</a>
-				    </label>
-				  </div>
-				  <div class="row">
-					  <div class="col-xs-12">
-					  	<button type="submit" class="btn btn-primary btn-lg btn-block">
-					  	Sign Up</button>
-					  </div>
-				  </div>
-				</form>
-		  </div><!-- /.panel-body -->
-		</div>
-  </div>
-</div><!-- /.row -->
+<section id="signup">
+	<div class="row">
+	  <div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-4 col-lg-offset-4 col-xs-6 col-sm-6 col-md-4 col-lg-4 auth-box">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Sign Up to Pinaple</h3>
+			  </div>
 
-<footer>
-	<p class="text-center">2013 Pinaple by <a href="http://exilium.ca/#/">Exilium Studio</a></p>
-</footer>
+			  <div class="panel-body">
+				  <form role="form" name="signupForm" ng-submit="signup(user, signupForm)" ng-switch on="error">
+			  		<div class="form-group">
+			  			<div class="row">
+								<div class="col-xs-6">
+					    		<input type="text" class="form-control input-lg" autofocus required placeholder="First name" ng-model="user.firstName">
+					  		</div>
+							  <div class="col-xs-6">
+							    <input type="text" class="form-control input-lg" required placeholder="Last name" ng-model="user.lastName">
+							  </div>
+			  			</div>
+						</div>
+
+						<div class="form-group">
+						   <select class="form-control input-lg" ng-model="user.description" ng-options="desc.key as desc.value for desc in descriptionTypes">
+							  <option value="">What describes you best?</option>
+							</select>
+					  </div>
+
+				  	<div class="form-group">
+					    <input type="text" class="form-control input-lg" placeholder="Company name (optional)" ng-model="user.company">
+					  </div>
+
+					  <div class="form-group">
+					    <input type="email" class="form-control input-lg" required placeholder="Email" ng-model="user.email">
+					    <span class="help-block" ng-switch-when="used">This email already used.</span>
+					  </div>
+
+					  <fieldset ng-class="{ 'has-error': error == 'match' || error == 'min' }">
+						  <div class="form-group">
+						    <input type="password" class="form-control input-lg" required placeholder="Password" ng-model="user.password">
+						  </div>
+
+						  <div class="form-group">
+						    <input type="password" class="form-control input-lg" required placeholder="Confirm password" ng-model="user.passwordConfirmation">
+						    <span class="help-block" ng-switch-when="match">Passwords don't match.</span>
+						    <span class="help-block" ng-switch-when="min">Password should be minimum 6 characters.</span>
+						  </div>
+					  </fieldset>
+					  
+					  <div class="checkbox">
+					    <label>
+					      <input type="checkbox" required ng-model="user.agreed">I agree to the <a href="">Terms &amp; Conditions</a>
+					    </label>
+					  </div>
+					  
+					  <div class="form-group">
+						  <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="signupForm.$invalid || loading"><span class="spinner-auth" us-spinner="{ radius: 7, width: 3, length: 8, lines: 10, color: '#fff' }" ng-show="loading"></span> Sign Up</button>
+					  </div>
+					</form>
+			  </div><!-- /.panel-body -->
+			</div><!-- /.panel -->
+	  </div><!-- /.auth-box -->
+	</div><!-- /.row -->
+</section>
   	
   
   	

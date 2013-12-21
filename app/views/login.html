@@ -1,50 +1,54 @@
-<div class="row">
-	<div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-4 col-lg-offset-4 col-xs-6 col-sm-6 col-md-4 col-lg-4 pi-container">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h1 class="panel-title">Pinaple</h1>
-			</div>
-			<div class="panel-body">
-				<form name="loginForm" role="form" ng-submit="login(credentials, loginForm)">
-					<div class="form-group">
-						<input type="email" class="form-control input-lg" required placeholder="Email" ng-model="credentials.username">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control input-lg" required placeholder="Password" ng-model="credentials.password">
-					</div>
-					<div class="checkbox">
-						<label>
-							<input type="checkbox">Remember me
-						</label>
-					</div>
-					<div class="row">
-					  <div class="col-md-12 login-text">
-					  	<em>Or you can sign up with</em>
-					  </div>
-					</div>
-
-					<div class="row social-buttons">
-					  <div class="col-xs-offset-3 col-xs-3">
-					    <a href="https://www.facebook.com/" target="_"><img src="images/facebook.png" alt="facebook logo" class="img-circle"></a>
-					  </div>
-					  <div class="col-xs-3">
-					     <a href="https://twitter.com/" target="_"><img src="images/twitter.png" alt="twitter logo" class="img-circle"></a>
-					  </div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 text-center">
-							<button type="submit" class="btn btn-lg btn-block btn-success">Log In</button>
-						</div>
-						<div class="col-xs-12 text-right">
-							<button type="button" class="btn btn-link"><em>Can't log in?</em></button>
-						</div>
-					</div>
+<section id="login">
+	<div class="row">
+		<div class="col-xs-offset-3 col-sm-offset-3 col-md-offset-4 col-lg-offset-4 col-xs-6 col-sm-6 col-md-4 col-lg-4 auth-box">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1 class="panel-title">Pinaple</h1>
 				</div>
-			</form>
-		</div>
-	</div>
-</div>
-<footer>
-	<p class="text-center">2013 Pinaple by <a href="http://exilium.ca/#/">Exilium Studio</a></p>
-</footer>
+				<div class="panel-body">
+					<form name="loginForm" role="form" ng-submit="login(credentials, loginForm)">
+						<div class="form-group">
+							<input type="email" class="form-control input-lg" required placeholder="Email" ng-model="credentials.username">
+						</div>
 
+						<div class="form-group">
+							<input type="password" class="form-control input-lg" required placeholder="Password" ng-model="credentials.password">
+						</div>
+
+						<div class="form-group">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox">Remember me
+								</label>
+							</div>
+						</div>
+
+						<div class="form-group">
+						  <div class="col-md-12 login-text">
+						  	<em>Or you can sign up with</em>
+						  </div>
+						</div>
+
+						<div class="form-group">
+							<div class="row social-buttons">
+							  <div class="col-xs-offset-3 col-xs-3">
+							    <a href="https://www.facebook.com/" target="_"><img src="images/facebook.png" alt="facebook logo" class="img-circle"></a>
+							  </div>
+							  <div class="col-xs-3">
+							     <a href="https://twitter.com/" target="_"><img src="images/twitter.png" alt="twitter logo" class="img-circle"></a>
+							  </div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<button type="submit" class="btn btn-lg btn-block btn-success">Log In</button>
+							<div class="text-right">
+								<a href="/forgot" class="btn btn-link">Forgot password?</a>
+							</div>
+						</div>
+					</form>
+				</div><!-- /.panel-body -->
+			</div><!-- /.panel -->
+		</div><!-- /.auth-box -->
+	</div><!-- /.row -->
+</section>
