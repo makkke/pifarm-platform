@@ -4,53 +4,55 @@
 		  <div class="panel-heading">
 		    <h3 class="panel-title">Sign Up to Pinaple</h3>
 		  </div>
+
 		  <div class="panel-body">
-			  <form role="form">
+			  <form role="form" name="signupForm" ng-submit="signup(user, signupForm)">
 		  		<div class="row">
 						<div class="col-xs-6 form-group">
-			    		<input type="text" class="form-control input-lg" required placeholder="First name">
+			    		<input type="text" class="form-control input-lg" required placeholder="First name" ng-model="user.firstName">
 			  		</div>
+
 					  <div class="col-xs-6 form-group">
-					    <input type="text" class="form-control input-lg" required placeholder="Last name">
+					    <input type="text" class="form-control input-lg" required placeholder="Last name" ng-model="user.lastName">
 					  </div>
 					</div>
+
 					<div class="form-group">
-					   <select class="form-control input-lg" >
+					   <select class="form-control input-lg" ng-model="user.description" ng-options="desc.key as desc.value for desc in descriptionTypes">
 						  <option>What describes you best?</option>
-						  <option>2</option>
-						  <option>3</option>
-						  <option>4</option>
-						  <option>5</option>
 						</select>
 				  </div>
+
 			  	<div class="form-group">
-				    <input type="text" class="form-control input-lg" placeholder="Company name (optional)">
+				    <input type="text" class="form-control input-lg" placeholder="Company name (optional)" ng-model="user.company">
 				  </div>
+
 				  <div class="form-group">
-				    <input type="email" class="form-control input-lg" required placeholder="Email">
+				    <input type="email" class="form-control input-lg" required placeholder="Email" ng-model="user.email">
 				  </div>
+
 				  <div class="form-group">
-				    <input type="password" class="form-control input-lg" required placeholder="Password">
+				    <input type="password" class="form-control input-lg" required placeholder="Password" ng-model="user.password">
 				  </div>
-				   <div class="form-group has-error ">
-				    <input type="password" class="form-control input-lg" required placeholder="Confirm password">
-				    <span class="help-block">Invalid username or password</span>
+
+				  <div class="form-group">
+				    <input type="password" class="form-control input-lg" required placeholder="Confirm password" ng-model="user.passwordConfirmation">
+				    <span class="help-block"></span>
 				  </div>
-				   <div class="checkbox">
+				  
+				  <div class="checkbox">
 				    <label>
-				      <input type="checkbox">I agree to the <a href="">Terms &amp; Conditions</a>
+				      <input type="checkbox" ng-model="agreed">I agree to the <a href="">Terms &amp; Conditions</a>
 				    </label>
 				  </div>
-				  <div class="row">
-					  <div class="col-xs-12">
-					  	<button type="submit" class="btn btn-primary btn-lg btn-block">
-					  	Sign Up</button>
-					  </div>
+				  
+				  <div class="form-group">
+					  <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="!agreed">Sign Up</button>
 				  </div>
 				</form>
 		  </div><!-- /.panel-body -->
-		</div>
-  </div>
+		</div><!-- /.panel -->
+  </div><!-- /.pi-container -->
 </div><!-- /.row -->
 
 <footer>
