@@ -8,6 +8,7 @@ var pinapleApp = angular.module('pinapleApp', [
   'pinaple.config',
   'ui.router',
   'restangular',
+  'angularSpinner'
 ])
 
   .config(['Config', '$stateProvider', '$urlRouterProvider', '$locationProvider', 'RestangularProvider',
@@ -50,7 +51,8 @@ var pinapleApp = angular.module('pinapleApp', [
       $stateProvider
         .state('auth', {
           abstract: true,
-          templateUrl: 'views/auth.html'
+          templateUrl: 'views/auth.html',
+          controller: 'AuthCtrl'
         })
 
         // user management

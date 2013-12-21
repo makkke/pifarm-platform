@@ -7,20 +7,21 @@
 			  </div>
 
 			  <div class="panel-body">
-				  <form role="form" name="signupForm" ng-submit="signup(user, signupForm)">
-			  		<div class="row">
-							<div class="col-xs-6 form-group">
-				    		<input type="text" class="form-control input-lg" required placeholder="First name" ng-model="user.firstName">
-				  		</div>
-
-						  <div class="col-xs-6 form-group">
-						    <input type="text" class="form-control input-lg" required placeholder="Last name" ng-model="user.lastName">
-						  </div>
+				  <form role="form" name="signupForm" ng-submit="signup(user, signupForm)" ng-switch on="error">
+			  		<div class="form-group">
+			  			<div class="row">
+								<div class="col-xs-6">
+					    		<input type="text" class="form-control input-lg" autofocus required placeholder="First name" ng-model="user.firstName">
+					  		</div>
+							  <div class="col-xs-6">
+							    <input type="text" class="form-control input-lg" required placeholder="Last name" ng-model="user.lastName">
+							  </div>
+			  			</div>
 						</div>
 
 						<div class="form-group">
 						   <select class="form-control input-lg" ng-model="user.description" ng-options="desc.key as desc.value for desc in descriptionTypes">
-							  <option>What describes you best?</option>
+							  <option value="">What describes you best?</option>
 							</select>
 					  </div>
 
@@ -30,25 +31,29 @@
 
 					  <div class="form-group">
 					    <input type="email" class="form-control input-lg" required placeholder="Email" ng-model="user.email">
+					    <span class="help-block" ng-switch-when="used">This email already used.</span>
 					  </div>
 
-					  <div class="form-group">
-					    <input type="password" class="form-control input-lg" required placeholder="Password" ng-model="user.password">
-					  </div>
+					  <fieldset ng-class="{ 'has-error': error == 'match' || error == 'min' }">
+						  <div class="form-group">
+						    <input type="password" class="form-control input-lg" required placeholder="Password" ng-model="user.password">
+						  </div>
 
-					  <div class="form-group">
-					    <input type="password" class="form-control input-lg" required placeholder="Confirm password" ng-model="user.passwordConfirmation">
-					    <span class="help-block"></span>
-					  </div>
+						  <div class="form-group">
+						    <input type="password" class="form-control input-lg" required placeholder="Confirm password" ng-model="user.passwordConfirmation">
+						    <span class="help-block" ng-switch-when="match">Passwords don't match.</span>
+						    <span class="help-block" ng-switch-when="min">Password should be minimum 6 characters.</span>
+						  </div>
+					  </fieldset>
 					  
 					  <div class="checkbox">
 					    <label>
-					      <input type="checkbox" ng-model="agreed">I agree to the <a href="">Terms &amp; Conditions</a>
+					      <input type="checkbox" required ng-model="user.agreed">I agree to the <a href="">Terms &amp; Conditions</a>
 					    </label>
 					  </div>
 					  
 					  <div class="form-group">
-						  <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="!agreed">Sign Up</button>
+						  <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="signupForm.$invalid || loading"><span class="spinner-auth" us-spinner="{ radius: 7, width: 3, length: 8, lines: 10, color: '#fff' }" ng-show="loading"></span> Sign Up</button>
 					  </div>
 					</form>
 			  </div><!-- /.panel-body -->

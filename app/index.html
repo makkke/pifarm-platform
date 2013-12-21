@@ -32,7 +32,7 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <div ng-init="serverCurrentYear = <%= serverCurrentYear %>"></div>
+  <!-- <div ng-init="serverCurrentYear = <%= serverCurrentYear %>"></div> -->
   <div class="container" ui-view></div>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site"s ID -->
@@ -54,6 +54,8 @@
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="bower_components/lodash/dist/lodash.min.js"></script>
   <script src="bower_components/restangular/dist/restangular.js"></script>
+  <script src="bower_components/spin.js/dist/spin.min.js"></script>
+  <script src="bower_components/angular-spinner/angular-spinner.min.js"></script>
   <!-- endbuild -->
 
   <!-- build:js scripts/modules.js -->
@@ -72,10 +74,16 @@
   <script src="scripts/controllers/LoginCtrl.js"></script>
   <script src="scripts/controllers/SignupCtrl.js"></script>
   <script src="scripts/controllers/ForgotCtrl.js"></script>
+  <script src="scripts/controllers/AuthCtrl.js"></script>
 
   <script src="scripts/services/AuthSvc.js"></script>
+  <script src="scripts/services/DataSvc.js"></script>
 
   <script src="scripts/repositories/PinapleRepo.js"></script>
   <!-- endbuild -->
+
+  <script>
+    angular.module( 'pinapleApp' ).constant( 'serverCurrentYear', '<%= serverCurrentYear %>' ); 
+  </script>
 </body>
 </html>
