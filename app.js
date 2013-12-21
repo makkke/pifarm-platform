@@ -61,7 +61,7 @@ var app = express();
 app.set( 'port', process.env.PORT || 3000 );
 app.set( 'view engine', 'ejs' );
 app.engine( 'html', require( 'ejs' ).renderFile );
-app.use( express.favicon( path.join( __dirname, 'app/favicon.png' ) ) );
+app.use( express.favicon( path.join( __dirname, 'app/images/favicon.png' ) ) );
 app.use( express.logger( 'dev' ) );
 app.use( express.json() );
 app.use( express.bodyParser() );
@@ -84,6 +84,12 @@ else {
   app.use( express.static( path.join( __dirname, 'dist' ) ) );
 }
 
+// middleware function puts hash before req.params
+// redirect logic falls back to angular
+app.use(function (req, res) {
+  return res.redirect(req.protocol + '://' + req.get( 'Host' ) + '/#' + req.url);
+});
+
 app.get( '/', routes.index );
 
 // route to test if the user is logged in or not
@@ -92,7 +98,7 @@ app.get('/loggedin', function (req, res) {
 });
 
 // route to login
-app.get('/login',
+app.get('/s/login',
   function (req, res) {
     var options = {
       hostname: nconf.get( 'api:hostname' ),
