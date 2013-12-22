@@ -3,6 +3,16 @@
 pinapleApp
   .controller('SignupCtrl', ['$scope', '$window', 'AuthSvc', 'DataSvc', function ($scope, $window, AuthSvc, DataSvc) {
 
+    $scope.user = {};
+    $scope.user.email = 'slava@gmail.com';
+    $scope.user.password = '123456';
+    $scope.user.passwordConfirmation = '123456';
+    $scope.user.firstName = 'Slava';
+    $scope.user.lastName = 'Ivanov';
+    $scope.user.company = 'Exilium';
+    $scope.user.description = 'pi-oneer';
+    $scope.user.agreed = true;
+
     /*
      * Creates a new user and logs him in
      * @param object User
@@ -33,11 +43,12 @@ pinapleApp
           description:  user.description 
         }).then(
           function (user) {
-            
+            $scope.stopSpinner();
+            console.log('user:', user);
           },
           function (error) {
             $scope.stopSpinner();
-
+            console.log('error:', error);
           });
 
         // do sign up to server

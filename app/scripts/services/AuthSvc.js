@@ -6,7 +6,19 @@ pinapleApp
     var Auth = {};
 
     Auth.signup = function (user) {
-      
+      var deferred = $q.defer();
+
+      $http.post('/_signup', user)
+        .success(function (data, status) {
+          console.log('data:', data);
+          deferred.resolve( data );
+        })
+        .error(function (data, status) {
+          console.log('not created');
+          deferred.reject();
+        });
+
+      return deferred.promise;
     };
 
     Auth.setHttpHeaders = function(apiKey, authToken) {

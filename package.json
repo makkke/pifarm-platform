@@ -15,7 +15,8 @@
     "passport": "~0.1.17",
     "passport-local": "*",
     "passport-http": "~0.2.2",
-    "nconf": "~0.6.8"
+    "nconf": "~0.6.8",
+    "needle": "~0.6.3"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
