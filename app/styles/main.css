@@ -3,6 +3,21 @@
 }
 
 /*
+ * General
+ */
+.margin-top-10 {
+	margin-top: 10px;
+}
+
+.margin-top-15 {
+	margin-top: 15px;
+} 
+
+.padding-bottom-0 {
+	padding-bottom: 0px;
+}
+
+/*
  * Login page
  */
 .social-buttons {
@@ -31,18 +46,64 @@
 	left: 40px;
 }
 
-.margin-top-10 {
-	margin-top: 10px;
-}
-
-.margin-top-15 {
-	margin-top: 15px;
-} 
 
 .auth-title {
 	font-size: 20px;
 }
 
-.padding-bottom-0 {
-	padding-bottom: 0px;
+/*
+ * Or line
+ */
+.horiz-text {
+  margin: 0px;
+  padding: 0px 10px;
+  background: #fff;
+  display: inline-block;
+}
+
+.horiz-block {
+  text-align: center;
+  position: relative;
+  z-index: 2; 
+}
+
+.horiz-block:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  right: 0px;
+  border-top:solid 1px #ddd;
+  z-index: -1;
+}
+
+.horiz-bar {
+  margin: 10px 0px;
+  color: #ddd;
+  overflow: hidden;
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.horiz-bar:before {
+  right: 1em;
+  margin-left: -50%;
+}
+
+.horiz-bar:after, .horiz-bar:before {
+  background-color: #ddd;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.horiz-bar:after {
+  left: 1em;
+  margin-right: -50%;
 }
