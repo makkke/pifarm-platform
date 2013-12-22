@@ -1,5 +1,5 @@
 .auth-box {
-	margin-top: 100px;
+	margin-top: 40px;
 }
 
 /*
@@ -33,4 +33,16 @@
 
 .margin-top-10 {
 	margin-top: 10px;
+}
+
+.margin-top-15 {
+	margin-top: 15px;
+} 
+
+.auth-title {
+	font-size: 20px;
+}
+
+.padding-bottom-0 {
+	padding-bottom: 0px;
 }
