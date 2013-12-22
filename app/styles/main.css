@@ -25,13 +25,12 @@
 	text-align: center;
 }
 
-#login .btn-link {
-	font-style: italic;
-}
-
 .spinner-auth {
 	position: relative;
 	top: 6px;
 	left: 40px;
 }
 
+.margin-top-10 {
+	margin-top: 10px;
+}
