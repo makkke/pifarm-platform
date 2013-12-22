@@ -18,7 +18,7 @@ module.exports = function() {
     autoWatch: true,
 
     // web server port
-    port: 8080,
+    port: 8070,
     
     // list of files / patterns to exclude
     exclude: [],
@@ -31,24 +31,17 @@ module.exports = function() {
     // list of files / patterns to load in the browser
     files: [
       // 3rd party code
-      'app/bower_components/angular/angular.js',
+      'app/bower_components/angular/angular.min.js',
+      'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/angular-resource/angular-resource.js',
+      'app/bower_components/angular-cookies/angular-cookies.js',
+      'app/bower_components/angular-sanitize/angular-sanitize.js',
       'app/bower_components/angular-route/angular-route.js',
-      'app/bower_components/angular-animate/angular-animate.js',
-      'app/bower_components/lodash/lodash.js',
-      'app/bower_components/restangular/dist/restangular.js',
-      'app/bower_components/angular-ui-select2/src/select2.js',
-      'app/bower_components/AngularJS-Toaster/toaster.js',
-      'app/external_components/ui-bootstrap/ui-bootstrap-0.7.0.min.js',
-      'app/external_components/ui-bootstrap/ui-bootstrap-tpls-0.7.0.min.js',
-      'app/bower_components/angular-xeditable/dist/js/xeditable.js',
-      'app/bower_components/angular-moment/angular-moment.js',
-      'app/bower_components/angular-ui-router/release/angular-ui-router.js',
-      'app/bower_components/angularjs-file-upload/angular-file-upload.min.js',
+
+      'app/bower_components/lodash/dist/lodash.min.js',
+      'app/bower_components/restangular/dist/restangular.min.js',
+      'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
       'app/bower_components/angular-spinner/angular-spinner.min.js',
-      'app/bower_components/angular-ui-utils/modules/unique/unique.js',
-      'app/bower_components/angular-ui-map/src/map.js',
-      'app/bower_components/angular-ui-utils/modules/event/event.js',
-      'app/bower_components/angular-google-chart/ng-google-chart.js',
 
       // app specific code
       'app/scripts/*.js',

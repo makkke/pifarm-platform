@@ -5,6 +5,10 @@ pinapleApp
 
     var Auth = {};
 
+    Auth.signup = function (user) {
+      
+    };
+
     Auth.setHttpHeaders = function(apiKey, authToken) {
       var secretBase64 = btoa( apiKey + ':' + authToken );
       this.defaultHeaders = {
