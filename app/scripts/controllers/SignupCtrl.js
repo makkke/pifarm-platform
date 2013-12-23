@@ -1,14 +1,14 @@
 'use strict';
 
 pinapleApp
-  .controller('SignupCtrl', ['$scope', '$window', 'AuthSvc', 'DataSvc', function ($scope, $window, AuthSvc, DataSvc) {
+  .controller('SignupCtrl', ['$scope', '$window', '$location', 'AuthSvc', 'DataSvc', 'ApiErrorSvc', function ($scope, $window, $location, AuthSvc, DataSvc, ApiErrorSvc) {
 
     $scope.user = {};
-    $scope.user.email = 'slava@gmail.com';
+    $scope.user.username = 'slava@gmail.com';
     $scope.user.password = '123456';
-    $scope.user.passwordConfirmation = '123456';
-    $scope.user.firstName = 'Slava';
-    $scope.user.lastName = 'Ivanov';
+    $scope.user.password_confirmation = '123456';
+    $scope.user.first_name = 'Slava';
+    $scope.user.last_name = 'Ivanov';
     $scope.user.company = 'Exilium';
     $scope.user.description = 'pi-oneer';
     $scope.user.agreed = true;
@@ -28,30 +28,23 @@ pinapleApp
           return;
         }
 
-        if( !$scope.checkPasswordsMatch( user.password, user.passwordConfirmation ) ) {
+        if( !$scope.checkPasswordsMatch( user.password, user.password_confirmation ) ) {
           $scope.stopSpinner();
           $scope.showError( 'match' );
           return;
         }
 
-        AuthSvc.signup({
-          username:     user.email,
-          password:     user.password,
-          firstName:    user.firstName,
-          lastName:     user.lastName,
-          company:      user.company,
-          description:  user.description 
-        }).then(
-          function (user) {
+        AuthSvc.signup( user ).then(
+          function (account) {
             $scope.stopSpinner();
-            console.log('user:', user);
+            $location.url( 'dashboard' );
           },
           function (error) {
             $scope.stopSpinner();
-            console.log('error:', error);
+            if( error.code === ApiErrorSvc.AccountAlreadyExists ) {
+              $scope.showError( 'used' );
+            }
           });
-
-        // do sign up to server
       }
     }
 

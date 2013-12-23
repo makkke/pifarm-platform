@@ -11,10 +11,10 @@
 			  		<div class="form-group">
 			  			<div class="row">
 								<div class="col-xs-6">
-					    		<input type="text" class="form-control input-lg" autofocus required placeholder="First name" ng-model="user.firstName">
+					    		<input type="text" class="form-control input-lg" autofocus required placeholder="First name" ng-model="user.first_name">
 					  		</div>
 							  <div class="col-xs-6">
-							    <input type="text" class="form-control input-lg" required placeholder="Last name" ng-model="user.lastName">
+							    <input type="text" class="form-control input-lg" required placeholder="Last name" ng-model="user.last_name">
 							  </div>
 			  			</div>
 						</div>
@@ -29,8 +29,8 @@
 					    <input type="text" class="form-control input-lg" placeholder="Company name (optional)" ng-model="user.company">
 					  </div>
 
-					  <div class="form-group">
-					    <input type="email" class="form-control input-lg" required placeholder="Email" ng-model="user.email">
+					  <div class="form-group" ng-class="{ 'has-error': error == 'used' }">
+					    <input type="email" class="form-control input-lg" required placeholder="Email" ng-model="user.username">
 					    <span class="help-block" ng-switch-when="used">This email already used.</span>
 					  </div>
 
@@ -40,7 +40,7 @@
 						  </div>
 
 						  <div class="form-group">
-						    <input type="password" class="form-control input-lg" required placeholder="Confirm password" ng-model="user.passwordConfirmation">
+						    <input type="password" class="form-control input-lg" required placeholder="Confirm password" ng-model="user.password_confirmation">
 						    <span class="help-block" ng-switch-when="match">Passwords don't match.</span>
 						    <span class="help-block" ng-switch-when="min">Password should be minimum 6 characters.</span>
 						  </div>

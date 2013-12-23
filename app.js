@@ -112,14 +112,11 @@ app.post('/_signup', function (req, res) {
   var data = {
     username:     req.body.username,
     password:     req.body.password,
-    firstName:    req.body.firstName,
-    lastName:     req.body.lastName,
+    first_name:    req.body.first_name,
+    last_name:     req.body.last_name,
     company:      req.body.company,
     description:  req.body.description
   };
-
-  //console.log( JSON.stringify( data ) );
-  //res.send( 'zhopa' );
 
   var url = nconf.get( 'api:hostname' ) + '/' + nconf.get( 'api:version' ) + '/signup';
 

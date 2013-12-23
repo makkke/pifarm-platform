@@ -1,10 +1,11 @@
-
-<header ng-controller="NavCtrl">
+<!-- <nav ng-controller="NavCtrl">
   <div ng-include="'views/nav.html'"></div>
-</header>
+</nav> -->
 
 <div class="page-content" ui-view></div>
 
 <footer>
-  <p class="text-center">2013 Pinaple by <a href="http://exilium.ca/#/">Exilium Studio</a></p>
+  <p class="text-center">
+    <span ng-bind="currentYear"></span> &copy; Pinaple by <a href="http://exilium.ca">Exilium Studio Inc.</a>
+  </p>
 </footer>

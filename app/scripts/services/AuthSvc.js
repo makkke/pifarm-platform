@@ -1,36 +1,53 @@
 'use strict';
 
 pinapleApp
-  .factory('AuthSvc', ['$http', '$q', 'Restangular', function ($http, $q, Restangular) {
+  .factory('AuthSvc', ['$http', '$q', '$cookies', 'Restangular', function ($http, $q, $cookies, Restangular) {
 
     var Auth = {};
 
     Auth.signup = function (user) {
+      var that = this;
       var deferred = $q.defer();
 
-      $http.post('/_signup', user)
-        .success(function (data, status) {
-          console.log('data:', data);
-          deferred.resolve( data );
+      $http.post('/_signup', {
+        username:     user.username,
+        password:     user.password,
+        first_name:   user.first_name,
+        last_name:    user.last_name,
+        company:      user.company,
+        description:  user.description
+      })
+        .success(function (body, status) {
+          var sessionToken = body.data.session_token;
+          that.setHttpHeaders( sessionToken );
+          that.setSessionTokenInBrowser( sessionToken );
+
+          deferred.resolve( body.data );
         })
-        .error(function (data, status) {
-          console.log('not created');
-          deferred.reject();
+        .error(function (body, status) {
+          deferred.reject( body.error );
         });
 
       return deferred.promise;
     };
 
-    Auth.setHttpHeaders = function(apiKey, authToken) {
-      var secretBase64 = btoa( apiKey + ':' + authToken );
-      this.defaultHeaders = {
+    Auth.setHttpHeaders = function(sessionToken) {
+      var headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json; charset=UTF-8',
-        'Authorization': 'Basic ' + secretBase64
+        'X-Pinaple-Session-Token': sessionToken
       }
       
-      Restangular.setDefaultHeaders( this.defaultHeaders );
-    }
+      Restangular.setDefaultHeaders( headers );
+    };
+
+    Auth.setSessionTokenInBrowser = function(sessionToken) {
+      $cookies.pinapleSession = sessionToken;
+    };
+
+    Auth.isLoggedIn = function () {
+      return $cookies.pinapleSession;
+    };
 
     Auth.login = function(credentials) {
       var deferred = $q.defer();
