@@ -15,8 +15,16 @@ var pinapleApp = angular.module('pinapleApp', [
     function (Config, $stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
 
       // checks if the user is authenticated
-      var isLoggedIn = function($q, $http, $location){
+      var isLoggedIn = function($q, $http, $location, AuthSvc){
         var deferred = $q.defer();
+
+        if( AuthSvc.isLoggedIn() ) {
+          deferred.resolve();
+        }
+        else {
+          deferred.resolve();
+          $location.url( 'login' );
+        }
 
         // $http.get( '/loggedin' ).success(
         //   function (response) {
@@ -40,8 +48,6 @@ var pinapleApp = angular.module('pinapleApp', [
         //       $location.url( 'login' );
         //     }
         //   });
-        deferred.resolve();
-        $location.url( 'login' );
 
         return deferred.promise;
       };
@@ -49,13 +55,12 @@ var pinapleApp = angular.module('pinapleApp', [
       $urlRouterProvider.otherwise( '/dashboard' );
       
       $stateProvider
+        // user management
         .state('auth', {
           abstract: true,
           templateUrl: 'views/auth.html',
           controller: 'AuthCtrl'
         })
-
-        // user management
         .state('auth.login', {
           url: '/login',
           templateUrl: 'views/login.html',

@@ -12,6 +12,7 @@ var passport = require( 'passport' );
 var LocalStrategy = require( 'passport-local' ).Strategy;
 var nconf = require( 'nconf' );
 var querystring = require( 'querystring' );
+var needle = require( 'needle' );
 
 nconf
   .argv()
@@ -87,10 +88,47 @@ else {
 // middleware function puts hash before req.params
 // redirect logic falls back to angular
 app.use(function (req, res) {
-  return res.redirect(req.protocol + '://' + req.get( 'Host' ) + '/#' + req.url);
+  if( req.url.substring(0, 1) !== '_' ) {
+    return res.redirect(req.protocol + '://' + req.get( 'Host' ) + '/#' + req.url);
+  }
 });
 
+/*
+ * Main route to index page
+ * @method GET
+ */
 app.get( '/', routes.index );
+
+app.get('/_test', function (req, res) {
+  res.send( 'something' );
+});
+
+/*
+ * Route to create a new account
+ * @method POST
+ * @data object User info
+ */
+app.post('/_signup', function (req, res) {
+  var data = {
+    username:     req.body.username,
+    password:     req.body.password,
+    first_name:    req.body.first_name,
+    last_name:     req.body.last_name,
+    company:      req.body.company,
+    description:  req.body.description
+  };
+
+  var url = nconf.get( 'api:hostname' ) + '/' + nconf.get( 'api:version' ) + '/signup';
+
+  needle.post(url, data, function (error, httpRes, body) {
+    if( error ) {
+      console.log( 'Got error: ' + JSON.stringify( error ) );
+      return res.send( 503, e.message );
+    }
+
+    res.send( httpRes.statusCode, body );
+  });
+});
 
 // route to test if the user is logged in or not
 app.get('/loggedin', function (req, res) {
@@ -147,38 +185,6 @@ app.post('/verify_credentials', function (req, res) {
 app.post('/logout', function (req, res){
   req.logOut();
   res.send( 200 );
-});
-
-// route to signup
-app.post('/signup', function (req, res) {
-  var data = {
-    email: req.body.email,
-    pwd: req.body.password,
-  };
-  var options = {
-    hostname: nconf.get( 'api:admin:hostname' ),
-    port: nconf.get( 'api:admin:port' ),
-    path: '/tasks/sysacc?' + querystring.stringify( data ),
-    method: 'POST'
-  };
-
-  var httpReq = http.request(options, function(httpRes) {
-    // TODO: api engine never send 200 for now
-    if( httpRes.statusCode === 200 ) {
-      res.send( 200 );
-    }
-    else {
-      httpRes.setEncoding('utf8');
-      httpRes.on('data', function (data) {
-        res.send( httpRes.statusCode, data );
-      });
-    }
-  }).on('error', function(e) {
-    console.log("Got error: " + JSON.stringify(e));
-    res.send( 503, e.message );
-  });
-
-  httpReq.end();
 });
 
 // route to reset password
