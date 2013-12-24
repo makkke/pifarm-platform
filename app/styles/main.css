@@ -107,3 +107,17 @@
   left: 1em;
   margin-right: -50%;
 }
+
+/*
+ * Main page
+ */
+.navbar-nav > li > a {
+  line-height: 32px;
+  padding-top: 37px;
+}
+
+.pi-navbar-default {
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #e7e7e7;
+}

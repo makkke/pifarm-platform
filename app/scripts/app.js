@@ -91,7 +91,7 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/dashboard',
           templateUrl: 'views/dashboard.html',
           controller: 'DashboardCtrl',
-          resolve: { loggedin: isLoggedIn }
+          // resolve: { loggedin: isLoggedIn }
         })
 
       $locationProvider.html5Mode( true );
