@@ -1,7 +1,7 @@
 'use strict';
 
 pinapleApp
-  .controller('DashboardCtrl', ['$scope', function ($scope) {
+  .controller('FarmCtrl', ['$scope', function ($scope) {
     
     console.log('popa');
 

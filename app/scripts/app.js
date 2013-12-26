@@ -52,7 +52,7 @@ var pinapleApp = angular.module('pinapleApp', [
         return deferred.promise;
       };
     
-      $urlRouterProvider.otherwise( '/dashboard' );
+      $urlRouterProvider.otherwise( '/farm' );
       
       $stateProvider
         // user management
@@ -87,12 +87,18 @@ var pinapleApp = angular.module('pinapleApp', [
           templateUrl: 'views/main.html'
         })
 
-        .state('main.dashboard', {
-          url: '/dashboard',
-          templateUrl: 'views/dashboard.html',
-          controller: 'DashboardCtrl',
+        .state('main.farm', {
+          url: '/farm',
+          templateUrl: 'views/farm.html',
+          controller: 'FarmCtrl',
           // resolve: { loggedin: isLoggedIn }
         })
+        .state('main.devices', {
+          url: '/devices',
+          templateUrl: 'views/devices.html',
+          controller: 'DevicesCtrl',
+          // resolve: { loggedin: isLoggedIn }
+        });
 
       $locationProvider.html5Mode( true );
 
