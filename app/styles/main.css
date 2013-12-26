@@ -10,8 +10,20 @@
 }
 
 .margin-top-15 {
-	margin-top: 15px;
+  margin-top: 15px;
 } 
+
+.margin-top-20 {
+  margin-top: 20px;
+} 
+
+.margin-top-34 {
+	margin-top: 34px;
+} 
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
 
 .padding-bottom-0 {
 	padding-bottom: 0px;
@@ -120,4 +132,15 @@
   background-color: #fff;
   border: none;
   border-bottom: 1px solid #e7e7e7;
+}
+
+/*
+ * Farm page
+ */
+.pi-panel-body {
+  padding: 0px;
+}
+
+.pi-pencil-style {
+  opacity: 0.3;
 }
