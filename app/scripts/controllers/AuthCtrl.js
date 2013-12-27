@@ -1,8 +1,8 @@
 'use strict';
 
 pinapleApp
-  .controller('AuthCtrl', ['$scope', 'serverCurrentYear', function ($scope, serverCurrentYear) {
+  .controller('AuthCtrl', ['$scope', 'ServerCurrentYear', function ($scope, ServerCurrentYear) {
     
-    $scope.currentYear = serverCurrentYear;
+    $scope.current_year = ServerCurrentYear;
 
   }]);

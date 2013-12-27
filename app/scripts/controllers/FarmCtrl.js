@@ -3,6 +3,6 @@
 pinapleApp
   .controller('FarmCtrl', ['$scope', function ($scope) {
     
-    console.log(AuthSvc.account);
+    //console.log(AuthSvc.account);
 
   }]);

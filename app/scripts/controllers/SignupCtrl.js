@@ -6,7 +6,7 @@ pinapleApp
     $scope.loading = false;
     $scope.error = '';
 
-    $scope.descriptionTypes = DataSvc.descriptionTypes;
+    $scope.description_types = DataSvc.description_types;
 
     $scope.title = 'Sign Up | Pinaple';
     $window.document.title = $scope.title;
@@ -18,34 +18,34 @@ pinapleApp
      */
     $scope.signup = function (user, form) {
       if( form.$valid ) {
-        $scope.startSpinner();
+        $scope.start_spinner();
         
-        if( !$scope.checkPasswordLength( user.password ) ) {
-          $scope.stopSpinner();
-          $scope.showError( 'min' );
+        if( !$scope.check_password_length( user.password ) ) {
+          $scope.stop_spinner();
+          $scope.show_error( 'min' );
           return;
         }
 
-        if( !$scope.checkPasswordsMatch( user.password, user.password_confirmation ) ) {
-          $scope.stopSpinner();
-          $scope.showError( 'match' );
+        if( !$scope.check_passwords_match( user.password, user.password_confirmation ) ) {
+          $scope.stop_spinner();
+          $scope.show_error( 'match' );
           return;
         }
 
         AuthSvc.signup( user ).then(
           function (account) {
-            $scope.stopSpinner();
+            $scope.stop_spinner();
             $location.url( 'login/email=' + user.username );
           },
           function (error, status) {
-            $scope.stopSpinner();
-            if( ApiErrorSvc.isServerError( status ) ) {
-              $scope.showError( 'server' );
+            $scope.stop_spinner();
+            if( ApiErrorSvc.is_server_error( status ) ) {
+              $scope.show_error( 'server' );
               return;
             }
             
             if( error.code === ApiErrorSvc.AccountAlreadyExists ) {
-              $scope.showError( 'invalid' );
+              $scope.show_error( 'invalid' );
             }
             $log.error( error );
           });
@@ -56,7 +56,7 @@ pinapleApp
      * Starts a loading spinner
      * @return bool New spinner status
      */
-    $scope.startSpinner = function () {
+    $scope.start_spinner = function () {
       return $scope.loading = true;
     };
 
@@ -64,7 +64,7 @@ pinapleApp
      * Stops a loading spinner
      * @return bool New spinner status
      */
-    $scope.stopSpinner = function () {
+    $scope.stop_spinner = function () {
       return $scope.loading = false;
     };
 
@@ -73,8 +73,8 @@ pinapleApp
      * @param string Error code, possible values 'used' || 'match' || 'min' || 'server'
      * @return string New error code
      */
-    $scope.showError = function (errorCode) {
-      return $scope.error = errorCode;
+    $scope.show_error = function (error_code) {
+      return $scope.error = error_code;
     };
   
     /*
@@ -82,10 +82,10 @@ pinapleApp
      * @param string Password
      * @return bool
      */
-    $scope.checkPasswordLength = function (password) {
-      var minPasswordLength = 6;
+    $scope.check_password_length = function (password) {
+      var min_password_length = 6;
       if( !password ) return false;
-      return password.length >= minPasswordLength;
+      return password.length >= min_password_length;
     };
 
     /*
@@ -94,7 +94,7 @@ pinapleApp
      * @param string Password confirmation
      * @return bool
      */
-    $scope.checkPasswordsMatch = function (password, confirmation) {
+    $scope.check_passwords_match = function (password, confirmation) {
       return password === confirmation;
     };
 

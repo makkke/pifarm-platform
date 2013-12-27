@@ -13,7 +13,7 @@ pinapleApp
       SessionInvalid:             'session_invalid',
       SessionNotProvided:         'session_not_provided',
 
-      isServerError: function(status) {
+      is_server_error: function(status) {
         return status >= 500;
       },
 

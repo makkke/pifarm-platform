@@ -91,13 +91,13 @@ var pinapleApp = angular.module('pinapleApp', [
           // resolve: { loggedin: isLoggedIn }
         })
         .state('main.device_details', {
-          url: '/devices/:device_id',
+          url: '/devices/:id',
           templateUrl: 'views/device.details.html',
           controller: 'DeviceDetailsCtrl'
           // resolve: { loggedin: isLoggedIn }
         });
 
-      $locationProvider.html5Mode( true );
+      //$locationProvider.html5Mode( true );
 
       // setup Restangular
       var url = Config.api.protocol + '://' + Config.api.hostname + '/' + Config.api.version;

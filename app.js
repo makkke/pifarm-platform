@@ -87,11 +87,11 @@ else {
 
 // middleware function puts hash before req.params
 // redirect logic falls back to angular
-app.use(function (req, res) {
-  if( req.url.substring(0, 1) !== '_' ) {
-    return res.redirect(req.protocol + '://' + req.get( 'Host' ) + '/#' + req.url);
-  }
-});
+// app.use(function (req, res) {
+//   if( req.url.substring(0, 1) !== '_' ) {
+//     return res.redirect(req.protocol + '://' + req.get( 'Host' ) + '/#' + req.url);
+//   }
+// });
 
 /*
  * Main route to index page
