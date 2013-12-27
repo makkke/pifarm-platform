@@ -44,6 +44,10 @@
 						    <span class="help-block" ng-switch-when="match">Passwords don't match.</span>
 						    <span class="help-block" ng-switch-when="min">Password should be minimum 6 characters.</span>
 						  </div>
+
+						  <div class="alert alert-danger" ng-switch-when="server">
+							  <strong>Ops</strong>, something happened with our server. Please try again.
+							</div>
 					  </fieldset>
 					  
 					  <div class="checkbox">

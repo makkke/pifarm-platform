@@ -7,7 +7,15 @@
 				</div>
 
 				<div class="panel-body padding-bottom-0">
-					<form name="loginForm" role="form" ng-submit="login(credentials, loginForm)">
+					<form name="loginForm" role="form" ng-submit="login(credentials, loginForm)" ng-switch on="error">
+						<div class="alert alert-danger" ng-switch-when="server">
+						  <strong>Ops</strong>, something happened with our server. Please try again.
+						</div>
+
+						<div class="alert alert-danger" ng-switch-when="invalid">
+						  Your username or password is incorrect.
+						</div>
+
 						<div class="form-group">
 							<input type="email" class="form-control input-lg" required autofocus placeholder="Email" ng-model="credentials.username">
 						</div>
@@ -50,7 +58,7 @@
 						</div>
 
 						<div class="form-group">
-							<button type="submit" class="btn btn-lg btn-block btn-success">Log In</button>
+							<button type="submit" class="btn btn-lg btn-block btn-success" ng-disabled="loginForm.$invalid || loading"><span class="spinner-auth" us-spinner="{ radius: 7, width: 3, length: 8, lines: 10, color: '#fff' }" ng-show="loading"></span> Log In</button>
 							<div class="text-center">
 								<a href="/signup" class="btn btn-link">Don't have an account? 
 								<strong>Sign Up!</strong></a>

@@ -1,8 +1,8 @@
 'use strict';
 
 pinapleApp
-  .controller('DashboardCtrl', ['$scope', function ($scope) {
+  .controller('DashboardCtrl', ['$scope', 'AuthSvc', function ($scope, AuthSvc) {
     
-    console.log('popa');
+    console.log(AuthSvc.account);
 
   }]);

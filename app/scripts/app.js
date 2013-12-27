@@ -15,40 +15,29 @@ var pinapleApp = angular.module('pinapleApp', [
     function (Config, $stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
 
       // checks if the user is authenticated
-      var isLoggedIn = function($q, $http, $location, AuthSvc){
+      var loggedIn = function($q, $location, AuthSvc) {
         var deferred = $q.defer();
 
-        if( AuthSvc.isLoggedIn() ) {
+        if( !AuthSvc.loggedIn() ) {
+          $location.url( 'login' );
           deferred.resolve();
         }
         else {
-          deferred.resolve();
-          $location.url( 'login' );
+          if( !AuthSvc.account ) {
+            AuthSvc.updateUserAccount().then(
+              function (account) {
+                deferred.resolve();
+              },
+              function (error, status) {
+                $location.url( 'login' );
+                deferred.resolve();
+              });
+          }
+          else {
+            deferred.resolve();
+          }
         }
-
-        // $http.get( '/loggedin' ).success(
-        //   function (response) {
-        //     if( response !== '0' ) {
-        //       // if authenticated on server then
-        //       // if( !AuthSvc.loggedIn ) {
-        //       //   // if not authenticated in app then
-        //       //   AuthSvc.login( response.sid, response.auth_token ).then(
-        //       //     function (user) {
-        //       //       deferred.resolve( user );
-        //       //     },
-        //       //     function (response) {
-                    
-        //       //     });
-        //       // }
-        //       // deferred.resolve( AuthSvc.user );
-        //     }
-        //     else {
-        //       // not authenticated on server
-        //       deferred.reject();
-        //       $location.url( 'login' );
-        //     }
-        //   });
-
+        
         return deferred.promise;
       };
     
@@ -69,7 +58,7 @@ var pinapleApp = angular.module('pinapleApp', [
         .state('auth.logout', {
           url: '/logout',
           controller: 'LogoutCtrl',
-          resolve: { loggedin: isLoggedIn }
+          resolve: { loggedIn: loggedIn }
         })
         .state('auth.signup', {
           url: '/signup',
@@ -91,7 +80,7 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/dashboard',
           templateUrl: 'views/dashboard.html',
           controller: 'DashboardCtrl',
-          resolve: { loggedin: isLoggedIn }
+          resolve: { loggedIn: loggedIn }
         })
 
       $locationProvider.html5Mode( true );
