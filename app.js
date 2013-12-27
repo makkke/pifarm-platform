@@ -99,10 +99,6 @@ app.use(function (req, res) {
  */
 app.get( '/', routes.index );
 
-app.get('/_test', function (req, res) {
-  res.send( 'something' );
-});
-
 /*
  * Route to create a new account
  * @method POST
@@ -112,54 +108,54 @@ app.post('/_signup', function (req, res) {
   var data = {
     username:     req.body.username,
     password:     req.body.password,
-    first_name:    req.body.first_name,
-    last_name:     req.body.last_name,
+    first_name:   req.body.first_name,
+    last_name:    req.body.last_name,
     company:      req.body.company,
     description:  req.body.description
   };
+
+  console.log(JSON.stringify( data ));
 
   var url = nconf.get( 'api:hostname' ) + '/' + nconf.get( 'api:version' ) + '/signup';
 
   needle.post(url, data, function (error, httpRes, body) {
     if( error ) {
       console.log( 'Got error: ' + JSON.stringify( error ) );
-      return res.send( 503, e.message );
+      return res.send( httpRes.statusCode, e.message );
     }
 
     res.send( httpRes.statusCode, body );
   });
 });
 
+/*
+ * Route to login an user
+ * @method GET
+ * @data object Credentials
+ */
+app.get('/_login',
+  function (req, res) {
+    var data = {
+      username: req.body.username,
+      password: req.body.password
+    };
+
+    var url = nconf.get( 'api:hostname' ) + '/' + nconf.get( 'api:version' ) + '/login';
+
+    needle.get(url, data, function (error, httpRes, body) {
+      if( error ) {
+        console.log( 'Got error: ' + JSON.stringify( error ) );
+        return res.send( httpRes.statusCode, e.message );
+      }
+
+      res.send( httpRes.statusCode, body );
+    });
+  });
+
 // route to test if the user is logged in or not
 app.get('/loggedin', function (req, res) {
   res.send( req.isAuthenticated() ? req.user : '0' );
 });
-
-// route to login
-app.get('/s/login',
-  function (req, res) {
-    var options = {
-      hostname: nconf.get( 'api:hostname' ),
-      path: '/' + nconf.get( 'api:version' ) + '/login',
-      auth: req.body.username + ':' + req.body.password
-    };
-
-    http.get(options, function (httpRes) {
-      if( httpRes.statusCode === 200 ) {
-        httpRes.setEncoding( 'utf8' );
-        httpRes.on('data', function (data) {
-          return res.send( data );
-        });
-      }
-      else {
-        console.log(httpRes.statusCode, 'not authorized');
-        return res.send( 401 );
-      }
-    }).on('error', function (e) {
-      console.log( 'Got error: ' + JSON.stringify( e ) );
-      return res.send( 500 );
-    });
-  });
 
 // route to test login credentials
 app.post('/verify_credentials', function (req, res) {

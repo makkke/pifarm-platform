@@ -1,20 +1,18 @@
 'use strict';
 
 pinapleApp
-  .controller('SignupCtrl', ['$scope', '$window', '$location', 'AuthSvc', 'DataSvc', 'ApiErrorSvc', function ($scope, $window, $location, AuthSvc, DataSvc, ApiErrorSvc) {
+  .controller('SignupCtrl', ['$scope', '$window', '$location', '$log', 'AuthSvc', 'DataSvc', 'ApiErrorSvc', function ($scope, $window, $location, $log, AuthSvc, DataSvc, ApiErrorSvc) {
 
-    $scope.user = {};
-    $scope.user.username = 'slava@gmail.com';
-    $scope.user.password = '123456';
-    $scope.user.password_confirmation = '123456';
-    $scope.user.first_name = 'Slava';
-    $scope.user.last_name = 'Ivanov';
-    $scope.user.company = 'Exilium';
-    $scope.user.description = 'pi-oneer';
-    $scope.user.agreed = true;
+    $scope.loading = false;
+    $scope.error = '';
+
+    $scope.descriptionTypes = DataSvc.descriptionTypes;
+
+    $scope.title = 'Sign Up | Pinaple';
+    $window.document.title = $scope.title;
 
     /*
-     * Creates a new user and logs him in
+     * Creates a new user and redirects to login page
      * @param object User
      * @param object Form
      */
@@ -37,13 +35,19 @@ pinapleApp
         AuthSvc.signup( user ).then(
           function (account) {
             $scope.stopSpinner();
-            $location.url( 'dashboard' );
+            $location.url( 'login/email=' + user.username );
           },
-          function (error) {
+          function (error, status) {
             $scope.stopSpinner();
-            if( error.code === ApiErrorSvc.AccountAlreadyExists ) {
-              $scope.showError( 'used' );
+            if( ApiErrorSvc.isServerError( status ) ) {
+              $scope.showError( 'server' );
+              return;
             }
+            
+            if( error.code === ApiErrorSvc.AccountAlreadyExists ) {
+              $scope.showError( 'invalid' );
+            }
+            $log.error( error );
           });
       }
     }
@@ -66,7 +70,7 @@ pinapleApp
 
     /*
      * Shows an error near input
-     * @param string Error code, possible values 'used' || 'match' || 'min'
+     * @param string Error code, possible values 'used' || 'match' || 'min' || 'server'
      * @return string New error code
      */
     $scope.showError = function (errorCode) {
@@ -93,12 +97,5 @@ pinapleApp
     $scope.checkPasswordsMatch = function (password, confirmation) {
       return password === confirmation;
     };
-    
-    $scope.loading = false;
-
-    $scope.descriptionTypes = DataSvc.descriptionTypes;
-
-    $scope.title = 'Sign Up | Pinaple';
-    $window.document.title = $scope.title;
 
   }]);
