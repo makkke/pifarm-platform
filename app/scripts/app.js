@@ -91,7 +91,7 @@ var pinapleApp = angular.module('pinapleApp', [
           // resolve: { loggedin: isLoggedIn }
         })
         .state('main.device_details', {
-          url: '/devices/:id',
+          url: '/devices/:device_id',
           templateUrl: 'views/device.details.html',
           controller: 'DeviceDetailsCtrl'
           // resolve: { loggedin: isLoggedIn }
