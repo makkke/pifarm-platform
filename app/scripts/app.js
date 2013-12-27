@@ -90,13 +90,21 @@ var pinapleApp = angular.module('pinapleApp', [
         .state('main.farm', {
           url: '/farm',
           templateUrl: 'views/farm.html',
-          controller: 'FarmCtrl',
+          controller: 'FarmCtrl'
           // resolve: { loggedin: isLoggedIn }
         })
+
+        // devices
         .state('main.devices', {
           url: '/devices',
           templateUrl: 'views/devices.html',
-          controller: 'DevicesCtrl',
+          controller: 'DevicesCtrl'
+          // resolve: { loggedin: isLoggedIn }
+        })
+        .state('main.device_details', {
+          url: '/devices/:device_id',
+          templateUrl: 'views/device.details.html',
+          controller: 'DeviceDetailsCtrl'
           // resolve: { loggedin: isLoggedIn }
         });
 
