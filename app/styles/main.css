@@ -10,8 +10,27 @@
 }
 
 .margin-top-15 {
-	margin-top: 15px;
+  margin-top: 15px;
 } 
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+.margin-top-30 {
+  margin-top: 30px;
+} 
+
+.margin-top-34 {
+	margin-top: 34px;
+} 
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.margin-bottom-30 {
+  margin-bottom: 30px;
+}
 
 .padding-bottom-0 {
 	padding-bottom: 0px;
@@ -106,4 +125,46 @@
 .horiz-bar:after {
   left: 1em;
   margin-right: -50%;
+}
+
+/*
+ * Main page
+ */
+.navbar-nav > li > a {
+  line-height: 32px;
+  padding-top: 37px;
+}
+
+.pi-navbar-default {
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+/*
+ * Farm page
+ */
+.pi-panel-body {
+  padding: 0px;
+}
+
+.copy-icon {
+  opacity: 0.3;
+  margin-left: 10px;
+  font-size: 16px;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.copy-icon:hover {
+  opacity: 1.0;
+}
+
+.pi-on-hover:hover {
+  background-color: #ddd;
+}
+
+.strong {
+  font-weight: bold;
 }

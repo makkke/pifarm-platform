@@ -1,0 +1,52 @@
+<div class="row margin-top-30 margin-bottom-30">
+	<div class="col-xs-offset-1 col-xs-5 ">
+		<button type="button" class="btn btn btn-warning btn-lg"><i class="fa fa-share-square-o"></i> Export to Excel</button>
+	</div>
+	<div class="col-xs-5 text-right">
+		<button type="button" class="btn btn-success btn-lg"><i class="fa fa-plus"></i> Add New Device</button>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-offset-1 col-xs-10">
+		<div class="row">
+		  <div class="col-xs-2 text-center">
+		  	<h3>Type</h3>
+		  </div>
+		  <div class="col-xs-3">
+		  	<h3>Name</h3>
+		  </div>
+		  <div class="col-xs-3">
+		  	<h3>Serial number</h3>
+		  </div>
+		  <div class="col-xs-4">
+		  	<h3>Device key</h3>
+		  </div>
+		</div>
+	</div>
+</div>
+
+<div class="row" ng-repeat="device in devices">
+	<div class="col-xs-offset-1 col-xs-10">
+		<div class="panel panel-default pi-on-hover">
+			<div class="panel-body pi-panel-body">
+				<div class="row">
+				  <div class="col-xs-2 text-center" ng-switch on="device.type">
+				  	<img src="images/raspberrypi.png" alt="..." class="img-rounded" ng-switch-when="rpi">
+				  	<img src="images/arduino.png" alt="..." class="img-rounded" ng-switch-when="arduino">
+				  	<img src="images/custom.png" alt="..." class="img-rounded" ng-switch-when="custom">
+				  </div>
+				  <div class="col-xs-3 margin-top-10">
+				  	<a ng-href="/devices/{{device.id}}"><h3 ng-bind="device.name"></h3></a>
+				  </div>
+				  <div class="col-xs-3 margin-top-10">
+				  	<h3 ng-bind="device.serial_number"></h3>
+				  </div>
+				  <div class="col-xs-4 margin-top-10">
+				  	<h3><span ng-bind="device.device_key"></span> <i class="fa fa-files-o copy-icon"></i></h3>
+				  </div>
+				</div>
+			</div><!-- /.panel-body -->
+		</div><!-- /.panel -->
+	</div>
+</div><!-- /.row-->
