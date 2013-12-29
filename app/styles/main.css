@@ -28,6 +28,10 @@
 	margin-top: 34px;
 } 
 
+.margin-bottom-0 {
+  margin-bottom: 0px;
+}
+
 .margin-bottom-20 {
   margin-bottom: 20px;
 }
@@ -186,4 +190,15 @@
 
 .link-style :hover {
   color: #333;
+}
+
+/*
+ * Device details page
+ */
+.bg-style {
+  background-color: #fbfbfb ;
+}
+
+.height {
+  line-height: 42px;
 }
