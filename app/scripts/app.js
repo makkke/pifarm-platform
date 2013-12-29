@@ -73,7 +73,8 @@ var pinapleApp = angular.module('pinapleApp', [
 
         .state('main', {
           abstract: true,
-          templateUrl: 'views/main.html'
+          templateUrl: 'views/main.html',
+          controller: 'MainCtrl'
         })
 
         .state('main.farm', {
