@@ -7,20 +7,20 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="row strong">
 	<div class="col-xs-offset-1 col-xs-10">
 		<div class="row">
 		  <div class="col-xs-2 text-center">
-		  	<h3>Type</h3>
+		  	<p>Type</p>
 		  </div>
 		  <div class="col-xs-3">
-		  	<h3>Name</h3>
+		  	<p>Name</p>
 		  </div>
 		  <div class="col-xs-3">
-		  	<h3>Serial number</h3>
+		  	<p>Serial number</p>
 		  </div>
 		  <div class="col-xs-4">
-		  	<h3>Device key</h3>
+		  	<p>Device key</p>
 		  </div>
 		</div>
 	</div>
@@ -30,20 +30,22 @@
 	<div class="col-xs-offset-1 col-xs-10">
 		<div class="panel panel-default pi-on-hover">
 			<div class="panel-body pi-panel-body">
-				<div class="row">
+				<div class="row size">
 				  <div class="col-xs-2 text-center" ng-switch on="device.type">
-				  	<img src="images/raspberrypi.png" alt="..." class="img-rounded" ng-switch-when="rpi">
-				  	<img src="images/arduino.png" alt="..." class="img-rounded" ng-switch-when="arduino">
-				  	<img src="images/custom.png" alt="..." class="img-rounded" ng-switch-when="custom">
+				  	<a ng-href="/devices/{{device.id}}">
+					  	<img src="images/raspberrypi.png" alt="..." class="img-rounded" ng-switch-when="rpi">
+					  	<img src="images/arduino.png" alt="..." class="img-rounded" ng-switch-when="arduino">
+					  	<img src="images/custom.png" alt="..." class="img-rounded" ng-switch-when="custom">
+				  	</a>
 				  </div>
-				  <div class="col-xs-3 margin-top-10">
-				  	<a ng-href="/devices/{{device.id}}"><h3 ng-bind="device.name"></h3></a>
+				  <div class="col-xs-3">
+				  	<a class="link-style" style="text-decoration:none;" ng-href="/devices/{{device.id}}"><p class="margin-0" ng-bind="device.name"></p></a>
 				  </div>
-				  <div class="col-xs-3 margin-top-10">
-				  	<h3 ng-bind="device.serial_number"></h3>
+				  <div class="col-xs-3">
+				  	<p class="margin-0" ng-bind="device.serial_number"></p>
 				  </div>
-				  <div class="col-xs-4 margin-top-10">
-				  	<h3><span ng-bind="device.device_key"></span> <i class="fa fa-files-o copy-icon"></i></h3>
+				  <div class="col-xs-4">
+				  	<p class="margin-0"><span ng-bind="device.device_key"></span> <i class="fa fa-files-o copy-icon"></i></p>
 				  </div>
 				</div>
 			</div><!-- /.panel-body -->

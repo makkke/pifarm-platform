@@ -5,6 +5,10 @@
 /*
  * General
  */
+ .margin-0 {
+  margin: 0px;
+ }
+
 .margin-top-10 {
 	margin-top: 10px;
 }
@@ -162,9 +166,24 @@
 }
 
 .pi-on-hover:hover {
-  background-color: #ddd;
+  background-color: #f4f1f1;
 }
 
 .strong {
+  font-size: 22px;
   font-weight: bold;
+}
+
+.size {
+  font-size: 20px;
+  line-height: 80px;
+}
+
+.link-style {
+  color: #333;
+  text-decoration: none; /*does't work*/
+}
+
+.link-style :hover {
+  color: #333;
 }
