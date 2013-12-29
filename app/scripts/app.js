@@ -11,9 +11,10 @@ var pinapleApp = angular.module('pinapleApp', [
   'angularSpinner'
 ])
 
-  .config(['Config', '$stateProvider', '$urlRouterProvider', '$locationProvider', 'RestangularProvider',
-    function (Config, $stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
+  .config(['Config', '$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'RestangularProvider',
+    function (Config, $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, RestangularProvider) {
 
+      $httpProvider.defaults.useXDomain = true;
       // checks if the user is authenticated
       var loggedIn = function($q, $location, AuthSvc) {
         var deferred = $q.defer();
@@ -23,13 +24,14 @@ var pinapleApp = angular.module('pinapleApp', [
           deferred.resolve();
         }
         else {
+          AuthSvc.setSessionToken();
           if( !AuthSvc.account ) {
             AuthSvc.updateUserAccount().then(
               function (account) {
                 deferred.resolve();
               },
               function (error, status) {
-                $location.url( 'login' );
+                //$location.url( 'login' );
                 deferred.resolve();
               });
           }
@@ -51,7 +53,7 @@ var pinapleApp = angular.module('pinapleApp', [
           controller: 'AuthCtrl'
         })
         .state('auth.login', {
-          url: '/login',
+          url: '/login?username',
           templateUrl: 'views/login.html',
           controller: 'LoginCtrl'
         })
@@ -80,8 +82,8 @@ var pinapleApp = angular.module('pinapleApp', [
         .state('main.farm', {
           url: '/farm',
           templateUrl: 'views/farm.html',
-          controller: 'FarmCtrl'
-          // resolve: { loggedin: isLoggedIn }
+          controller: 'FarmCtrl',
+          resolve: { loggedIn: loggedIn }
         })
 
         // devices

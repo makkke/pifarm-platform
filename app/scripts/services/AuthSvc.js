@@ -30,13 +30,9 @@ pinapleApp
       var that = this;
       var deferred = $q.defer();
 
-      $http({
-        method: 'GET',
-        url: '/_login',
-        data: {
-          username: credentials.username,
-          password: credentials.password
-        }
+      $http.post('/_login', {
+        username: credentials.username,
+        password: credentials.password
       })
       .success(function (account) {
         var sessionToken = account.session_token;
@@ -51,7 +47,12 @@ pinapleApp
       });
 
       return deferred.promise;
-    }
+    };
+
+    Auth.setSessionToken = function() {
+      var sessionToken = $cookies.pinapleSession;
+      this._setHttpHeaders( sessionToken );
+    };
 
     Auth.updateUserAccount = function () {
       var that = this;
@@ -60,6 +61,7 @@ pinapleApp
       AccountsRepoSvc.me().then(
         function (account) {
           that._setUserAccount( account );
+          console.log(account);
 
           deferred.resolve( account );
         },
@@ -82,6 +84,7 @@ pinapleApp
       }
       
       Restangular.setDefaultHeaders( headers );
+      //$http.defaults.headers.common['X-Pinaple-Session-Token'] = 123;
     };
 
     Auth._setSessionTokenInBrowser = function(sessionToken) {

@@ -1,8 +1,9 @@
 'use strict';
 
 pinapleApp
-  .controller('FarmCtrl', ['$scope', function ($scope) {
+  .controller('FarmCtrl', ['$scope', '$window', function ($scope, $window) {
     
-    //console.log(AuthSvc.account);
+    $scope.title = 'My Farm | Pinaple';
+    $window.document.title = $scope.title;
 
   }]);

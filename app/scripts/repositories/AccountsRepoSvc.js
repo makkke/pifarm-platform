@@ -1,13 +1,13 @@
 'use strict';
 
 pinapleApp
-  .factory('AccountsRepoSvc', ['Restangular', function (Restangular) {
+  .factory('AccountsRepoSvc', ['$http', '$q', 'Restangular', function ($http, $q, Restangular) {
 
     var Repo = {};
     var route = 'accounts';
 
     Repo.me = function () {
-      return Restangular.all( route ).one( 'me' ).get();
+      return Restangular.one( 'accounts', 'me' ).get();
     };
 
     return Repo;

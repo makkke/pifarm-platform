@@ -35,7 +35,7 @@ pinapleApp
         AuthSvc.signup( user ).then(
           function (account) {
             $scope.stop_spinner();
-            $location.url( 'login/email=' + user.username );
+            $location.url( '#/login?username=' + account.username );
           },
           function (error, status) {
             $scope.stop_spinner();
@@ -45,8 +45,9 @@ pinapleApp
             }
             
             if( error.code === ApiErrorSvc.AccountAlreadyExists ) {
-              $scope.show_error( 'invalid' );
+              $scope.show_error( 'used' );
             }
+
             $log.error( error );
           });
       }

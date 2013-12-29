@@ -114,8 +114,6 @@ app.post('/_signup', function (req, res) {
     description:  req.body.description
   };
 
-  console.log(JSON.stringify( data ));
-
   var url = nconf.get( 'api:hostname' ) + '/' + nconf.get( 'api:version' ) + '/signup';
 
   needle.post(url, data, function (error, httpRes, body) {
@@ -133,7 +131,7 @@ app.post('/_signup', function (req, res) {
  * @method GET
  * @data object Credentials
  */
-app.get('/_login',
+app.post('/_login',
   function (req, res) {
     var data = {
       username: req.body.username,
@@ -142,7 +140,7 @@ app.get('/_login',
 
     var url = nconf.get( 'api:hostname' ) + '/' + nconf.get( 'api:version' ) + '/login';
 
-    needle.get(url, data, function (error, httpRes, body) {
+    needle.post(url, data, function (error, httpRes, body) {
       if( error ) {
         console.log( 'Got error: ' + JSON.stringify( error ) );
         return res.send( httpRes.statusCode, e.message );

@@ -1,10 +1,13 @@
 'use strict';
 
 pinapleApp
-  .controller('LoginCtrl', ['$scope', '$window', 'AuthSvc', 'ApiErrorSvc', function ($scope, $window, AuthSvc, ApiErrorSvc) {
+  .controller('LoginCtrl', ['$scope', '$window', '$location', '$log', '$stateParams', 'AuthSvc', 'ApiErrorSvc', function ($scope, $window, $location, $log, $stateParams, AuthSvc, ApiErrorSvc) {
 
     $scope.loading = false;
     $scope.error = '';
+    $scope.credentials = {
+      username: $stateParams.username || ''
+    };
 
     $scope.title = 'Log In | Pinaple';
     $window.document.title = $scope.title;
@@ -27,19 +30,21 @@ pinapleApp
         AuthSvc.login( credentials ).then(
           function (account) {
             $scope.stop_spinner();
-            $location.url( 'dashboard' );
+            $location.url( 'farm' );
           },
           function (error, status) {
             $scope.stop_spinner();
             if( ApiErrorSvc.is_server_error( status ) ) {
-              if( error.code === ApiErrorSvc.AccountInvalidCredentials ) {
-                $scope.show_error( 'invalid' );
-                return;
-              }
-            }
-            else {
               $scope.show_error( 'server' );
+              return;
             }
+            
+            if( error.code === ApiErrorSvc.AccountInvalidCredentials ) {
+              $scope.show_error( 'invalid' );
+              return;
+            }
+
+            $log.error( error );
           });
       }
     };
