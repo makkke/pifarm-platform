@@ -79,39 +79,55 @@ var pinapleApp = angular.module('pinapleApp', [
           controller: 'MainCtrl'
         })
 
+        // farm
         .state('main.farm', {
           url: '/farm',
           templateUrl: 'views/farm.html',
           controller: 'FarmCtrl',
-          resolve: { loggedIn: loggedIn }
+          //resolve: { loggedIn: loggedIn }
         })
 
         // devices
         .state('main.devices', {
           url: '/devices',
           templateUrl: 'views/devices.html',
-          controller: 'DevicesCtrl'
-          // resolve: { loggedin: isLoggedIn }
+          controller: 'DevicesCtrl',
+          //resolve: { loggedIn: loggedIn }
         })
         .state('main.device_details', {
           url: '/devices/:device_id',
           templateUrl: 'views/device.details.html',
-          controller: 'DeviceDetailsCtrl'
-          // resolve: { loggedin: isLoggedIn }
-        });
+          controller: 'DeviceDetailsCtrl',
+          //resolve: { loggedIn: loggedIn }
+        })
+
+        // account settings
+        .state('main.settings', {
+          abstract: true,
+          url: '/settings',
+          templateUrl: 'views/settings.html',
+          controller: 'SettingsCtrl'
+        })
+        .state('main.settings.profile', {
+          url: '/profile',
+          templateUrl: 'views/settings.profile.html',
+          controller: 'SettingsProfileCtrl',
+          //resolve: { loggedIn: loggedIn }
+        })
 
       //$locationProvider.html5Mode( true );
 
       // setup Restangular
       var url = Config.api.protocol + '://' + Config.api.hostname + '/' + Config.api.version;
       RestangularProvider.setBaseUrl( url );
-      // RestangularProvider.setRestangularFields({
-      //   id: 'sid',
-      //   selfLink: 'uri'
-      // });
-      RestangularProvider.setResponseExtractor(function (response, operation) {
-        if( response.status === 401 ) $location.url( 'login' );
-        return response;
+      RestangularProvider.setRestangularFields({
+        id: '_id'
+      });
+      RestangularProvider.setResponseExtractor(function (res, operation) {
+        if( res.status === 401 ) {
+          $location.url( 'login' );
+        }
+        return res;
       });  
 
   }]);
