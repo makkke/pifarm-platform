@@ -1,7 +1,9 @@
 'use strict';
 
 pinapleApp
-  .factory('AuthSvc', ['$http', '$q', '$cookies', 'Restangular', 'AccountsRepoSvc', function ($http, $q, $cookies, Restangular, AccountsRepoSvc) {
+  .factory('AuthSvc', ['$http', '$q', '$cookies', 'Restangular', 'AccountsRepoSvc', 'LocalStorageSvc', function ($http, $q, $cookies, Restangular, AccountsRepoSvc, LocalStorageSvc) {
+
+    var SESSION_TOKEN_NAME = 'pinaple.session';
 
     var Auth = {};
 
@@ -35,9 +37,9 @@ pinapleApp
         password: credentials.password
       })
       .success(function (account) {
-        var sessionToken = account.session_token;
-        that._setHttpHeaders( sessionToken );
-        that._setSessionTokenInBrowser( sessionToken );
+        var session_token = account.session_token;
+        LocalStorageSvc.set( SESSION_TOKEN_NAME, session_token );
+        that._setHttpHeaders( session_token );
         that._setUserAccount( account );
 
         deferred.resolve( account );
@@ -49,9 +51,13 @@ pinapleApp
       return deferred.promise;
     };
 
+    Auth.logout = function() {
+      LocalStorageSvc.remove( SESSION_TOKEN_NAME );
+      delete this.account; 
+    };
+
     Auth.setSessionToken = function() {
-      var sessionToken = $cookies.pinapleSession;
-      this._setHttpHeaders( sessionToken );
+      this._setHttpHeaders( LocalStorageSvc.get( SESSION_TOKEN_NAME ) );
     };
 
     Auth.updateUserAccount = function () {
@@ -72,7 +78,13 @@ pinapleApp
     };
 
     Auth.loggedIn = function () {
-      return $cookies.pinapleSession;
+      var minimumSessionTokenLength = 32;
+      var session_token = LocalStorageSvc.get( SESSION_TOKEN_NAME );
+      if( session_token ) {
+        return session_token.length >= minimumSessionTokenLength;
+      }
+
+      return false;
     };
 
     Auth._setHttpHeaders = function(sessionToken) {
@@ -83,7 +95,6 @@ pinapleApp
       }
       
       Restangular.setDefaultHeaders( headers );
-      //$http.defaults.headers.common['X-Pinaple-Session-Token'] = 123;
     };
 
     Auth._setSessionTokenInBrowser = function(sessionToken) {

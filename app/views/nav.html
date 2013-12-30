@@ -18,11 +18,11 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
-        <a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="images/imageDefault.png" alt="user image" class="img-circle"> {{user.get_fullname()}} <b class="caret"></b></a>
+        <a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="images/imageDefault.png" alt="user image" class="img-circle"> {{get_user_fullname()}} <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="#/settings/profile"><i class="fa fa-cog"></i> Account</a></li>
           <li class="divider"></li>
-          <li><a href="#"><i class="fa fa-power-off"></i> Log out</a></li>
+          <li><a href ng-click="logout()"><i class="fa fa-power-off"></i> Log out</a></li>
         </ul>
       </li>
     </ul>

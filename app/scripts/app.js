@@ -83,7 +83,7 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/farm',
           templateUrl: 'views/farm.html',
           controller: 'FarmCtrl',
-          //resolve: { loggedIn: loggedIn }
+          resolve: { loggedIn: loggedIn }
         })
 
         // devices
