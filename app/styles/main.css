@@ -9,6 +9,10 @@
   margin: 0px;
  }
 
+.margin-top-0 {
+  margin-top: 0px;
+}
+
 .margin-top-10 {
 	margin-top: 10px;
 }
@@ -199,6 +203,17 @@
   background-color: #fbfbfb ;
 }
 
+.bg-yellow {
+  background-color: #FFE63D; /*  #746b6b*/
+  border: 1px solid #FFD407; /*  #635c5c*/
+}
+
 .sidebar-icon {
   line-height: 42px;
+}
+
+.a-text {
+  font-size: 18px;
+  color: #000; /* #fff*/
+  line-height: 32px;
 }
