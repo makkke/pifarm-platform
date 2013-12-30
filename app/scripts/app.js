@@ -114,6 +114,30 @@ var pinapleApp = angular.module('pinapleApp', [
           controller: 'SettingsProfileCtrl',
           //resolve: { loggedIn: loggedIn }
         })
+        .state('main.settings.account', {
+          url: '/account',
+          templateUrl: 'views/settings.account.html',
+          controller: 'SettingsAccountCtrl',
+          //resolve: { loggedIn: loggedIn }
+        })
+        .state('main.settings.keys', {
+          url: '/keys',
+          templateUrl: 'views/settings.keys.html',
+          controller: 'SettingsKeysCtrl',
+          //resolve: { loggedIn: loggedIn }
+        })
+        .state('main.settings.notifications', {
+          url: '/notifications',
+          templateUrl: 'views/settings.notifications.html',
+          controller: 'SettingsNotificationsCtrl',
+          //resolve: { loggedIn: loggedIn }
+        })
+        .state('main.settings.delete_account', {
+          url: '/delete',
+          templateUrl: 'views/settings.delete.html',
+          controller: 'SettingsDeleteAccountCtrl',
+          //resolve: { loggedIn: loggedIn }
+        });
 
       //$locationProvider.html5Mode( true );
 
