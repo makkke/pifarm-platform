@@ -1,7 +1,8 @@
 'use strict';
 
 pinapleApp
-  .controller('SignupCtrl', ['$scope', '$window', '$location', '$log', 'AuthSvc', 'DataSvc', 'ApiErrorSvc', function ($scope, $window, $location, $log, AuthSvc, DataSvc, ApiErrorSvc) {
+  .controller('SignupCtrl', ['$scope', '$window', '$location', '$log', 'MIN_PASSWORD_LENGTH', 'AuthSvc', 'DataSvc', 'ApiErrorSvc',
+    function ($scope, $window, $location, $log, MIN_PASSWORD_LENGTH, AuthSvc, DataSvc, ApiErrorSvc) {
 
     $scope.loading = false;
     $scope.error = '';
@@ -84,9 +85,8 @@ pinapleApp
      * @return bool
      */
     $scope.check_password_length = function (password) {
-      var min_password_length = 6;
       if( !password ) return false;
-      return password.length >= min_password_length;
+      return password.length >= MIN_PASSWORD_LENGTH;
     };
 
     /*

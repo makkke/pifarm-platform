@@ -3,7 +3,20 @@
 pinapleApp
   .factory('ApiErrorSvc', [function () {
 
-    return {
+    var ApiError = {
+      // http status codes
+      Ok: 200,
+      Created: 201,
+
+      BadRequest: 400,
+      Unauthorized: 401,
+      NotFound: 404,
+      NotAcceptable: 406,
+      UnprocessableEntity: 422,
+
+      InternalServerError: 500,
+      BadGateway: 502,
+      ServiceUnavailable: 503,
 
       // custom error codes
       AccountInvalidCredentials:  'account_invalid_credentials',
@@ -12,11 +25,12 @@ pinapleApp
 
       SessionInvalid:             'session_invalid',
       SessionNotProvided:         'session_not_provided',
-
-      is_server_error: function(status) {
-        return status >= 500;
-      },
-
     };
+
+    ApiError.is_server_error = function (status) {
+      return status >= this.InternalServerError;
+    }
+
+    return ApiError;
 
   }]);

@@ -6,6 +6,7 @@ var pinapleApp = angular.module('pinapleApp', [
   'ngSanitize',
   'ngRoute',
   'pinaple.config',
+  'pinaple.constants',
   'ui.router',
   'restangular',
   'angularSpinner'
@@ -15,17 +16,17 @@ var pinapleApp = angular.module('pinapleApp', [
     function (Config, $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, RestangularProvider) {
 
       // checks if the user is authenticated
-      var loggedIn = function($q, $location, AuthSvc) {
+      var logged_in = function($q, $location, AuthSvc) {
         var deferred = $q.defer();
 
-        if( !AuthSvc.loggedIn() ) {
+        if( AuthSvc.logged_out() ) {
           $location.url( 'login' );
           deferred.resolve();
         }
         else {
-          AuthSvc.setSessionToken();
+          AuthSvc.set_session_token();
           if( !AuthSvc.account ) {
-            AuthSvc.updateUserAccount().then(
+            AuthSvc.update_user_account().then(
               function (account) {
                 deferred.resolve();
               },
@@ -59,7 +60,7 @@ var pinapleApp = angular.module('pinapleApp', [
         .state('auth.logout', {
           url: '/logout',
           controller: 'LogoutCtrl',
-          resolve: { loggedIn: loggedIn }
+          resolve: { logged_in: logged_in }
         })
         .state('auth.signup', {
           url: '/signup',
@@ -83,7 +84,7 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/farm',
           templateUrl: 'views/farm.html',
           controller: 'FarmCtrl',
-          resolve: { loggedIn: loggedIn }
+          resolve: { logged_in: logged_in }
         })
 
         // devices
@@ -91,13 +92,13 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/devices',
           templateUrl: 'views/devices.html',
           controller: 'DevicesCtrl',
-          //resolve: { loggedIn: loggedIn }
+          //resolve: { logged_in: logged_in }
         })
         .state('main.device_details', {
           url: '/devices/:device_id',
           templateUrl: 'views/device.details.html',
           controller: 'DeviceDetailsCtrl',
-          //resolve: { loggedIn: loggedIn }
+          //resolve: { logged_in: logged_in }
         })
 
         // account settings
@@ -111,31 +112,31 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/profile',
           templateUrl: 'views/settings.profile.html',
           controller: 'SettingsProfileCtrl',
-          //resolve: { loggedIn: loggedIn }
+          //resolve: { logged_in: logged_in }
         })
         .state('main.settings.account', {
           url: '/account',
           templateUrl: 'views/settings.account.html',
           controller: 'SettingsAccountCtrl',
-          //resolve: { loggedIn: loggedIn }
+          //resolve: { logged_in: logged_in }
         })
         .state('main.settings.keys', {
           url: '/keys',
           templateUrl: 'views/settings.keys.html',
           controller: 'SettingsKeysCtrl',
-          //resolve: { loggedIn: loggedIn }
+          //resolve: { logged_in: logged_in }
         })
         .state('main.settings.notifications', {
           url: '/notifications',
           templateUrl: 'views/settings.notifications.html',
           controller: 'SettingsNotificationsCtrl',
-          //resolve: { loggedIn: loggedIn }
+          //resolve: { logged_in: logged_in }
         })
         .state('main.settings.delete_account', {
           url: '/delete',
           templateUrl: 'views/settings.delete.html',
           controller: 'SettingsDeleteAccountCtrl',
-          resolve: { loggedIn: loggedIn }
+          resolve: { logged_in: logged_in }
         });
 
       //$locationProvider.html5Mode( true );

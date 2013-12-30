@@ -1,7 +1,7 @@
 'use strict';
 
 pinapleApp
-  .controller('LoginCtrl', ['$scope', '$window', '$location', '$log', '$stateParams', 'AuthSvc', 'ApiErrorSvc', function ($scope, $window, $location, $log, $stateParams, AuthSvc, ApiErrorSvc) {
+  .controller('LoginCtrl', ['$scope', '$window', '$location', '$log', '$stateParams', 'MIN_PASSWORD_LENGTH', 'AuthSvc', 'ApiErrorSvc', function ($scope, $window, $location, $log, $stateParams, MIN_PASSWORD_LENGTH, AuthSvc, ApiErrorSvc) {
 
     $scope.loading = false;
     $scope.error = '';
@@ -70,8 +70,8 @@ pinapleApp
      * @param string Error code, possible values 'used' || 'match' || 'min'
      * @return string New error code
      */
-    $scope.show_error = function (errorCode) {
-      return $scope.error = errorCode;
+    $scope.show_error = function (error_code) {
+      return $scope.error = error_code;
     };
   
     /*
@@ -80,9 +80,8 @@ pinapleApp
      * @return bool
      */
     $scope.check_password_length = function (password) {
-      var min_password_length = 6;
       if( !password ) return false;
-      return password.length >= min_password_length;
+      return password.length >= MIN_PASSWORD_LENGTH;
     };
 
   }]);

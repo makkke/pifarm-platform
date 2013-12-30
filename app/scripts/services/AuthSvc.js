@@ -1,9 +1,8 @@
 'use strict';
 
 pinapleApp
-  .factory('AuthSvc', ['$http', '$q', '$cookies', 'Restangular', 'AccountsRepoSvc', 'LocalStorageSvc', function ($http, $q, $cookies, Restangular, AccountsRepoSvc, LocalStorageSvc) {
-
-    var SESSION_TOKEN_NAME = 'pinaple.session';
+  .factory('AuthSvc', ['$http', '$q', '$cookies', 'MIN_SESSION_TOKEN_LENGTH', 'SESSION_TOKEN_NAME', 'Restangular', 'AccountsRepoSvc', 'LocalStorageSvc',
+    function ($http, $q, $cookies, MIN_SESSION_TOKEN_LENGTH, SESSION_TOKEN_NAME, Restangular, AccountsRepoSvc, LocalStorageSvc) {
 
     var Auth = {};
 
@@ -51,22 +50,22 @@ pinapleApp
       return deferred.promise;
     };
 
-    Auth.logout = function() {
+    Auth.logout = function () {
       LocalStorageSvc.remove( SESSION_TOKEN_NAME );
       delete this.account; 
     };
 
-    Auth.setSessionToken = function() {
-      this._setHttpHeaders( LocalStorageSvc.get( SESSION_TOKEN_NAME ) );
+    Auth.set_session_token = function () {
+      this._set_http_headers( LocalStorageSvc.get( SESSION_TOKEN_NAME ) );
     };
 
-    Auth.updateUserAccount = function () {
+    Auth.update_user_account = function () {
       var that = this;
       var deferred = $q.defer();
 
       AccountsRepoSvc.me().then(
         function (account) {
-          that._setUserAccount( account );
+          that._set_user_account( account );
 
           deferred.resolve( account );
         },
@@ -77,17 +76,20 @@ pinapleApp
       return deferred.promise;
     };
 
-    Auth.loggedIn = function () {
-      var minimumSessionTokenLength = 32;
+    Auth.logged_in = function () {
       var session_token = LocalStorageSvc.get( SESSION_TOKEN_NAME );
       if( session_token ) {
-        return session_token.length >= minimumSessionTokenLength;
+        return session_token.length >= MIN_SESSION_TOKEN_LENGTH;
       }
 
       return false;
     };
 
-    Auth._setHttpHeaders = function(sessionToken) {
+    Auth.logged_out = function () {
+      return !this.logged_in();
+    };
+
+    Auth._set_http_headers = function (sessionToken) {
       var headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json; charset=UTF-8',
@@ -97,11 +99,7 @@ pinapleApp
       Restangular.setDefaultHeaders( headers );
     };
 
-    Auth._setSessionTokenInBrowser = function(sessionToken) {
-      $cookies.pinapleSession = sessionToken;
-    };
-
-    Auth._setUserAccount = function(account) {
+    Auth._set_user_account = function (account) {
       this.account = account;
     };
 
