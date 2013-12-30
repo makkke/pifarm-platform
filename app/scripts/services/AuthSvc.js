@@ -61,7 +61,6 @@ pinapleApp
       AccountsRepoSvc.me().then(
         function (account) {
           that._setUserAccount( account );
-          console.log(account);
 
           deferred.resolve( account );
         },
