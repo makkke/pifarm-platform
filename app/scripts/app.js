@@ -84,7 +84,7 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/farm',
           templateUrl: 'views/farm.html',
           controller: 'FarmCtrl',
-          resolve: { logged_in: logged_in }
+          //resolve: { logged_in: logged_in }
         })
 
         // devices
@@ -136,7 +136,7 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/delete',
           templateUrl: 'views/settings.delete.html',
           controller: 'SettingsDeleteAccountCtrl',
-          resolve: { logged_in: logged_in }
+          //resolve: { logged_in: logged_in }
         });
 
       //$locationProvider.html5Mode( true );
