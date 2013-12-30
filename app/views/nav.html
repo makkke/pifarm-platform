@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default pi-navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pi-navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#"><img src="images/pinapleLogo.png" alt="Pinaple Logo"></a>
+  </div>
+
+  <div class="collapse navbar-collapse" id="pi-navbar">
+    <ul class="nav navbar-nav">
+      <li><a href="#/farm">My Farm</a></li>
+      <li><a href="#/devices">Devices</a></li>
+      <li><a href="#">Tutorials</a></li>
+      <li><a href="#">Docs</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="images/imageDefault.png" alt="user image" class="img-circle"> {{user.get_fullname()}} <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#/settings/profile"><i class="fa fa-cog"></i> Account</a></li>
+          <li class="divider"></li>
+          <li><a href="#"><i class="fa fa-power-off"></i> Log out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav><!-- /.navbar -->

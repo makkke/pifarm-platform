@@ -14,7 +14,6 @@ var pinapleApp = angular.module('pinapleApp', [
   .config(['Config', '$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'RestangularProvider',
     function (Config, $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, RestangularProvider) {
 
-      $httpProvider.defaults.useXDomain = true;
       // checks if the user is authenticated
       var loggedIn = function($q, $location, AuthSvc) {
         var deferred = $q.defer();
@@ -31,7 +30,7 @@ var pinapleApp = angular.module('pinapleApp', [
                 deferred.resolve();
               },
               function (error, status) {
-                //$location.url( 'login' );
+                $location.url( 'login' );
                 deferred.resolve();
               });
           }
@@ -136,10 +135,13 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/delete',
           templateUrl: 'views/settings.delete.html',
           controller: 'SettingsDeleteAccountCtrl',
-          //resolve: { loggedIn: loggedIn }
+          resolve: { loggedIn: loggedIn }
         });
 
       //$locationProvider.html5Mode( true );
+
+      // enable CORS
+      $httpProvider.defaults.useXDomain = true;
 
       // setup Restangular
       var url = Config.api.protocol + '://' + Config.api.hostname + '/' + Config.api.version;
