@@ -199,10 +199,6 @@
 /*
  * Device details page
  */
-.bg-grey {
-  background-color: #fbfbfb ;
-}
-
 .bg-yellow {
   background-color: #FFE63D; /*  #746b6b*/
   border: 1px solid #FFD407; /*  #635c5c*/
@@ -213,7 +209,26 @@
 }
 
 .a-text {
-  font-size: 18px;
+  font-size: 14px;
   color: #000; /* #fff*/
   line-height: 32px;
 }
+
+.pi-sidebar > .list-group-item {
+  background-color: #fbfbfb ;
+}
+
+.pi-sidebar > .list-group-item :hover {
+  color: #F48706;
+}
+
+.pi-sidebar > .list-group-item.pi-active {
+  background-color: #efefef;
+  border-color: #ddd;
+  color: #F48706;
+}
+
+.pi-sidebar > .list-group-item.pi-active h4 {
+  color: #F48706;
+}
+
