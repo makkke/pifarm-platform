@@ -94,10 +94,22 @@ var pinapleApp = angular.module('pinapleApp', [
           controller: 'DevicesCtrl',
           //resolve: { logged_in: logged_in }
         })
-        .state('main.device_details', {
+        .state('main.device', {
+          abstract: true,
           url: '/devices/:device_id',
-          templateUrl: 'views/device.details.html',
-          controller: 'DeviceDetailsCtrl',
+          templateUrl: 'views/device.html',
+          controller: 'DeviceCtrl'
+        })
+        .state('main.device.general', {
+          url: '/general',
+          templateUrl: 'views/device.general.html',
+          controller: 'DeviceGeneralCtrl',
+          //resolve: { logged_in: logged_in }
+        })
+        .state('main.device.delete', {
+          url: '/delete',
+          templateUrl: 'views/device.delete.html',
+          controller: 'DeviceDeleteCtrl',
           //resolve: { logged_in: logged_in }
         })
 

@@ -3,6 +3,7 @@
 pinapleApp
   .controller('ForgotCtrl', ['$scope', function ($scope) {
     
-    console.log('forgot');
+    $scope.title = 'Forgot Password? | Pinaple';
+    $window.document.title = $scope.title;
 
   }]);

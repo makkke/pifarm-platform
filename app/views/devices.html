@@ -32,14 +32,14 @@
 			<div class="panel-body pi-panel-body">
 				<div class="row size">
 				  <div class="col-xs-2 text-center" ng-switch on="device.type">
-				  	<a ng-href="/devices/{{device.id}}">
+				  	<a ng-href="/devices/{{device.id}}/general">
 					  	<img src="images/raspberrypi.png" alt="..." class="img-rounded" ng-switch-when="rpi">
 					  	<img src="images/arduino.png" alt="..." class="img-rounded" ng-switch-when="arduino">
 					  	<img src="images/custom.png" alt="..." class="img-rounded" ng-switch-when="custom">
 				  	</a>
 				  </div>
 				  <div class="col-xs-3">
-				  	<a class="link-style" style="text-decoration:none;" ng-href="/devices/{{device.id}}"><p class="margin-0" ng-bind="device.name"></p></a>
+				  	<a class="link-style" style="text-decoration:none;" ng-href="/devices/{{device.id}}/general"><p class="margin-0" ng-bind="device.name"></p></a>
 				  </div>
 				  <div class="col-xs-3">
 				  	<p class="margin-0" ng-bind="device.serial_number"></p>

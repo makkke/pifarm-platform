@@ -1,7 +1,7 @@
 'use strict';
 
 pinapleApp
-  .controller('DevicesCtrl', ['$scope', 'DataSvc', function ($scope, DataSvc) {
+  .controller('DevicesCtrl', ['$scope', '$window', 'DataSvc', function ($scope, $window, DataSvc) {
 
     $scope.types = DataSvc.device_types;
     $scope.devices = [
@@ -41,5 +41,8 @@ pinapleApp
         device_key: 's5ehd532hd7gd...'
       }
     ];
+
+    $scope.title = 'Devices | Pinaple';
+    $window.document.title = $scope.title;
 
   }]);
