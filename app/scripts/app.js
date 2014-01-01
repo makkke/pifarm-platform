@@ -92,7 +92,7 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/devices',
           templateUrl: 'views/devices.html',
           controller: 'DevicesCtrl',
-          //resolve: { logged_in: logged_in }
+          resolve: { logged_in: logged_in }
         })
         .state('main.device', {
           abstract: true,
@@ -162,11 +162,27 @@ var pinapleApp = angular.module('pinapleApp', [
       RestangularProvider.setRestangularFields({
         id: '_id'
       });
-      RestangularProvider.setResponseExtractor(function (res, operation) {
-        if( res.status === 401 ) {
+      RestangularProvider.setResponseExtractor(function (response, operation) {
+        if( response.status === 401 ) {
           $location.url( 'login' );
         }
-        return res;
+
+        var modified_response;
+        if( operation === 'getList' ) {
+          if( response.data ) {
+            modified_response = response.data;
+            modified_response.metadata = response.metadata;
+          }
+          else {
+            console.log('response:', response);
+            return response;
+          }
+        }
+        else {
+          modified_response = response;
+        }
+
+        return modified_response;
       });  
 
   }]);
