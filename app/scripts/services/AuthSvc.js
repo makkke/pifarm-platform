@@ -38,8 +38,8 @@ pinapleApp
       .success(function (account) {
         var session_token = account.session_token;
         LocalStorageSvc.set( SESSION_TOKEN_NAME, session_token );
-        that._setHttpHeaders( session_token );
-        that._setUserAccount( account );
+        that._set_http_headers( session_token );
+        that._set_user_account( account );
 
         deferred.resolve( account );
       })
