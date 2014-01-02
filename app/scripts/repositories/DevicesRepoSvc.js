@@ -15,6 +15,10 @@ pinapleApp
       return Restangular.all( route ).getList();
     };
 
+    Repo.create = function (device) {
+      return Restangular.all( route ).post( device );
+    };
+
     return Repo;
 
   }]);

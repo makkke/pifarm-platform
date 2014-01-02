@@ -73,6 +73,11 @@
 	left: 40px;
 }
 
+.spinner-save {
+  position: relative;
+  top: 6px;
+  left: 20px;
+}
 
 .auth-title {
 	font-size: 20px;

@@ -1,9 +1,9 @@
 <div class="row" ng-show="devices.length === 0 || !devices">
 	<div class="col-xs-offset-1 col-xs-10">
 		<div class="jumbotron">
-		  <h1>Ops, no devices in your list yet!</h1>
+		  <h1>Oops, no devices yet!</h1>
 		  <p>Don't worry, it's easy to add one</p>
-		  <p><a class="btn btn-success btn-lg" role="button">Add Device</a></p>
+		  <p><a href="#/devices/new" class="btn btn-success btn-lg" role="button">Add Device</a></p>
 		</div>
 	</div>
 </div>
@@ -14,7 +14,7 @@
 			<button type="button" class="btn btn btn-warning btn-lg"><i class="fa fa-share-square-o"></i> Export to Excel</button>
 		</div>
 		<div class="col-xs-5 text-right">
-			<button type="button" class="btn btn-success btn-lg"><i class="fa fa-plus"></i> Add New Device</button>
+			<a href="#/devices/new" class="btn btn-success btn-lg"><i class="fa fa-plus"></i> Add New Device</a>
 		</div>
 	</div>
 

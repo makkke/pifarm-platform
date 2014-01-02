@@ -76,7 +76,8 @@ var pinapleApp = angular.module('pinapleApp', [
         .state('main', {
           abstract: true,
           templateUrl: 'views/main.html',
-          controller: 'MainCtrl'
+          controller: 'MainCtrl',
+          resolve: { logged_in: logged_in }
         })
 
         // farm
@@ -84,7 +85,6 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/farm',
           templateUrl: 'views/farm.html',
           controller: 'FarmCtrl',
-          //resolve: { logged_in: logged_in }
         })
 
         // devices
@@ -92,7 +92,11 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/devices',
           templateUrl: 'views/devices.html',
           controller: 'DevicesCtrl',
-          resolve: { logged_in: logged_in }
+        })
+        .state('main.new_device', {
+          url: '/devices/new',
+          templateUrl: 'views/device.new.html',
+          controller: 'DeviceNewCtrl',
         })
         .state('main.device', {
           abstract: true,
@@ -104,13 +108,11 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/general',
           templateUrl: 'views/device.general.html',
           controller: 'DeviceGeneralCtrl',
-          //resolve: { logged_in: logged_in }
         })
         .state('main.device.delete', {
           url: '/delete',
           templateUrl: 'views/device.delete.html',
           controller: 'DeviceDeleteCtrl',
-          //resolve: { logged_in: logged_in }
         })
 
         // account settings
@@ -124,31 +126,26 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/profile',
           templateUrl: 'views/settings.profile.html',
           controller: 'SettingsProfileCtrl',
-          //resolve: { logged_in: logged_in }
         })
         .state('main.settings.account', {
           url: '/account',
           templateUrl: 'views/settings.account.html',
           controller: 'SettingsAccountCtrl',
-          //resolve: { logged_in: logged_in }
         })
         .state('main.settings.keys', {
           url: '/keys',
           templateUrl: 'views/settings.keys.html',
           controller: 'SettingsKeysCtrl',
-          //resolve: { logged_in: logged_in }
         })
         .state('main.settings.notifications', {
           url: '/notifications',
           templateUrl: 'views/settings.notifications.html',
           controller: 'SettingsNotificationsCtrl',
-          //resolve: { logged_in: logged_in }
         })
         .state('main.settings.delete_account', {
           url: '/delete',
           templateUrl: 'views/settings.delete.html',
           controller: 'SettingsDeleteAccountCtrl',
-          //resolve: { logged_in: logged_in }
         });
 
       //$locationProvider.html5Mode( true );

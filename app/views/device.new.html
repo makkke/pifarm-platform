@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="panel-title">Add New Device</h1>
+      </div>
+
+      <div class="panel-body">
+
+        <form class="form-horizontal" name="device_form" role="form" ng-submit="add_device(device, device_form)" ng-switch on="error">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Device Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control input-lg" required maxlength="32" placeholder="Name" ng-model="device.name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Device Type</label>
+            <div class="col-sm-10">
+              <select class="form-control input-lg" ng-options="type.key as type.value for type in types" ng-model="device.type">
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" ng-class="{ 'has-error': error == 'format' }">
+            <label class="col-sm-2 control-label">
+              Serial Number<br>
+              <small>optional</small>
+            </label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control input-lg" placeholder="Serial number" ng-model="device.serial_number">
+              <span class="help-block" ng-switch-when="format">Should contain only alpha-numeric characters, as well as dashes and underscores.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">
+              Description<br>
+              <small>optional</small>
+            </label>
+            <div class="col-sm-10">
+              <textarea class="form-control input-lg" rows="5" placeholder="About your device" ng-model="device.description"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-group" ng-switch-when="server">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="alert alert-danger">
+                <strong>Oops</strong>, something happened with our server. Please try again.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-xs-3">
+              <button type="submit" class="btn btn-success btn-lg btn-block" ng-disabled="device_form.$invalid || loading"><span class="spinner-save" us-spinner="{ radius: 7, width: 3, length: 8, lines: 10, color: '#fff' }" ng-show="loading"></span> Save</button>
+            </div>
+
+            <div class="col-sm-offset-4 col-xs-3">
+              <a href="#/devices" class="btn btn-default btn-lg btn-block" ng-disabled="loading">Close</a>
+            </div>
+          </div>
+
+        </form><!-- /.form-horizontal -->
+      </div><!-- /.panel-body -->
+    </div><!-- /.panel -->
+  </div>
+</div>
