@@ -9,6 +9,10 @@
   margin: 0px;
  }
 
+.margin-top-0 {
+  margin-top: 0px;
+}
+
 .margin-top-10 {
 	margin-top: 10px;
 }
@@ -32,6 +36,10 @@
   margin-bottom: 0px;
 }
 
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
 .margin-bottom-20 {
   margin-bottom: 20px;
 }
@@ -44,6 +52,21 @@
 	padding-bottom: 0px;
 }
 
+.padding-20 {
+  padding: 20px;
+}
+
+.line-height-40 {
+  line-height: 40px;
+}
+
+.line-height-45 {
+  line-height: 45px;
+}
+
+.line-height-80 {
+  line-height: 80px;
+}
 /*
  * Login page
  */
@@ -200,10 +223,41 @@
 /*
  * Device details page
  */
-.bg-grey {
-  background-color: #fbfbfb ;
+.bg-yellow {
+  background-color: #FFE63D; /*  #746b6b*/
+  border: 1px solid #FFD407; /*  #635c5c*/
 }
 
 .sidebar-icon {
   line-height: 42px;
 }
+
+.a-text-14 {
+  font-size: 14px;
+  color: #000; /* #fff*/
+  line-height: 32px;
+}
+
+.a-text-18 {
+  font-size: 18px;
+  color: #000; /* #fff*/
+}
+
+.pi-sidebar > .list-group-item {
+  background-color: #fbfbfb ;
+}
+
+/*.pi-sidebar > .list-group-item :hover {
+  color: #F48706;
+}*/
+
+.pi-sidebar > .list-group-item.pi-active {
+  background-color: #E6E6E6;
+  border-color: #ddd;
+  color: #333;
+}
+
+.pi-sidebar > .list-group-item.pi-active h4 {
+  color: #333;
+}
+
