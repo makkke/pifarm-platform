@@ -52,10 +52,21 @@
 	padding-bottom: 0px;
 }
 
+.padding-20 {
+  padding: 20px;
+}
+
+.line-height-40 {
+  line-height: 40px;
+}
+
 .line-height-45 {
   line-height: 45px;
 }
 
+.line-height-80 {
+  line-height: 80px;
+}
 /*
  * Login page
  */
@@ -216,10 +227,15 @@
   line-height: 42px;
 }
 
-.a-text {
+.a-text-14 {
   font-size: 14px;
   color: #000; /* #fff*/
   line-height: 32px;
+}
+
+.a-text-18 {
+  font-size: 18px;
+  color: #000; /* #fff*/
 }
 
 .pi-sidebar > .list-group-item {
