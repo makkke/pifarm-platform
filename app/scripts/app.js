@@ -92,6 +92,22 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/devices',
           templateUrl: 'views/devices.html',
           controller: 'DevicesCtrl',
+          // resolve: {
+          //   devices: function ($q) {
+          //     var deferred = $q.defer();
+
+          //     DevicesRepoSvc.query().then(
+          //       function (devices) {
+          //         $scope.devices = devices;
+          //         console.log( devices );
+          //       },
+          //       function (error, status) {
+          //         console.log( 'error:', error );
+          //       });
+              
+          //     return deferred.promise;
+          //   }
+          // }
         })
         .state('main.new_device', {
           url: '/devices/new',

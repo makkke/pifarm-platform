@@ -26,6 +26,7 @@ pinapleApp
 
         DevicesRepoSvc.create( device ).then(
           function (device) {
+            $scope.stop_spinner();
             $location.url( 'devices' );
           },
           function (error, status) {
