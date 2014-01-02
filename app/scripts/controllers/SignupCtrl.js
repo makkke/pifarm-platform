@@ -4,13 +4,12 @@ pinapleApp
   .controller('SignupCtrl', ['$scope', '$window', '$location', '$log', 'MIN_PASSWORD_LENGTH', 'AuthSvc', 'DataSvc', 'ApiErrorSvc',
     function ($scope, $window, $location, $log, MIN_PASSWORD_LENGTH, AuthSvc, DataSvc, ApiErrorSvc) {
 
-    $scope.loading = false;
-    $scope.error = '';
-
-    $scope.description_types = DataSvc.description_types;
-
     $scope.title = 'Sign Up | Pinaple';
     $window.document.title = $scope.title;
+    
+    $scope.loading = false;
+    $scope.error = '';
+    $scope.description_types = DataSvc.description_types;
 
     /*
      * Creates a new user and redirects to login page
@@ -36,7 +35,7 @@ pinapleApp
         AuthSvc.signup( user ).then(
           function (account) {
             $scope.stop_spinner();
-            $location.url( '#/login?username=' + account.username );
+            $location.url( 'login?username=' + account.username );
           },
           function (error, status) {
             $scope.stop_spinner();
