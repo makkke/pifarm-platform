@@ -222,17 +222,17 @@
   background-color: #fbfbfb ;
 }
 
-.pi-sidebar > .list-group-item :hover {
+/*.pi-sidebar > .list-group-item :hover {
   color: #F48706;
-}
+}*/
 
 .pi-sidebar > .list-group-item.pi-active {
-  background-color: #efefef;
+  background-color: #E6E6E6;
   border-color: #ddd;
-  color: #F48706;
+  color: #333;
 }
 
 .pi-sidebar > .list-group-item.pi-active h4 {
-  color: #F48706;
+  color: #333;
 }
 
