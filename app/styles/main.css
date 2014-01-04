@@ -5,11 +5,19 @@
 /*
  * General
  */
+.margin-left-36 {
+  margin-left: 36px;
+}
+
  .margin-0 {
   margin: 0px;
  }
 
 .margin-top-0 {
+  margin-top: 0px;
+}
+
+.margin-left-0 {
   margin-top: 0px;
 }
 
@@ -261,3 +269,11 @@
   color: #333;
 }
 
+/*
+ * asses keys page
+ */
+.size-18px {
+  font-size: 18px;
+  line-height: 50px;
+}
+  
