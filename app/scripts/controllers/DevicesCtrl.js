@@ -10,11 +10,17 @@ pinapleApp
     
     DevicesRepoSvc.query().then(
       function (devices) {
+        _.each(devices, function (device) {
+          device.copy_text = 'copy';
+        });
         $scope.devices = devices;
-        console.log( devices );
       },
       function (error, status) {
         console.log( 'error:', error );
       });
+
+    $scope.change_text = function (device) {
+      device.copy_text = 'copied';
+    };
 
   }]);

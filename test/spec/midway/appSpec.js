@@ -60,6 +60,14 @@ describe('Midway: Testing Modules', function() {
         expect( hasModule( 'angularSpinner' ) ).to.equal( true );
       });
 
+      it('should have ngClipboard as a dependency', function() {
+        expect( hasModule( 'ngClipboard' ) ).to.equal( true );
+      });
+
+      it('should have ui-bootstrap as a dependency', function() {
+        expect( hasModule( 'ui-bootstrap' ) ).to.equal( true );
+      });
+
     });
   });
 });

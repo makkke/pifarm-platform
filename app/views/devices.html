@@ -56,7 +56,7 @@
 					  	<p class="margin-0" ng-bind="device.serial_number"></p>
 					  </div>
 					  <div class="col-xs-4">
-					  	<p class="margin-0"><span ng-bind="device.key | keyFilter"></span> <i class="fa fa-files-o copy-icon"></i></p>
+					  	<p class="margin-0"><span ng-bind="device.key | keyFilter"></span> <i class="fa fa-files-o copy-icon" clip-copy="device.key" clip-click="change_text(device)"> {{device.copy_text}}</i></p>
 					  </div>
 					</div>
 				</div><!-- /.panel-body -->

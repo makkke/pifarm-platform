@@ -9,11 +9,13 @@ var pinapleApp = angular.module('pinapleApp', [
   'pinaple.constants',
   'ui.router',
   'restangular',
-  'angularSpinner'
+  'angularSpinner',
+  'ngClipboard',
+  'ui.bootstrap'
 ])
 
-  .config(['Config', '$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'RestangularProvider',
-    function (Config, $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, RestangularProvider) {
+  .config(['Config', '$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'RestangularProvider', 'ngClipProvider',
+    function (Config, $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, RestangularProvider, ngClipProvider) {
 
       // checks if the user is authenticated
       var logged_in = function($q, $location, AuthSvc) {
@@ -197,5 +199,8 @@ var pinapleApp = angular.module('pinapleApp', [
 
         return modified_response;
       });  
+
+      // setup ngClip
+      ngClipProvider.setPath( 'bower_components/zeroclipboard/ZeroClipboard.swf');
 
   }]);
