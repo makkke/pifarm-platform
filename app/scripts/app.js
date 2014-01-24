@@ -88,28 +88,17 @@ var pinapleApp = angular.module('pinapleApp', [
           templateUrl: 'views/farm.html',
           controller: 'FarmCtrl',
         })
+        .state('main.new_pinaple', {
+          url: '/farm/new',
+          templateUrl: 'views/pinaple.new.html',
+          controller: 'PinapleNewCtrl',
+        })
 
         // devices
         .state('main.devices', {
           url: '/devices',
           templateUrl: 'views/devices.html',
-          controller: 'DevicesCtrl',
-          // resolve: {
-          //   devices: function ($q) {
-          //     var deferred = $q.defer();
-
-          //     DevicesRepoSvc.query().then(
-          //       function (devices) {
-          //         $scope.devices = devices;
-          //         console.log( devices );
-          //       },
-          //       function (error, status) {
-          //         console.log( 'error:', error );
-          //       });
-              
-          //     return deferred.promise;
-          //   }
-          // }
+          controller: 'DevicesCtrl'
         })
         .state('main.new_device', {
           url: '/devices/new',
@@ -165,8 +154,6 @@ var pinapleApp = angular.module('pinapleApp', [
           templateUrl: 'views/settings.delete.html',
           controller: 'SettingsDeleteAccountCtrl',
         });
-
-      //$locationProvider.html5Mode( true );
 
       // enable CORS
       $httpProvider.defaults.useXDomain = true;
