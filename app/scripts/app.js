@@ -82,7 +82,7 @@ var pinapleApp = angular.module('pinapleApp', [
           resolve: { logged_in: logged_in }
         })
 
-        // farm
+        // farm (or pinaples)
         .state('main.farm', {
           url: '/farm',
           templateUrl: 'views/farm.html',
@@ -92,6 +92,17 @@ var pinapleApp = angular.module('pinapleApp', [
           url: '/farm/new',
           templateUrl: 'views/pinaple.new.html',
           controller: 'PinapleNewCtrl',
+        })
+        .state('main.pinaple', {
+          abstract: true,
+          url: '/farm/:pinaple_id',
+          templateUrl: 'views/pinaple.html',
+          controller: 'PinapleCtrl'
+        })
+        .state('main.pinaple.dashboard', {
+          url: '/dashboard',
+          templateUrl: 'views/pinaple.dashboard.html',
+          controller: 'PinapleDashboardCtrl',
         })
 
         // devices
