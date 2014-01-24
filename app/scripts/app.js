@@ -104,6 +104,11 @@ var pinapleApp = angular.module('pinapleApp', [
           templateUrl: 'views/pinaple.dashboard.html',
           controller: 'PinapleDashboardCtrl',
         })
+        .state('main.pinaple.data', {
+          url: '/data',
+          templateUrl: 'views/pinaple.data.html',
+          controller: 'PinapleDataCtrl',
+        })
 
         // devices
         .state('main.devices', {
