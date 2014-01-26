@@ -9,6 +9,7 @@ pinapleApp
     $window.document.title = $scope.title;
 
     $scope.loading = false;
+    $scope.button_text = 'Create Pinaple';
     $scope.error = '';
 
     $scope.pinaple = {};
@@ -24,7 +25,7 @@ pinapleApp
 
     $scope.add_pinaple = function(pinaple, form) {
       if( form.$valid ) {
-        $scope.start_spinner();
+        $scope.start_creating();
 
         PinaplesRepoSvc.create({
           name: pinaple.name,
@@ -32,11 +33,11 @@ pinapleApp
           devices: [pinaple.device]
         }).then(
           function (pinaple) {
-            $scope.stop_spinner();
+            $scope.stop_creating();
             $location.url( 'farm' );
           },
           function (error, status) {
-            $scope.stop_spinner();
+            $scope.stop_creating();
             if( ApiErrorSvc.is_server_error( status ) ) {
               $scope.show_error( 'server' );
               return;
@@ -47,19 +48,13 @@ pinapleApp
       }
     };
 
-    /*
-     * Starts a loading spinner
-     * @return bool New spinner status
-     */
-    $scope.start_spinner = function () {
+    $scope.start_creating = function () {
+      $scope.button_text = 'Creating Pinaple...';
       return $scope.loading = true;
     };
 
-    /*
-     * Stops a loading spinner
-     * @return bool New spinner status
-     */
-    $scope.stop_spinner = function () {
+    $scope.stop_creating = function () {
+      return $scope.button_text = 'Create Pinaple';
       return $scope.loading = false;
     };
 
