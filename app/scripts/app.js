@@ -95,7 +95,7 @@ var pinapleApp = angular.module('pinapleApp', [
         })
         .state('main.pinaple', {
           abstract: true,
-          url: '/farm/:pinaple_id',
+          url: '/farm/:pinaple_sid',
           templateUrl: 'views/pinaple.html',
           controller: 'PinapleCtrl'
         })
@@ -104,16 +104,25 @@ var pinapleApp = angular.module('pinapleApp', [
           templateUrl: 'views/pinaple.dashboard.html',
           controller: 'PinapleDashboardCtrl',
         })
+
         .state('main.pinaple.data', {
           url: '/data',
           templateUrl: 'views/pinaple.data.html',
           controller: 'PinapleDataCtrl',
         })
+
+        // slices
         .state('main.pinaple.slices', {
           url: '/slices',
           templateUrl: 'views/pinaple.slices.html',
           controller: 'PinapleSlicesCtrl',
         })
+        .state('main.new_slice', {
+          url: '/farm/:pinaple_sid/slices/new',
+          templateUrl: 'views/slice.new.html',
+          controller: 'SliceNewCtrl',
+        })
+
         .state('main.pinaple.settings', {
           url: '/settings',
           templateUrl: 'views/pinaple.settings.html',
@@ -133,7 +142,7 @@ var pinapleApp = angular.module('pinapleApp', [
         })
         .state('main.device', {
           abstract: true,
-          url: '/devices/:device_id',
+          url: '/devices/:device_sid',
           templateUrl: 'views/device.html',
           controller: 'DeviceCtrl'
         })

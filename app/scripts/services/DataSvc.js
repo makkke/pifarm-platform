@@ -15,9 +15,66 @@ pinapleApp
       ],
 
       device_types: [
-        { key: 'raspberry_pi', value: 'Raspberry Pi' },
-        { key: 'arduino', value: 'Arduino' },
-        { key: 'custom', value: 'Custom' }
+        { key: 'raspberry_pi',  value: 'Raspberry Pi' },
+        { key: 'arduino',       value: 'Arduino' },
+        { key: 'custom',        value: 'Custom' }
+      ],
+
+      slice_types: [
+        { key: 'input',   value: 'Input' },
+        { key: 'output',  value: 'Output' },
+        { key: 'counter', value: 'Counter' },
+      ],
+
+      measurement_types: [
+        {
+          key: 'custom',
+          value: 'Custom',
+          units: [
+            { key: 'numeric', value: 'Numeric' },
+            { key: 'text',    value: 'Text' },
+            { key: 'boolean', value: 'Boolean' }
+          ]
+        },
+        {
+          key: 'temperature',
+          value: 'Temperature',
+          units: [
+            { key: 'c', value: 'C' },
+            { key: 'f', value: 'F' }
+          ]
+        },
+        {
+          key: 'pressure',
+          value: 'Pressure',
+          units: [
+            { key: 'b',   value: 'Bar' },
+            { key: 'pa',  value: 'Pascal' },
+            { key: 'hpa', value: 'Hectopascal' }
+          ]
+        },
+        {
+          key: 'humidity',
+          value: 'Humidity',
+          units: [
+            { key: '_', value: 'Percent(%)' }
+          ]
+        }
+      ],
+
+      units: [
+        { key: 'numeric',   value: 'Numeric' },
+        { key: 'text',   value: 'Text' },
+        { key: 'boolean',   value: 'Boolean' },
+
+        { key: 'c',   value: 'C' },
+        { key: 'f',   value: 'F' },
+
+        { key: 'b',   value: 'Bar' },
+        { key: 'pa',  value: 'Pascal' },
+        { key: 'hpa', value: 'Hectopascal' },
+
+        { key: '_', value: '%' },
       ]
     };
 
