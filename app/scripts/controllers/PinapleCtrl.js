@@ -1,7 +1,10 @@
 'use strict';
 
 pinapleApp
-  .controller('PinapleCtrl', ['$scope', function ($scope) {
+  .controller('PinapleCtrl',
+  ['$scope', '$stateParams', 'pinaple',
+  function ($scope, $stateParams, pinaple) {
     
+    $scope.pinaple = pinaple;
 
   }]);

@@ -95,25 +95,50 @@ var pinapleApp = angular.module('pinapleApp', [
         })
         .state('main.pinaple', {
           abstract: true,
-          url: '/farm/:pinaple_id',
+          url: '/farm/:pinaple_sid',
           templateUrl: 'views/pinaple.html',
-          controller: 'PinapleCtrl'
+          controller: 'PinapleCtrl',
+          resolve: {
+            pinaple: function ($stateParams, $q, PinaplesRepoSvc) {
+              var deferred = $q.defer();
+
+              PinaplesRepoSvc.find( $stateParams.pinaple_sid ).then(
+                function (pinaple) {
+                  deferred.resolve( pinaple );
+                },
+                function (error, status) {
+                  console.log( 'error:', error );
+                  deferred.reject( error );
+                });
+
+              return deferred.promise;
+            }
+          }
         })
         .state('main.pinaple.dashboard', {
           url: '/dashboard',
           templateUrl: 'views/pinaple.dashboard.html',
           controller: 'PinapleDashboardCtrl',
         })
+
         .state('main.pinaple.data', {
           url: '/data',
           templateUrl: 'views/pinaple.data.html',
           controller: 'PinapleDataCtrl',
         })
+
+        // slices
         .state('main.pinaple.slices', {
           url: '/slices',
           templateUrl: 'views/pinaple.slices.html',
           controller: 'PinapleSlicesCtrl',
         })
+        .state('main.new_slice', {
+          url: '/farm/:pinaple_sid/slices/new',
+          templateUrl: 'views/slice.new.html',
+          controller: 'SliceNewCtrl',
+        })
+
         .state('main.pinaple.settings', {
           url: '/settings',
           templateUrl: 'views/pinaple.settings.html',
@@ -133,7 +158,7 @@ var pinapleApp = angular.module('pinapleApp', [
         })
         .state('main.device', {
           abstract: true,
-          url: '/devices/:device_id',
+          url: '/devices/:device_sid',
           templateUrl: 'views/device.html',
           controller: 'DeviceCtrl'
         })

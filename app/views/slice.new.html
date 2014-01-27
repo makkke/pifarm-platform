@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="panel-title">Create a New Slice</h1>
+      </div>
+
+      <div class="panel-body">
+
+        <form class="form-horizontal" name="slice_form" role="form" ng-submit="add_slice(slice, slice_form)" ng-switch on="error">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Slice Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control input-lg" required autofocus maxlength="32" placeholder="Name" ng-model="slice.name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Measurement Type and Unit</label>
+            <div class="col-sm-5">
+              <select class="form-control input-lg" ng-options="type.key as type.value for type in measurement_types" ng-model="slice.measurement_type">
+              </select>
+            </div>
+            <div class="col-sm-5">
+              <select class="form-control input-lg" ng-options="unit.key as unit.value for unit in units" ng-model="slice.unit">
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">
+              Description<br>
+              <small>optional</small>
+            </label>
+            <div class="col-sm-10">
+              <textarea class="form-control input-lg" rows="5" placeholder="About your slice" ng-model="slice.description"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-group" ng-switch-when="server">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="alert alert-danger">
+                <strong>Oops</strong>, something happened with our server. Please try again.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-xs-3">
+              <button type="submit" class="btn btn-success btn-lg btn-block" ng-disabled="slice_form.$invalid || loading">{{button_text}}</button>
+            </div>
+
+            <div class="col-sm-offset-4 col-xs-3">
+              <a href="#/farm/{{pinaple_sid}}/slices" class="btn btn-default btn-lg btn-block" ng-disabled="loading">Close</a>
+            </div>
+          </div>
+
+        </form><!-- /.form-horizontal -->
+      </div><!-- /.panel-body -->
+    </div><!-- /.panel -->
+  </div>
+</div>
