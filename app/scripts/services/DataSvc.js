@@ -57,7 +57,7 @@ pinapleApp
           key: 'humidity',
           value: 'Humidity',
           units: [
-            { key: '_', value: 'Percent(%)' }
+            { key: 'percent', value: 'Percent(%)' }
           ]
         }
       ],

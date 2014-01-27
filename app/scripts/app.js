@@ -97,7 +97,23 @@ var pinapleApp = angular.module('pinapleApp', [
           abstract: true,
           url: '/farm/:pinaple_sid',
           templateUrl: 'views/pinaple.html',
-          controller: 'PinapleCtrl'
+          controller: 'PinapleCtrl',
+          resolve: {
+            pinaple: function ($stateParams, $q, PinaplesRepoSvc) {
+              var deferred = $q.defer();
+
+              PinaplesRepoSvc.find( $stateParams.pinaple_sid ).then(
+                function (pinaple) {
+                  deferred.resolve( pinaple );
+                },
+                function (error, status) {
+                  console.log( 'error:', error );
+                  deferred.reject( error );
+                });
+
+              return deferred.promise;
+            }
+          }
         })
         .state('main.pinaple.dashboard', {
           url: '/dashboard',
