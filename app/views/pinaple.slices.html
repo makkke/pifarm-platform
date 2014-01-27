@@ -1,1 +1,78 @@
-pinaple slices
+<div class="row">
+  <div class=" col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="panel-title">Add New Slice</h1>
+      </div>
+
+      <div class="panel-body">
+
+        <form class="form-horizontal" name="pinaple_form" role="form">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Slice Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control input-lg" required maxlength="32" placeholder="Name" >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Type and Unit</label>
+              <div class="row">
+                <div class="col-sm-5">
+                  <select class="form-control input-lg">
+                    <option>Custom</option>
+                    <option>Temperature</option>
+                    <option>Pressure</option>
+                    <option>Humidity</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">
+                  <select class="form-control input-lg">
+                    <option>Text</option>
+                    <option>Numeric</option>
+                    <option>Boolean </option>
+                    <option>°C</option>
+                    <option>°F</option>
+                  </select>
+                </div>
+                <div class="col-sm-1">
+                  <button type="button" class="btn btn-default btn-lg text-center">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">
+              Description<br>
+              <small>optional</small>
+            </label>
+            <div class="col-sm-10">
+              <textarea class="form-control input-lg" rows="5" placeholder="About your slice"></textarea>
+            </div>
+          </div>
+          
+          <!-- <div class="form-group" ng-switch-when="server">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="alert alert-danger">
+                <strong>Oops</strong>, something happened with our server. Please try again.
+              </div>
+            </div>
+          </div> -->
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-xs-3">
+              <button type="button" class="btn btn-success btn-lg btn-block">Create Slice</button>
+            </div>
+
+            <div class="col-sm-offset-4 col-xs-3">
+              <a href="#/farm" class="btn btn-default btn-lg btn-block" ng-disabled="loading">Close</a>
+            </div>
+          </div>
+
+        </form><!-- /.form-horizontal -->
+      </div><!-- /.panel-body -->
+    </div><!-- /.panel -->
+  </div>
+</div>

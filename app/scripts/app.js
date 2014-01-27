@@ -62,7 +62,7 @@ var pinapleApp = angular.module('pinapleApp', [
         .state('auth.logout', {
           url: '/logout',
           controller: 'LogoutCtrl',
-          resolve: { logged_in: logged_in }
+          //resolve: { logged_in: logged_in }
         })
         .state('auth.signup', {
           url: '/signup',
@@ -79,7 +79,7 @@ var pinapleApp = angular.module('pinapleApp', [
           abstract: true,
           templateUrl: 'views/main.html',
           controller: 'MainCtrl',
-          resolve: { logged_in: logged_in }
+          //resolve: { logged_in: logged_in }
         })
 
         // farm (or pinaples)
