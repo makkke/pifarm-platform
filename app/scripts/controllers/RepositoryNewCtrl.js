@@ -1,40 +1,40 @@
 'use strict';
 
 pinapleApp
-  .controller('PinapleNewCtrl',
-    ['$scope', '$window', '$location', 'DevicesRepoSvc', 'PinaplesRepoSvc',
-    function ($scope, $window, $location, DevicesRepoSvc, PinaplesRepoSvc) {
+  .controller('RepositoryNewCtrl',
+  ['$scope', '$window', '$location', 'DevicesRepoSvc', 'RepositoriesRepoSvc',
+  function ($scope, $window, $location, DevicesRepoSvc, RepositoriesRepoSvc) {
     
-    $scope.title = 'Create New Pinaple | Pinaple';
+    $scope.title = 'Create a New Repository | Pinaple';
     $window.document.title = $scope.title;
 
     $scope.loading = false;
-    $scope.button_text = 'Create Pinaple';
+    $scope.button_text = 'Create Repository';
     $scope.error = '';
 
-    $scope.pinaple = {};
+    $scope.repository = {};
     
     DevicesRepoSvc.query().then(
       function (devices) {
         $scope.devices = devices;
-        $scope.pinaple.device = devices[0].sid;
+        $scope.repository.device = devices[0].sid;
       },
       function (error, status) {
         console.log( 'error:', error );
       });
 
-    $scope.add_pinaple = function(pinaple, form) {
+    $scope.add_repository = function(repository, form) {
       if( form.$valid ) {
         $scope.start_creating();
 
-        PinaplesRepoSvc.create({
-          name: pinaple.name,
-          description: pinaple.description,
-          devices: [pinaple.device]
+        RepositoriesRepoSvc.create({
+          name: repository.name,
+          description: repository.description,
+          devices: [repository.device]
         }).then(
-          function (pinaple) {
+          function (repository) {
             $scope.stop_creating();
-            $location.url( 'farm' );
+            $location.url( 'repositories' );
           },
           function (error, status) {
             $scope.stop_creating();
@@ -49,12 +49,12 @@ pinapleApp
     };
 
     $scope.start_creating = function () {
-      $scope.button_text = 'Creating Pinaple...';
+      $scope.button_text = 'Creating Repository...';
       return $scope.loading = true;
     };
 
     $scope.stop_creating = function () {
-      return $scope.button_text = 'Create Pinaple';
+      return $scope.button_text = 'Create Repository';
       return $scope.loading = false;
     };
 
