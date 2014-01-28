@@ -20,13 +20,13 @@ pinapleApp
         { key: 'custom',        value: 'Custom' }
       ],
 
-      slice_types: [
+      datastream_directions: [
         { key: 'input',   value: 'Input' },
         { key: 'output',  value: 'Output' },
         { key: 'counter', value: 'Counter' },
       ],
 
-      measurement_types: [
+      datastream_types: [
         {
           key: 'custom',
           value: 'Custom',

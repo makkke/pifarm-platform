@@ -95,14 +95,14 @@ var pinapleApp = angular.module('pinapleApp', [
         })
         .state('main.repo', {
           abstract: true,
-          url: '/repositories/:repo_sid',
+          url: '/repositories/:repository_sid',
           templateUrl: 'views/repository.html',
           controller: 'RepositoryCtrl',
           resolve: {
             repository: function ($stateParams, $q, RepositoriesRepoSvc) {
               var deferred = $q.defer();
 
-              RepositoriesRepoSvc.find( $stateParams.repo_sid ).then(
+              RepositoriesRepoSvc.find( $stateParams.repository_sid ).then(
                 function (repository) {
                   deferred.resolve( repository );
                 },
@@ -128,15 +128,15 @@ var pinapleApp = angular.module('pinapleApp', [
         })
 
         // slices
-        .state('main.repo.slices', {
-          url: '/slices',
-          templateUrl: 'views/repository.slices.html',
-          controller: 'RepositorySlicesCtrl',
+        .state('main.repo.datastreams', {
+          url: '/datastreams',
+          templateUrl: 'views/repository.datastreams.html',
+          controller: 'DatastreamsCtrl',
         })
-        .state('main.new_slice', {
-          url: '/repositories/:repo_sid/slices/new',
-          templateUrl: 'views/slice.new.html',
-          controller: 'SliceNewCtrl',
+        .state('main.new_datastream', {
+          url: '/repositories/:repository_sid/datastreams/new',
+          templateUrl: 'views/datastream.new.html',
+          controller: 'DatastreamNewCtrl',
         })
 
         .state('main.repo.settings', {

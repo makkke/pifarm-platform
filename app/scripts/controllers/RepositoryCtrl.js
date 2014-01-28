@@ -2,8 +2,8 @@
 
 pinapleApp
   .controller('RepositoryCtrl',
-  ['$scope', '$stateParams', 'repository',
-  function ($scope, $stateParams, repository) {
+  ['$scope', 'repository',
+  function ($scope, repository) {
     
     $scope.repository = repository;
 
