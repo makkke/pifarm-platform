@@ -5,6 +5,6 @@ angular.module('pinaple.config', [])
     api: {
       protocol: 'http',
       hostname: 'api.pinaple.com',
-      version: '1'
+      version: 'v1'
     }
   });

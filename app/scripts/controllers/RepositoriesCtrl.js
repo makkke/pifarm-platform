@@ -10,6 +10,7 @@ pinapleApp
     RepositoriesRepoSvc.query().then(
       function (repositories) {
         $scope.repositories = repositories;
+        console.log( repositories );
       },
       function (error, status) {
         console.log( 'error:', error );

@@ -16,8 +16,8 @@ pinapleApp
       return Restangular.all( route ).getList();
     };
 
-    Repo.find = function (sid) {
-      return Restangular.one( route, sid ).get();
+    Repo.find = function (id) {
+      return Restangular.one( route, id ).get();
     };
 
     Repo.create = function (repository) {

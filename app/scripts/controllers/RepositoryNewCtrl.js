@@ -17,7 +17,7 @@ pinapleApp
     DevicesRepoSvc.query().then(
       function (devices) {
         $scope.devices = devices;
-        $scope.repository.device = devices[0].sid;
+        $scope.repository.device = devices[0].id;
       },
       function (error, status) {
         console.log( 'error:', error );

@@ -8,7 +8,7 @@ pinapleApp
     $scope.title = 'Datastreams | Pinaple';
     $window.document.title = $scope.title;
 
-    DatastreamsRepoSvc.query( repository.sid ).then(
+    DatastreamsRepoSvc.query( repository.id ).then(
       function (datastreams) {
         $scope.datastreams = datastreams;
       },

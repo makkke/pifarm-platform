@@ -12,7 +12,7 @@ pinapleApp
     $scope.button_text = 'Create Datastream';
     $scope.error = '';
 
-    $scope.repository_sid = $stateParams.repository_sid;
+    $scope.repository_id = $stateParams.repository_id;
     $scope.types = DataSvc.datastream_types;
 
     $scope.$watch('datastream.type', function (new_value) {
@@ -22,7 +22,7 @@ pinapleApp
     });
 
     $scope.datastream = {
-      repository: $scope.repository_sid,
+      repository: $scope.repository_id,
       direction: 'input',  // for now only available direction is input
       type: $scope.types[0].key
     };
@@ -34,7 +34,7 @@ pinapleApp
         DatastreamsRepoSvc.create( datastream ).then(
           function (datastream) {
             $scope.stop_creating();
-            $location.url( 'repositories/' + $scope.repository_sid + '/datastreams' );
+            $location.url( 'repositories/' + $scope.repository_id + '/datastreams' );
           },
           function (error, status) {
             $scope.stop_creating();

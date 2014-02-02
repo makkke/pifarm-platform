@@ -95,14 +95,14 @@ var pinapleApp = angular.module('pinapleApp', [
         })
         .state('main.repo', {
           abstract: true,
-          url: '/repositories/:repository_sid',
+          url: '/repositories/:repository_id',
           templateUrl: 'views/repository.html',
           controller: 'RepositoryCtrl',
           resolve: {
             repository: function ($stateParams, $q, RepositoriesRepoSvc) {
               var deferred = $q.defer();
 
-              RepositoriesRepoSvc.find( $stateParams.repository_sid ).then(
+              RepositoriesRepoSvc.find( $stateParams.repository_id ).then(
                 function (repository) {
                   deferred.resolve( repository );
                 },
@@ -134,7 +134,7 @@ var pinapleApp = angular.module('pinapleApp', [
           controller: 'DatastreamsCtrl',
         })
         .state('main.new_datastream', {
-          url: '/repositories/:repository_sid/datastreams/new',
+          url: '/repositories/:repository_id/datastreams/new',
           templateUrl: 'views/datastream.new.html',
           controller: 'DatastreamNewCtrl',
         })
@@ -158,7 +158,7 @@ var pinapleApp = angular.module('pinapleApp', [
         })
         .state('main.device', {
           abstract: true,
-          url: '/devices/:device_sid',
+          url: '/devices/:device_id',
           templateUrl: 'views/device.html',
           controller: 'DeviceCtrl'
         })
@@ -212,9 +212,6 @@ var pinapleApp = angular.module('pinapleApp', [
       // setup Restangular
       var url = Config.api.protocol + '://' + Config.api.hostname + '/' + Config.api.version;
       RestangularProvider.setBaseUrl( url );
-      RestangularProvider.setRestangularFields({
-        id: '_id'
-      });
       RestangularProvider.setResponseExtractor(function (response, operation) {
         if( response.status === 401 ) {
           $location.url( 'login' );

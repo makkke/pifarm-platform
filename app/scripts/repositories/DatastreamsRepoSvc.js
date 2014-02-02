@@ -12,14 +12,14 @@ pinapleApp
       return model;
     });
 
-    Repo.query = function (repository_sid) {
+    Repo.query = function (repository_id) {
       return Restangular.all( route ).getList({
-        repository: repository_sid
+        repository: repository_id
       });
     };
 
-    Repo.find = function (sid) {
-      return Restangular.one( route, sid ).get();
+    Repo.find = function (id) {
+      return Restangular.one( route, id ).get();
     };
 
     Repo.create = function (datastream) {
