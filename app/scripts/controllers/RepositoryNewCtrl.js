@@ -2,8 +2,8 @@
 
 pinapleApp
   .controller('RepositoryNewCtrl',
-  ['$scope', '$window', '$location', 'DevicesRepoSvc', 'RepositoriesRepoSvc',
-  function ($scope, $window, $location, DevicesRepoSvc, RepositoriesRepoSvc) {
+  ['$scope', '$window', '$location', '$log', 'DevicesRepoSvc', 'RepositoriesRepoSvc', 'ApiErrorSvc',
+  function ($scope, $window, $location, $log, DevicesRepoSvc, RepositoriesRepoSvc, ApiErrorSvc) {
     
     $scope.title = 'Create a New Repository | Pinaple';
     $window.document.title = $scope.title;
