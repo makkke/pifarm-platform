@@ -1,7 +1,6 @@
-pinaple-platform
-================
+# Pinaple Farm Platform
 
-Web app platform for Pi-naple project
+Web platform for Pinaple Farm.
 
 ## Requirements
 
