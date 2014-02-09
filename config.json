@@ -1,7 +1,7 @@
 {
   "api": {
     "protocol": "http",
-    "hostname": "api.pinaple.com",
+    "hostname": "api.pinaplefarm.com",
     "version": "v1"
   }
 }

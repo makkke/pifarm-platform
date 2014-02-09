@@ -4,7 +4,7 @@ angular.module('pinaple.config', [])
   .constant( 'Config', {
     api: {
       protocol: 'http',
-      hostname: 'api.pinaple.com',
+      hostname: 'api.pinaplefarm.com',
       version: 'v1'
     }
   });
