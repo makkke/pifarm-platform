@@ -3,5 +3,3 @@ dist
 .tmp
 .sass-cache
 app/bower_components
-config.json
-app/scripts/modules/Config.js
