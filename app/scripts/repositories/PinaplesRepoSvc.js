@@ -1,12 +1,12 @@
 'use strict';
 
-pinapleApp
-  .factory('RepositoriesRepoSvc',
+pifarmApp
+  .factory('PinaplesRepoSvc',
   ['Restangular',
   function (Restangular) {
 
     var Repo = {};
-    var route = 'repositories';
+    var route = 'pinaples';
 
     Restangular.extendModel( route, function (model) {
       return model;
@@ -20,8 +20,8 @@ pinapleApp
       return Restangular.one( route, id ).get();
     };
 
-    Repo.create = function (repository) {
-      return Restangular.all( route ).post( repository );
+    Repo.create = function (pinaple) {
+      return Restangular.all( route ).post( pinaple );
     };
 
     return Repo;

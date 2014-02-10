@@ -26,8 +26,8 @@ app.use( express.json() );
 app.use( express.bodyParser() );
 app.use( express.urlencoded() );
 app.use( express.methodOverride() );
-app.use( express.cookieParser( 'pinaplecookie' ) );
-app.use( express.session( { secret: 'pinaplesession' } ) );
+app.use( express.cookieParser( 'pifarmcookie' ) );
+app.use( express.session( { secret: 'pifarmsession' } ) );
 app.use( app.router );
 
 // development only
@@ -105,17 +105,6 @@ app.post('/_login',
       res.send( httpRes.statusCode, body );
     });
   });
-
-// route to test if the user is logged in or not
-app.get('/loggedin', function (req, res) {
-  res.send( req.isAuthenticated() ? req.user : '0' );
-});
-
-// route to log out
-app.post('/logout', function (req, res){
-  req.logOut();
-  res.send( 200 );
-});
 
 http.createServer( app ).listen(app.get( 'port' ), function() {
   console.log( 'Express server listening on port ' + app.get( 'port' ) );

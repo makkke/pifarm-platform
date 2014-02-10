@@ -1,7 +1,9 @@
 'use strict';
 
-pinapleApp
-  .controller('SettingsCtrl', ['$scope', function ($scope) {
+pifarmApp
+  .controller('SettingsCtrl',
+  ['$scope',
+  function ($scope) {
 
     
     

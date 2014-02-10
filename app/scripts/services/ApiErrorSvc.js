@@ -1,6 +1,6 @@
 'use strict';
 
-pinapleApp
+pifarmApp
   .factory('ApiErrorSvc', [function () {
 
     var ApiError = {

@@ -1,20 +1,20 @@
 'use strict';
 
-pinapleApp
-  .factory('DatastreamsRepoSvc',
+pifarmApp
+  .factory('SlicesRepoSvc',
   ['Restangular',
   function (Restangular) {
 
     var Repo = {};
-    var route = 'datastreams';
+    var route = 'slices';
 
     Restangular.extendModel( route, function (model) {
       return model;
     });
 
-    Repo.query = function (repository_id) {
+    Repo.query = function (pinaple_id) {
       return Restangular.all( route ).getList({
-        repository: repository_id
+        pinaple: pinaple_id
       });
     };
 
@@ -22,8 +22,8 @@ pinapleApp
       return Restangular.one( route, id ).get();
     };
 
-    Repo.create = function (datastream) {
-      return Restangular.all( route ).post( datastream );
+    Repo.create = function (slice) {
+      return Restangular.all( route ).post( slice );
     };
 
     return Repo;

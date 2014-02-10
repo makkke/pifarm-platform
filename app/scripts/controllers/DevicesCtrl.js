@@ -1,9 +1,11 @@
 'use strict';
 
-pinapleApp
-  .controller('DevicesCtrl', ['$scope', '$window', 'DevicesRepoSvc', 'DataSvc', function ($scope, $window, DevicesRepoSvc, DataSvc) {
+pifarmApp
+  .controller('DevicesCtrl',
+  ['$scope', '$window', 'DevicesRepoSvc', 'DataSvc',
+  function ($scope, $window, DevicesRepoSvc, DataSvc) {
 
-    $scope.title = 'Devices | Pinaple';
+    $scope.title = 'Devices | Pinaple Farm';
     $window.document.title = $scope.title;
 
     $scope.types = DataSvc.device_types;

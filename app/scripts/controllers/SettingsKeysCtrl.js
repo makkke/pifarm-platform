@@ -1,9 +1,11 @@
 'use strict';
 
-pinapleApp
-  .controller('SettingsKeysCtrl', ['$scope', '$window', function ($scope, $window) {
+pifarmApp
+  .controller('SettingsKeysCtrl',
+  ['$scope', '$window',
+  function ($scope, $window) {
 
-    $scope.title = 'Access Keys | Pinaple';
+    $scope.title = 'Access Keys | Pinaple Farm';
     $window.document.title = $scope.title;
     
   }]);

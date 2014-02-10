@@ -1,6 +1,6 @@
 'use strict';
 
-pinapleApp
+pifarmApp
   .factory('DataSvc', [function () {
 
     var Data = {
@@ -20,13 +20,13 @@ pinapleApp
         { key: 'custom',        value: 'Custom' }
       ],
 
-      datastream_directions: [
+      slice_directions: [
         { key: 'input',   value: 'Input' },
         { key: 'output',  value: 'Output' },
         { key: 'counter', value: 'Counter' },
       ],
 
-      datastream_types: [
+      slice_types: [
         {
           key: 'custom',
           value: 'Custom',

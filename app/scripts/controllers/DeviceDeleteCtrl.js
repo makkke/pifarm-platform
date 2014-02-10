@@ -1,9 +1,11 @@
 'use strict';
 
-pinapleApp
-  .controller('DeviceDeleteCtrl', ['$scope', '$window', function ($scope, $window) {
+pifarmApp
+  .controller('DeviceDeleteCtrl',
+  ['$scope', '$window',
+  function ($scope, $window) {
     
-    $scope.title = 'Delete Device | Pinaple';
+    $scope.title = 'Delete Device | Pinaple Farm';
     $window.document.title = $scope.title;
 
   }]);

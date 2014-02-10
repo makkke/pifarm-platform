@@ -1,6 +1,6 @@
 'use strict';
 
-pinapleApp
+pifarmApp
   .filter('keyFilter', [function () {
     
     return function (key) {

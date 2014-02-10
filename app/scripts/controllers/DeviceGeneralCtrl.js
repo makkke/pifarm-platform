@@ -1,9 +1,11 @@
 'use strict';
 
-pinapleApp
-  .controller('DeviceGeneralCtrl', ['$scope', '$window', function ($scope, $window) {
+pifarmApp
+  .controller('DeviceGeneralCtrl',
+  ['$scope', '$window',
+  function ($scope, $window) {
     
-    $scope.title = 'Device General Info | Pinaple';
+    $scope.title = 'Device General| Pinaple Farm';
     $window.document.title = $scope.title;
 
   }]);

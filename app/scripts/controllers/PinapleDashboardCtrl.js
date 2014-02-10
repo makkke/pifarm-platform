@@ -1,7 +1,7 @@
 'use strict';
 
-pinapleApp
-  .controller('RepositorySettingsCtrl',
+pifarmApp
+  .controller('PinapleDashboardCtrl',
   ['$scope',
   function ($scope) {
     

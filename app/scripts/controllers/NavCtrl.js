@@ -1,7 +1,9 @@
 'use strict';
 
-pinapleApp
-  .controller('NavCtrl', ['$scope', '$location', 'AuthSvc', function ($scope, $location, AuthSvc) {
+pifarmApp
+  .controller('NavCtrl',
+  ['$scope', '$location', 'AuthSvc',
+  function ($scope, $location, AuthSvc) {
 
     $scope.get_user_fullname = function () {
       if( !AuthSvc.account ) {

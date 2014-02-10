@@ -1,40 +1,40 @@
 'use strict';
 
-pinapleApp
-  .controller('RepositoryNewCtrl',
-  ['$scope', '$window', '$location', '$log', 'DevicesRepoSvc', 'RepositoriesRepoSvc', 'ApiErrorSvc',
-  function ($scope, $window, $location, $log, DevicesRepoSvc, RepositoriesRepoSvc, ApiErrorSvc) {
+pifarmApp
+  .controller('PinapleNewCtrl',
+  ['$scope', '$window', '$location', '$log', 'DevicesRepoSvc', 'PinaplesRepoSvc', 'ApiErrorSvc',
+  function ($scope, $window, $location, $log, DevicesRepoSvc, PinaplesRepoSvc, ApiErrorSvc) {
     
-    $scope.title = 'Create a New Repository | Pinaple';
+    $scope.title = 'Create a New Pinaple | Pinaple Farm';
     $window.document.title = $scope.title;
 
     $scope.loading = false;
-    $scope.button_text = 'Create Repository';
+    $scope.button_text = 'Create Pinaple';
     $scope.error = '';
 
-    $scope.repository = {};
+    $scope.pinaple = {};
     
     DevicesRepoSvc.query().then(
       function (devices) {
         $scope.devices = devices;
-        $scope.repository.device = devices[0].id;
+        $scope.pinaple.device = devices[0].id;
       },
       function (error, status) {
         console.log( 'error:', error );
       });
 
-    $scope.add_repository = function(repository, form) {
+    $scope.add_pinaple = function(pinaple, form) {
       if( form.$valid ) {
         $scope.start_creating();
 
-        RepositoriesRepoSvc.create({
-          name: repository.name,
-          description: repository.description,
-          devices: [repository.device]
+        PinaplesRepoSvc.create({
+          name: pinaple.name,
+          description: pinaple.description,
+          devices: [pinaple.device]
         }).then(
-          function (repository) {
+          function (pinaple) {
             $scope.stop_creating();
-            $location.url( 'repositories' );
+            $location.url( 'pinaples' );
           },
           function (error, status) {
             $scope.stop_creating();
@@ -49,12 +49,12 @@ pinapleApp
     };
 
     $scope.start_creating = function () {
-      $scope.button_text = 'Creating Repository...';
+      $scope.button_text = 'Creating Pinaple...';
       return $scope.loading = true;
     };
 
     $scope.stop_creating = function () {
-      return $scope.button_text = 'Create Repository';
+      return $scope.button_text = 'Create Pinaple';
       return $scope.loading = false;
     };
 

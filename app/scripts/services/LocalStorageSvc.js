@@ -1,6 +1,6 @@
 'use strict';
 
-pinapleApp
+pifarmApp
   .factory('LocalStorageSvc', ['$cookieStore', function ($cookieStore) {
 
     var Storage = {};

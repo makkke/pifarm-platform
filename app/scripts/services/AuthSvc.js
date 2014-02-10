@@ -1,6 +1,6 @@
 'use strict';
 
-pinapleApp
+pifarmApp
   .factory('AuthSvc', ['$http', '$q', '$cookies', 'MIN_SESSION_TOKEN_LENGTH', 'SESSION_TOKEN_NAME', 'Restangular', 'AccountsRepoSvc', 'LocalStorageSvc',
     function ($http, $q, $cookies, MIN_SESSION_TOKEN_LENGTH, SESSION_TOKEN_NAME, Restangular, AccountsRepoSvc, LocalStorageSvc) {
 
@@ -93,7 +93,7 @@ pinapleApp
       var headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json; charset=UTF-8',
-        'X-Pinaple-Session-Token': sessionToken
+        'X-Pifarm-Session-Token': sessionToken
       }
       
       Restangular.setDefaultHeaders( headers );

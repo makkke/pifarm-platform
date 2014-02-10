@@ -1,9 +1,11 @@
 'use strict';
 
-pinapleApp
-  .controller('ForgotCtrl', ['$scope', function ($scope) {
+pifarmApp
+  .controller('ForgotCtrl',
+  ['$scope',
+  function ($scope) {
     
-    $scope.title = 'Forgot Password? | Pinaple';
+    $scope.title = 'Forgot Password? | Pinaple Farm';
     $window.document.title = $scope.title;
 
   }]);

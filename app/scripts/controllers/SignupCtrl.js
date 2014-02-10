@@ -1,10 +1,11 @@
 'use strict';
 
-pinapleApp
-  .controller('SignupCtrl', ['$scope', '$window', '$location', '$log', 'MIN_PASSWORD_LENGTH', 'AuthSvc', 'DataSvc', 'ApiErrorSvc',
-    function ($scope, $window, $location, $log, MIN_PASSWORD_LENGTH, AuthSvc, DataSvc, ApiErrorSvc) {
+pifarmApp
+  .controller('SignupCtrl',
+  ['$scope', '$window', '$location', '$log', 'MIN_PASSWORD_LENGTH', 'AuthSvc', 'DataSvc', 'ApiErrorSvc',
+  function ($scope, $window, $location, $log, MIN_PASSWORD_LENGTH, AuthSvc, DataSvc, ApiErrorSvc) {
 
-    $scope.title = 'Sign Up | Pinaple';
+    $scope.title = 'Sign Up | Pinaple Farm';
     $window.document.title = $scope.title;
     
     $scope.loading = false;

@@ -1,9 +1,11 @@
 'use strict';
 
-pinapleApp
-  .controller('SettingsDeleteAccountCtrl', ['$scope', '$window', function ($scope, $window) {
+pifarmApp
+  .controller('SettingsDeleteAccountCtrl',
+  ['$scope', '$window',
+  function ($scope, $window) {
 
-    $scope.title = 'Delete Account | Pinaple';
+    $scope.title = 'Delete Account | Pinaple Farm';
     $window.document.title = $scope.title;
     
   }]);

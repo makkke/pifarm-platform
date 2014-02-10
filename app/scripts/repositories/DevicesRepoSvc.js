@@ -1,8 +1,9 @@
 'use strict';
 
-pinapleApp
-  .factory('DevicesRepoSvc', ['$http', '$q', 'Restangular',
-    function ($http, $q, Restangular) {
+pifarmApp
+  .factory('DevicesRepoSvc',
+  ['Restangular',
+  function (Restangular) {
 
     var Repo = {};
     var route = 'devices';

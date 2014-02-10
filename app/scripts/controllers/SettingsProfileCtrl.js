@@ -1,9 +1,11 @@
 'use strict';
 
-pinapleApp
-  .controller('SettingsProfileCtrl', ['$scope', '$window', function ($scope, $window) {
+pifarmApp
+  .controller('SettingsProfileCtrl',
+  ['$scope', '$window',
+  function ($scope, $window) {
 
-    $scope.title = 'Profile Settings | Pinaple';
+    $scope.title = 'Profile Settings | Pinaple Farm';
     $window.document.title = $scope.title;
     
   }]);

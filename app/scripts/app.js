@@ -1,12 +1,12 @@
 'use strict';
 
-var pinapleApp = angular.module('pinapleApp', [
+var pifarmApp = angular.module('pifarmApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'pinaple.config',
-  'pinaple.constants',
+  'pifarm.config',
+  'pifarm.constants',
   'ui.router',
   'restangular',
   'angularSpinner',
@@ -45,7 +45,7 @@ var pinapleApp = angular.module('pinapleApp', [
         return deferred.promise;
       };
     
-      $urlRouterProvider.otherwise( '/repositories' );
+      $urlRouterProvider.otherwise( '/pinaples' );
       
       $stateProvider
         // user management
@@ -82,29 +82,29 @@ var pinapleApp = angular.module('pinapleApp', [
           resolve: { logged_in: logged_in }
         })
 
-        // repositories
-        .state('main.repos', {
-          url: '/repositories',
-          templateUrl: 'views/repositories.html',
-          controller: 'RepositoriesCtrl',
+        // pinaples
+        .state('main.pinaples', {
+          url: '/pinaples',
+          templateUrl: 'views/pinaples.html',
+          controller: 'PinaplesCtrl',
         })
-        .state('main.new_repo', {
-          url: '/repositories/new',
-          templateUrl: 'views/repository.new.html',
-          controller: 'RepositoryNewCtrl',
+        .state('main.new_pinaple', {
+          url: '/pinaples/new',
+          templateUrl: 'views/pinaple.new.html',
+          controller: 'PinapleNewCtrl',
         })
-        .state('main.repo', {
+        .state('main.pinaple', {
           abstract: true,
-          url: '/repositories/:repository_id',
-          templateUrl: 'views/repository.html',
-          controller: 'RepositoryCtrl',
+          url: '/pinaples/:pinaple_id',
+          templateUrl: 'views/pinaple.html',
+          controller: 'PinapleCtrl',
           resolve: {
-            repository: function ($stateParams, $q, RepositoriesRepoSvc) {
+            pinaple: function ($stateParams, $q, PinaplesRepoSvc) {
               var deferred = $q.defer();
 
-              RepositoriesRepoSvc.find( $stateParams.repository_id ).then(
-                function (repository) {
-                  deferred.resolve( repository );
+              PinaplesRepoSvc.find( $stateParams.pinaple_id ).then(
+                function (pinaple) {
+                  deferred.resolve( pinaple );
                 },
                 function (error, status) {
                   console.log( 'error:', error );
@@ -115,34 +115,34 @@ var pinapleApp = angular.module('pinapleApp', [
             }
           }
         })
-        .state('main.repo.dashboard', {
+        .state('main.pinaple.dashboard', {
           url: '/dashboard',
-          templateUrl: 'views/repository.dashboard.html',
-          controller: 'RepositoryDashboardCtrl',
+          templateUrl: 'views/pinaple.dashboard.html',
+          controller: 'PinapleDashboardCtrl',
         })
 
-        .state('main.repo.data', {
+        .state('main.pinaple.data', {
           url: '/data',
-          templateUrl: 'views/repository.data.html',
-          controller: 'RepositoryDataCtrl',
+          templateUrl: 'views/pinaple.data.html',
+          controller: 'PinapleDataCtrl',
         })
 
         // slices
-        .state('main.repo.datastreams', {
-          url: '/datastreams',
-          templateUrl: 'views/repository.datastreams.html',
-          controller: 'DatastreamsCtrl',
+        .state('main.pinaple.slices', {
+          url: '/slices',
+          templateUrl: 'views/pinaple.slices.html',
+          controller: 'SlicesCtrl',
         })
-        .state('main.new_datastream', {
-          url: '/repositories/:repository_id/datastreams/new',
-          templateUrl: 'views/datastream.new.html',
-          controller: 'DatastreamNewCtrl',
+        .state('main.new_slice', {
+          url: '/pinaples/:pinaple_id/slices/new',
+          templateUrl: 'views/slice.new.html',
+          controller: 'SliceNewCtrl',
         })
 
-        .state('main.repo.settings', {
+        .state('main.pinaple.settings', {
           url: '/settings',
-          templateUrl: 'views/repository.settings.html',
-          controller: 'RepositorySettingsCtrl',
+          templateUrl: 'views/pinaple.settings.html',
+          controller: 'PinapleSettingsCtrl',
         })
 
         // devices

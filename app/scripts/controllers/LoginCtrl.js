@@ -1,7 +1,9 @@
 'use strict';
 
-pinapleApp
-  .controller('LoginCtrl', ['$scope', '$window', '$location', '$log', '$stateParams', 'MIN_PASSWORD_LENGTH', 'AuthSvc', 'ApiErrorSvc', function ($scope, $window, $location, $log, $stateParams, MIN_PASSWORD_LENGTH, AuthSvc, ApiErrorSvc) {
+pifarmApp
+  .controller('LoginCtrl',
+  ['$scope', '$window', '$location', '$log', '$stateParams', 'MIN_PASSWORD_LENGTH', 'AuthSvc', 'ApiErrorSvc',
+  function ($scope, $window, $location, $log, $stateParams, MIN_PASSWORD_LENGTH, AuthSvc, ApiErrorSvc) {
 
     $scope.loading = false;
     $scope.error = '';
@@ -9,7 +11,7 @@ pinapleApp
       username: $stateParams.username || ''
     };
 
-    $scope.title = 'Log In | Pinaple';
+    $scope.title = 'Log In | Pinaple Farm';
     $window.document.title = $scope.title;
     
     /*

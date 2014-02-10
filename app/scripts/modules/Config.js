@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pinaple.config', [])
+angular.module('pifarm.config', [])
   .constant( 'Config', {
     api: {
       protocol: 'http',

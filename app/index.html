@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Pinaple</title>
+  <title>Pinaple Farm</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
-<body ng-app="pinapleApp">
+<body ng-app="pifarmApp">
   <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -65,16 +65,16 @@
   <script src="scripts/controllers/MainCtrl.js"></script>
   <script src="scripts/controllers/NavCtrl.js"></script>
 
-  <script src="scripts/controllers/RepositoriesCtrl.js"></script>
-  <script src="scripts/controllers/RepositoryNewCtrl.js"></script>
-  <script src="scripts/controllers/RepositoryCtrl.js"></script>
-  <script src="scripts/controllers/RepositoryDashboardCtrl.js"></script>
-  <script src="scripts/controllers/RepositoryDataCtrl.js"></script>
+  <script src="scripts/controllers/PinaplesCtrl.js"></script>
+  <script src="scripts/controllers/PinapleNewCtrl.js"></script>
+  <script src="scripts/controllers/PinapleCtrl.js"></script>
+  <script src="scripts/controllers/PinapleDashboardCtrl.js"></script>
+  <script src="scripts/controllers/PinapleDataCtrl.js"></script>
 
-  <script src="scripts/controllers/DatastreamsCtrl.js"></script>
-  <script src="scripts/controllers/DatastreamNewCtrl.js"></script>
+  <script src="scripts/controllers/SlicesCtrl.js"></script>
+  <script src="scripts/controllers/SliceNewCtrl.js"></script>
 
-  <script src="scripts/controllers/RepositorySettingsCtrl.js"></script>
+  <script src="scripts/controllers/PinapleSettingsCtrl.js"></script>
   
   <script src="scripts/controllers/LoginCtrl.js"></script>
   <script src="scripts/controllers/SignupCtrl.js"></script>
@@ -101,14 +101,14 @@
 
   <script src="scripts/repositories/AccountsRepoSvc.js"></script>
   <script src="scripts/repositories/DevicesRepoSvc.js"></script>
-  <script src="scripts/repositories/RepositoriesRepoSvc.js"></script>
-  <script src="scripts/repositories/DatastreamsRepoSvc.js"></script>
+  <script src="scripts/repositories/PinaplesRepoSvc.js"></script>
+  <script src="scripts/repositories/SlicesRepoSvc.js"></script>
 
   <script src="scripts/filters/KeyFilter.js"></script>
   <!-- endbuild -->
 
   <script>
-    angular.module( 'pinapleApp' ).constant( 'ServerCurrentYear', '<%= ServerCurrentYear %>' ); 
+    angular.module( 'pifarmApp' ).constant( 'ServerCurrentYear', '<%= ServerCurrentYear %>' ); 
   </script>
 </body>
 </html>
