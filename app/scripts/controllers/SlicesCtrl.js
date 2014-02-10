@@ -5,7 +5,7 @@ pifarmApp
   ['$scope', '$window', 'SlicesRepoSvc', 'pinaple',
   function ($scope, $window, SlicesRepoSvc, pinaple) {
 
-    $scope.title = 'Datastreams | Pinaple Farm';
+    $scope.title = 'Slices | Pinaple Farm';
     $window.document.title = $scope.title;
 
     SlicesRepoSvc.query( pinaple.id ).then(
