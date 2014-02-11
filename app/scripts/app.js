@@ -172,6 +172,11 @@ var pifarmApp = angular.module('pifarmApp', [
           templateUrl: 'views/device.delete.html',
           controller: 'DeviceDeleteCtrl',
         })
+        .state('main.device.key', {
+          url: '/key',
+          templateUrl: 'views/device.key.html',
+          controller: 'DeviceKeyCtrl',
+        })
 
         // account settings
         .state('main.settings', {
