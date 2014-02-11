@@ -255,6 +255,10 @@
   color: #000; /* #fff*/
 }
 
+.pi-sidebar h4 {
+  text-transform: capitalize;
+}
+
 .pi-sidebar > .list-group-item {
   background-color: #fbfbfb ;
 }
