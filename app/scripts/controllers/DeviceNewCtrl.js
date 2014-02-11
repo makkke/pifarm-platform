@@ -5,7 +5,7 @@ pifarmApp
   ['$scope', '$window', '$location', '$log', 'DataSvc', 'ApiErrorSvc', 'DevicesRepoSvc',
   function ($scope, $window, $location, $log, DataSvc, ApiErrorSvc, DevicesRepoSvc) {
     
-    $scope.title = 'New Device | Pinaple Farm';
+    $scope.title = 'Add a New Device | Pinaple Farm';
     $window.document.title = $scope.title;
 
     $scope.loading = false;
