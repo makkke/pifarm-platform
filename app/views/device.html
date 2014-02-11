@@ -2,6 +2,7 @@
 
   <div class="col-xs-3">
     <div class="list-group pi-sidebar">
+
       <a ng-href="#/devices/{{device.id}}/general" class="list-group-item bg-grey">
         <div class="row">
           <div class="col-xs-2">
@@ -10,6 +11,18 @@
           <div class="col-xs-10">
             <h4 class="list-group-item-heading">General info</h4>
             <p class="list-group-item-text">Edit info about device.</p>
+          </div>
+        </div>
+      </a>
+
+      <a ng-href="#/devices/{{device.id}}/general" class="list-group-item bg-grey">
+        <div class="row">
+          <div class="col-xs-2">
+            <i class="fa fa-key fa-lg sidebar-icon"></i>
+          </div>
+          <div class="col-xs-10">
+            <h4 class="list-group-item-heading">Device Key</h4>
+            <p class="list-group-item-text">Regenerate key.</p>
           </div>
         </div>
       </a>
