@@ -3,33 +3,31 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js",
     "test": "grunt test"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   },
   "dependencies": {
-    "express": "3.4.7",
+    "express": "~3.4.3",
+    "lodash": "~2.4.1",
     "ejs": "*",
-    "passport": "~0.1.17",
-    "passport-local": "*",
-    "passport-http": "~0.2.2",
     "nconf": "~0.6.8",
     "needle": "~0.6.3"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.0",
+    "grunt-bower-install": "~0.7.0",
     "grunt-concurrent": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-coffee": "~0.7.0",
     "grunt-contrib-compass": "~0.6.0",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-cssmin": "~0.7.0",
     "grunt-contrib-htmlmin": "~0.1.3",
+    "jpegtran-bin": "0.2.0",
     "grunt-contrib-imagemin": "~0.3.0",
     "grunt-contrib-jshint": "~0.7.1",
     "grunt-contrib-uglify": "~0.2.0",
@@ -43,21 +41,23 @@
     "jshint-stylish": "~0.1.3",
     "load-grunt-tasks": "~0.2.0",
     "time-grunt": "~0.2.1",
+    "grunt-express-server": "~0.4.5",
+    "grunt-open": "~0.2.0",
+    "connect-livereload": "~0.3.0",
     "karma-ng-scenario": "~0.1.0",
     "grunt-karma": "~0.6.2",
-    "karma-chrome-launcher": "~0.1.1",
-    "karma-firefox-launcher": "~0.1.2",
+    "karma-firefox-launcher": "~0.1.3",
     "karma-script-launcher": "~0.1.0",
     "karma-html2js-preprocessor": "~0.1.0",
-    "karma-jasmine": "~0.1.4",
-    "karma-coffee-preprocessor": "~0.1.1",
-    "requirejs": "~2.1.9",
-    "karma-requirejs": "~0.2.0",
+    "karma-jasmine": "~0.1.5",
+    "karma-chrome-launcher": "~0.1.2",
+    "requirejs": "~2.1.10",
+    "karma-requirejs": "~0.2.1",
+    "karma-coffee-preprocessor": "~0.1.2",
     "karma-phantomjs-launcher": "~0.1.1",
-    "karma": "~0.10.8",
+    "karma": "~0.10.9",
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "karma-mocha": "latest",
-    "chai": "1.4.0",
-    "ng-midway-tester": "2.0.5"
+    "chai": "1.4.0"
   }
 }

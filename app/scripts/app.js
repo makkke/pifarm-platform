@@ -9,7 +9,6 @@ var pifarmApp = angular.module('pifarmApp', [
   'pifarm.constants',
   'ui.router',
   'restangular',
-  'angularSpinner',
   'ngClipboard',
   'ui.bootstrap'
 ])
@@ -51,12 +50,12 @@ var pifarmApp = angular.module('pifarmApp', [
         // user management
         .state('auth', {
           abstract: true,
-          templateUrl: 'views/auth.html',
+          templateUrl: 'partials/auth',
           controller: 'AuthCtrl'
         })
         .state('auth.login', {
           url: '/login?username',
-          templateUrl: 'views/login.html',
+          templateUrl: 'partials/login',
           controller: 'LoginCtrl'
         })
         .state('auth.logout', {
@@ -66,18 +65,18 @@ var pifarmApp = angular.module('pifarmApp', [
         })
         .state('auth.signup', {
           url: '/signup',
-          templateUrl: 'views/signup.html',
+          templateUrl: 'partials/signup',
           controller: 'SignupCtrl'
         })
         .state('auth.forgot', {
           url: '/forgot',
-          templateUrl: 'views/forgot.html',
+          templateUrl: 'partials/forgot',
           controller: 'ForgotCtrl'
         })
 
         .state('main', {
           abstract: true,
-          templateUrl: 'views/main.html',
+          templateUrl: 'partials/main',
           controller: 'MainCtrl',
           resolve: { logged_in: logged_in }
         })
@@ -85,18 +84,18 @@ var pifarmApp = angular.module('pifarmApp', [
         // pinaples
         .state('main.pinaples', {
           url: '/pinaples',
-          templateUrl: 'views/pinaples.html',
+          templateUrl: 'partials/pinaples',
           controller: 'PinaplesCtrl',
         })
         .state('main.new_pinaple', {
           url: '/pinaples/new',
-          templateUrl: 'views/pinaple.new.html',
+          templateUrl: 'partials/pinaple.new',
           controller: 'PinapleNewCtrl',
         })
         .state('main.pinaple', {
           abstract: true,
           url: '/pinaples/:pinaple_id',
-          templateUrl: 'views/pinaple.html',
+          templateUrl: 'partials/pinaple',
           controller: 'PinapleCtrl',
           resolve: {
             pinaple: function ($stateParams, $q, PinaplesRepoSvc) {
@@ -117,64 +116,64 @@ var pifarmApp = angular.module('pifarmApp', [
         })
         .state('main.pinaple.dashboard', {
           url: '/dashboard',
-          templateUrl: 'views/pinaple.dashboard.html',
+          templateUrl: 'partials/pinaple.dashboard',
           controller: 'PinapleDashboardCtrl',
         })
 
         .state('main.pinaple.data', {
           url: '/data',
-          templateUrl: 'views/pinaple.data.html',
+          templateUrl: 'partials/pinaple.data',
           controller: 'PinapleDataCtrl',
         })
 
         // slices
         .state('main.pinaple.slices', {
           url: '/slices',
-          templateUrl: 'views/pinaple.slices.html',
+          templateUrl: 'partials/pinaple.slices',
           controller: 'SlicesCtrl',
         })
         .state('main.new_slice', {
           url: '/pinaples/:pinaple_id/slices/new',
-          templateUrl: 'views/slice.new.html',
+          templateUrl: 'partials/slice.new',
           controller: 'SliceNewCtrl',
         })
 
         .state('main.pinaple.settings', {
           url: '/settings',
-          templateUrl: 'views/pinaple.settings.html',
+          templateUrl: 'partials/pinaple.settings',
           controller: 'PinapleSettingsCtrl',
         })
 
         // devices
         .state('main.devices', {
           url: '/devices',
-          templateUrl: 'views/devices.html',
+          templateUrl: 'partials/devices',
           controller: 'DevicesCtrl'
         })
         .state('main.new_device', {
           url: '/devices/new',
-          templateUrl: 'views/device.new.html',
+          templateUrl: 'partials/device.new',
           controller: 'DeviceNewCtrl',
         })
         .state('main.device', {
           abstract: true,
           url: '/devices/:device_id',
-          templateUrl: 'views/device.html',
+          templateUrl: 'partials/device',
           controller: 'DeviceCtrl'
         })
         .state('main.device.general', {
           url: '/general',
-          templateUrl: 'views/device.general.html',
+          templateUrl: 'partials/device.general',
           controller: 'DeviceGeneralCtrl',
         })
         .state('main.device.delete', {
           url: '/delete',
-          templateUrl: 'views/device.delete.html',
+          templateUrl: 'partials/device.delete',
           controller: 'DeviceDeleteCtrl',
         })
         .state('main.device.key', {
           url: '/key',
-          templateUrl: 'views/device.key.html',
+          templateUrl: 'partials/device.key',
           controller: 'DeviceKeyCtrl',
         })
 
@@ -182,32 +181,32 @@ var pifarmApp = angular.module('pifarmApp', [
         .state('main.settings', {
           abstract: true,
           url: '/settings',
-          templateUrl: 'views/settings.html',
+          templateUrl: 'partials/settings',
           controller: 'SettingsCtrl'
         })
         .state('main.settings.profile', {
           url: '/profile',
-          templateUrl: 'views/settings.profile.html',
+          templateUrl: 'partials/settings.profile',
           controller: 'SettingsProfileCtrl',
         })
         .state('main.settings.account', {
           url: '/account',
-          templateUrl: 'views/settings.account.html',
+          templateUrl: 'partials/settings.account',
           controller: 'SettingsAccountCtrl',
         })
         .state('main.settings.keys', {
           url: '/keys',
-          templateUrl: 'views/settings.keys.html',
+          templateUrl: 'partials/settings.keys',
           controller: 'SettingsKeysCtrl',
         })
         .state('main.settings.notifications', {
           url: '/notifications',
-          templateUrl: 'views/settings.notifications.html',
+          templateUrl: 'partials/settings.notifications',
           controller: 'SettingsNotificationsCtrl',
         })
         .state('main.settings.delete_account', {
           url: '/delete',
-          templateUrl: 'views/settings.delete.html',
+          templateUrl: 'partials/settings.delete',
           controller: 'SettingsDeleteAccountCtrl',
         });
 
