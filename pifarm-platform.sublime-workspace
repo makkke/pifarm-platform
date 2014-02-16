@@ -665,6 +665,21 @@
 	"file_history":
 	[
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/modules/Constants.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/LoginCtrl.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SignupCtrl.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/AuthSvc.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/server.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/test/spec/server-tests.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/test/karma-e2e.conf.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/test/karma-midway.conf.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/test/karma.conf.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/test/karma-server.conf.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/Gruntfile.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/test/karma-unit.conf.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/package.json",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/test/server-tests.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/test/.jshintrc",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/pifarm-platform.sublime-project",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/modules/Config.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/config.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/express.js",
@@ -684,10 +699,8 @@
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/.jshintrc",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/.jshintrc",
 		"/Users/vivanov/repos/tmp/my_pr/lib/controllers/index.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/server.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/external_components/angular-ui-router/angular-ui-router.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/bower.json",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/Gruntfile.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/styles/main.scss",
 		"/Users/vivanov/repos/tmp/my-new-project/app/views/index.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/.gitignore",
@@ -695,7 +708,6 @@
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/env/production.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/config.json",
 		"/Users/vivanov/repos/tmp/my-new-project/server.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/package.json",
 		"/Users/vivanov/repos/tmp/my-new-project/package.json",
 		"/Users/vivanov/repos/tmp/my-new-project/Gruntfile.js",
 		"/Users/vivanov/repos/tmp/my-new-project/bower.json",
@@ -779,19 +791,7 @@
 		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/controllers/RepositoryNewCtrl.js",
 		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/repositories/DatastreamsRepoSvc.js",
 		"/Users/vivanov/repos/pinaple/pinaple-platform/app/views/datastream.new.html",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/views/repositories.html",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/views/repository.datastreams.html",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/views/repository.new.html",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/views/device.html",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/views/repository.html",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/views/settings.html",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/config.json",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app.js",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/repositories/RepositoriesRepoSvc.js",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/controllers/RepositoryCtrl.js",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/index.html",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/services/DataSvc.js",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/views/slice.new.html"
+		"/Users/vivanov/repos/pinaple/pinaple-platform/app/views/repositories.html"
 	],
 	"find":
 	{
@@ -824,6 +824,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"SESSION_TOKEN_NAME",
+			"MIN_SESSION_TOKEN_LENGTH",
+			"SESSION_TOKEN_NAME",
+			"MIN_SESSION_TOKEN_LENGTH",
+			"      if( form.$valid ) {\n      if( form.$valid ) {\nMIN_SESSION_TOKEN_LENGTH",
+			"check_password_length",
+			"MIN_PASSWORD_LENGTH",
+			"simple",
+			"load-grunt-tasks",
+			"loadn",
+			"simple",
+			"server",
+			"karma",
+			"spec",
+			"sharedConfig",
 			"404",
 			"ServerCurrentYear",
 			"Err",
@@ -936,22 +951,7 @@
 			"farm",
 			"slice",
 			"slice_form",
-			"device_sid",
-			"$stateParams",
-			"repo_sid",
-			"slices",
-			"farm",
-			"pinaple",
-			"Pinaple",
-			"pinaple",
-			"farm",
-			"$http",
-			"farm",
-			"pinaple",
-			"Pinaple",
-			"pinaple",
-			"pinapl",
-			"pinaple"
+			"device_sid"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -965,7 +965,7 @@
 			"\"category\": \"nhl\",\\nsad",
 			"category"
 		],
-		"reverse": true,
+		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -1040,6 +1040,18 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"authsvc",
+				"app/scripts/services/AuthSvc.js"
+			],
+			[
+				"signup",
+				"app/scripts/controllers/SignupCtrl.js"
+			],
+			[
+				"login",
+				"app/scripts/controllers/LoginCtrl.js"
+			],
 			[
 				"consta",
 				"app/scripts/modules/Constants.js"
@@ -1325,10 +1337,6 @@
 				"app/styles/main.css"
 			],
 			[
-				"login",
-				"app/scripts/controllers/LoginCtrl.js"
-			],
-			[
 				"i",
 				"app/index.html"
 			],
@@ -1339,10 +1347,6 @@
 			[
 				"authsc",
 				"app/scripts/services/AuthSvc.js"
-			],
-			[
-				"signup",
-				"app/scripts/controllers/SignupCtrl.js"
 			],
 			[
 				"loginctr",
@@ -1547,10 +1551,6 @@
 			[
 				"channel.js",
 				"app/scripts/services/channel.js"
-			],
-			[
-				"device.rege",
-				"app/scripts/controllers/device.regen.key.modal.js"
 			]
 		],
 		"width": 0.0
