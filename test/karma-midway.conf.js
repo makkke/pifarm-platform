@@ -1,7 +1,7 @@
-var sharedConfig = require( './karma.conf' );
+var shared_config = require( './karma.conf' );
 
 module.exports = function(config) {
-  var conf = sharedConfig();
+  var conf = shared_config();
 
   // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
   conf.logLevel = config.LOG_INFO,

@@ -41,7 +41,6 @@ module.exports = function() {
       'app/bower_components/lodash/dist/lodash.min.js',
       'app/bower_components/restangular/dist/restangular.min.js',
       'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
-      'app/bower_components/angular-spinner/angular-spinner.min.js',
 
       // app specific code
       'app/scripts/*.js',
