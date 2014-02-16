@@ -19,7 +19,7 @@ var app = express();
 require( './lib/config/express' )(app);
 
 // routing
-require('./lib/routes')(app);
+require( './lib/routes' )(app);
 
 // start server
 app.listen(config.port, function () {

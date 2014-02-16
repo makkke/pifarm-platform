@@ -2,8 +2,8 @@
 
 pifarmApp
   .controller('SignupCtrl',
-  ['$scope', '$window', '$location', '$log', 'MIN_PASSWORD_LENGTH', 'AuthSvc', 'DataSvc', 'ApiErrorSvc',
-  function ($scope, $window, $location, $log, MIN_PASSWORD_LENGTH, AuthSvc, DataSvc, ApiErrorSvc) {
+  ['$scope', '$window', '$location', '$log', 'Constants', 'AuthSvc', 'DataSvc', 'ApiErrorSvc',
+  function ($scope, $window, $location, $log, Constants, AuthSvc, DataSvc, ApiErrorSvc) {
 
     $scope.title = 'Sign Up | Pinaple Farm';
     $window.document.title = $scope.title;
@@ -86,7 +86,7 @@ pifarmApp
      */
     $scope.check_password_length = function (password) {
       if( !password ) return false;
-      return password.length >= MIN_PASSWORD_LENGTH;
+      return password.length >= Constants.min_password_length;
     };
 
     /*

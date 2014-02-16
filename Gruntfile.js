@@ -12,11 +12,24 @@ module.exports = function (grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
+  // Add the grunt-mocha-test tasks.
+  grunt.loadNpmTasks('grunt-mocha-test');
+
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
   // Define the configuration for all the tasks
   grunt.initConfig({
+
+    // configure a mochaTest task
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec'
+        },
+        src: ['test/spec/server-tests.js']
+      }
+    },
 
     // Project settings
     yeoman: {
@@ -375,6 +388,11 @@ module.exports = function (grunt) {
 
     // Test settings
     karma: {
+      server: {
+        configFile: './test/karma-server.conf.js',
+        autowatch: false,
+        singleRun: true
+      },
       unit: {
         configFile: './test/karma-unit.conf.js',
         autowatch: false,
@@ -445,6 +463,8 @@ module.exports = function (grunt) {
     'autoprefixer',
     'karma'
   ]);
+
+  grunt.registerTask('test-server', 'mochaTest');
 
   grunt.registerTask('build', [
     'clean:dist',

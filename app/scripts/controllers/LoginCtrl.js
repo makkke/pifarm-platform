@@ -2,8 +2,8 @@
 
 pifarmApp
   .controller('LoginCtrl',
-  ['$scope', '$window', '$location', '$log', '$stateParams', 'MIN_PASSWORD_LENGTH', 'AuthSvc', 'ApiErrorSvc',
-  function ($scope, $window, $location, $log, $stateParams, MIN_PASSWORD_LENGTH, AuthSvc, ApiErrorSvc) {
+  ['$scope', '$window', '$location', '$log', '$stateParams', 'Constants', 'AuthSvc', 'ApiErrorSvc',
+  function ($scope, $window, $location, $log, $stateParams, Constants, AuthSvc, ApiErrorSvc) {
 
     $scope.loading = false;
     $scope.error = '';
@@ -83,7 +83,7 @@ pifarmApp
      */
     $scope.check_password_length = function (password) {
       if( !password ) return false;
-      return password.length >= MIN_PASSWORD_LENGTH;
+      return password.length >= Constants.min_password_length;
     };
 
   }]);
