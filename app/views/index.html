@@ -106,7 +106,14 @@
   <!-- endbuild -->
 
   <script>
-    angular.module( 'pifarmApp' ).constant( 'ServerCurrentYear', '<%= ServerCurrentYear %>' ); 
+    angular.module( 'pifarm.config' ).constant( 'Config', {
+      api: {
+        protocol: '<%= config.api.protocol %>',
+        hostname: '<%= config.api.hostname %>',
+        version:  '<%= config.api.version %>'
+      },
+      current_year: '<%= current_year %>'
+    }); 
   </script>
 </body>
 </html>

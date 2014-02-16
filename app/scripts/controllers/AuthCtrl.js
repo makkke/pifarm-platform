@@ -2,9 +2,9 @@
 
 pifarmApp
   .controller('AuthCtrl',
-  ['$scope', 'ServerCurrentYear',
-  function ($scope, ServerCurrentYear) {
+  ['$scope', 'Config',
+  function ($scope, Config) {
     
-    $scope.current_year = ServerCurrentYear;
+    $scope.current_year = Config.current_year;
 
   }]);
