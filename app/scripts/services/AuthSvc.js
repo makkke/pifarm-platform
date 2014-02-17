@@ -6,23 +6,20 @@ pifarmApp
 
     var Auth = {};
 
-    Auth.signup = function (user) {
+    Auth.signup = function (account) {
       var deferred = $q.defer();
 
-      $http.post('/_signup', {
-        username:     user.username,
-        password:     user.password,
-        first_name:   user.first_name,
-        last_name:    user.last_name,
-        company:      user.company,
-        description:  user.description
+      $http.post('/api/signup', {
+        name:         account.name,
+        email:        account.email,
+        password:     account.password
       })
-        .success(function (data, status) {
-          deferred.resolve( data );
-        })
-        .error(function (error, status) {
-          deferred.reject( error, status );
-        });
+      .success(function (data, status) {
+        deferred.resolve( data );
+      })
+      .error(function (error, status) {
+        deferred.reject( error, status );
+      });
 
       return deferred.promise;
     };

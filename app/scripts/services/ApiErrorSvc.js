@@ -27,7 +27,7 @@ pifarmApp
       SessionNotProvided:         'session_not_provided',
     };
 
-    ApiError.is_server_error = function (status) {
+    ApiError.server_error = function (status) {
       return status >= this.InternalServerError;
     }
 

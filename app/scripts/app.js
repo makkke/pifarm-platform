@@ -215,7 +215,7 @@ var pifarmApp = angular.module('pifarmApp', [
 
     // setup Restangular
     var url = Config.api.protocol + '://' + Config.api.hostname + '/' + Config.api.version;
-    debugger;
+
     RestangularProvider.setBaseUrl( url );
     RestangularProvider.setResponseExtractor(function (response, operation) {
       if( response.status === 401 ) {
