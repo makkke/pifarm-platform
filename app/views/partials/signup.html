@@ -8,26 +8,11 @@
 
 			  <div class="panel-body">
 				  <form role="form" name="signupForm" ng-submit="signup(user, signupForm)" ng-switch on="error">
+
 			  		<div class="form-group">
-			  			<div class="row">
-								<div class="col-xs-6">
-					    		<input type="text" class="form-control input-lg" autofocus required placeholder="First name" ng-model="user.first_name">
-					  		</div>
-							  <div class="col-xs-6">
-							    <input type="text" class="form-control input-lg" required placeholder="Last name" ng-model="user.last_name">
-							  </div>
-			  			</div>
+			    		<input type="text" class="form-control input-lg" autofocus required placeholder="Name" ng-model="user.first_name">
+			    		<span class="help-block" ng-switch-when="min">Password should be minimum 6 characters.</span>
 						</div>
-
-						<div class="form-group">
-						   <select class="form-control input-lg" ng-model="user.description" ng-options="desc.key as desc.value for desc in description_types">
-							  <option value="">What describes you best?</option>
-							</select>
-					  </div>
-
-				  	<div class="form-group">
-					    <input type="text" class="form-control input-lg" placeholder="Company name (optional)" ng-model="user.company">
-					  </div>
 
 					  <div class="form-group" ng-class="{ 'has-error': error == 'used' }">
 					    <input type="email" class="form-control input-lg" required placeholder="Email" ng-model="user.username">
@@ -37,11 +22,6 @@
 					  <fieldset ng-class="{ 'has-error': error == 'match' || error == 'min' }">
 						  <div class="form-group">
 						    <input type="password" class="form-control input-lg" required placeholder="Password" ng-model="user.password">
-						  </div>
-
-						  <div class="form-group">
-						    <input type="password" class="form-control input-lg" required placeholder="Confirm password" ng-model="user.password_confirmation">
-						    <span class="help-block" ng-switch-when="match">Passwords don't match.</span>
 						    <span class="help-block" ng-switch-when="min">Password should be minimum 6 characters.</span>
 						  </div>
 
@@ -58,6 +38,8 @@
 					  
 					  <div class="form-group">
 						  <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="signupForm.$invalid || loading"><span class="spinner-auth" us-spinner="{ radius: 7, width: 3, length: 8, lines: 10, color: '#fff' }" ng-show="loading"></span> Sign Up</button>
+						  <div class="text-center margin-top-10">or <a href="#/login"<strong>Log In</strong></a>
+							</div>
 					  </div>
 					</form>
 			  </div><!-- /.panel-body -->
