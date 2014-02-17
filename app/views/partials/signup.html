@@ -7,21 +7,20 @@
 				</div>
 
 			  <div class="panel-body">
-				  <form role="form" name="signupForm" ng-submit="signup(user, signupForm)" ng-switch on="error">
+				  <form role="form" name="signupForm" ng-submit="signup(account, signupForm)" ng-switch on="error">
 
 			  		<div class="form-group">
-			    		<input type="text" class="form-control input-lg" autofocus required placeholder="Name" ng-model="user.first_name">
-			    		<span class="help-block" ng-switch-when="min">Password should be minimum 6 characters.</span>
+			    		<input type="text" class="form-control input-lg" autofocus required placeholder="Name" ng-model="account.name">
 						</div>
 
 					  <div class="form-group" ng-class="{ 'has-error': error == 'used' }">
-					    <input type="email" class="form-control input-lg" required placeholder="Email" ng-model="user.username">
-					    <span class="help-block" ng-switch-when="used">This email already used.</span>
+					    <input type="email" class="form-control input-lg" required placeholder="Email" ng-model="account.email">
+					    <span class="help-block" ng-switch-when="used">The email has already been taken.</span>
 					  </div>
 
 					  <fieldset ng-class="{ 'has-error': error == 'match' || error == 'min' }">
 						  <div class="form-group">
-						    <input type="password" class="form-control input-lg" required placeholder="Password" ng-model="user.password">
+						    <input type="password" class="form-control input-lg" required placeholder="Password" ng-model="account.password">
 						    <span class="help-block" ng-switch-when="min">Password should be minimum 6 characters.</span>
 						  </div>
 
@@ -32,14 +31,14 @@
 					  
 					  <div class="checkbox">
 					    <label>
-					      <input type="checkbox" required ng-model="user.agreed">I agree to the <a href="">Terms &amp; Conditions</a>
+					      <input type="checkbox" required ng-model="account.agreed">I agree to the <a href="">Terms &amp; Conditions</a>
 					    </label>
 					  </div>
 					  
 					  <div class="form-group">
-						  <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="signup()">{{button_text}}</button>
-						  <button type="button" class="btn btn-primary btn-lg btn-block" loading-btn loading="creating" text="Sign Up" loading-text="Creating Account..." ng-click="poop()"></button>
-						  <div class="text-center margin-top-10">or <a href="#/login"<strong>Log In</strong></a>
+						  <button type="submit" class="btn btn-primary btn-lg btn-block" loading-btn loading="loading" text="Sign Up" loading-text="Creating Account..."></button>
+
+						  <div class="text-center margin-top-10">or <a href="#/login"><strong>Log In</strong></a>
 							</div>
 					  </div>
 					</form>
