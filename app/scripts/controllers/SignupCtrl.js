@@ -2,24 +2,33 @@
 
 pifarmApp
   .controller('SignupCtrl',
-  ['$scope', '$window', '$location', '$log', 'Constants', 'AuthSvc', 'DataSvc', 'ApiErrorSvc',
-  function ($scope, $window, $location, $log, Constants, AuthSvc, DataSvc, ApiErrorSvc) {
+  ['$scope', '$window', '$location', '$log', '$timeout', 'Constants', 'AuthSvc', 'DataSvc', 'ApiErrorSvc',
+  function ($scope, $window, $location, $log, $timeout, Constants, AuthSvc, DataSvc, ApiErrorSvc) {
 
     $scope.title = 'Sign Up | Pinaple Farm';
     $window.document.title = $scope.title;
     
-    $scope.loading = false;
+    //$scope.loading = false;
+    $scope.button_text = 'Sign Up';
     $scope.error = '';
-    $scope.description_types = DataSvc.description_types;
+    $scope.creating = false;
+
+    $scope.poop = function () {
+      $scope.creating = true;
+      $timeout(function(){
+        $scope.creating = false;
+        console.log('got it');
+      }, 2000);
+    };
 
     /*
-     * Creates a new user and redirects to login page
+     * Create new user and redirect to login page
      * @param object User
      * @param object Form
      */
     $scope.signup = function (user, form) {
-      if( form.$valid ) {
-        $scope.start_spinner();
+      if( true ) {
+        $scope.start_creating();
         
         if( !$scope.check_password_length( user.password ) ) {
           $scope.stop_spinner();
@@ -54,19 +63,13 @@ pifarmApp
       }
     }
 
-    /*
-     * Starts a loading spinner
-     * @return bool New spinner status
-     */
-    $scope.start_spinner = function () {
+    $scope.start_creating = function () {
+      $scope.button_text = 'Creating your Account...';
       return $scope.loading = true;
     };
 
-    /*
-     * Stops a loading spinner
-     * @return bool New spinner status
-     */
-    $scope.stop_spinner = function () {
+    $scope.stop_creating = function () {
+      $scope.button_text = 'Sign Up';
       return $scope.loading = false;
     };
 
@@ -87,16 +90,6 @@ pifarmApp
     $scope.check_password_length = function (password) {
       if( !password ) return false;
       return password.length >= Constants.min_password_length;
-    };
-
-    /*
-     * Checks if password matches password confirmation.
-     * @param string Password
-     * @param string Password confirmation
-     * @return bool
-     */
-    $scope.check_passwords_match = function (password, confirmation) {
-      return password === confirmation;
     };
 
   }]);
