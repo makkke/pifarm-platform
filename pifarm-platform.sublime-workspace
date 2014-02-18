@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"ng-c",
+				"ng-click	AngularJS"
+			],
+			[
 				"bowe",
 				"bower_components"
 			],
@@ -510,15 +514,59 @@
 			[
 				"player",
 				"players_arr"
-			],
-			[
-				"strip",
-				"strip_tags"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "app/scripts/directives/LoadingBtn.js",
+			"settings":
+			{
+				"buffer_size": 551,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/partials/signup.html",
+			"settings":
+			{
+				"buffer_size": 2135,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/controllers/api.js",
+			"settings":
+			{
+				"buffer_size": 1058,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/controllers/SignupCtrl.js",
+			"settings":
+			{
+				"buffer_size": 1650,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/services/AccountValidatorSvc.js",
+			"settings":
+			{
+				"buffer_size": 458,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/services/AuthSvc.js",
+			"settings":
+			{
+				"buffer_size": 2743,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -664,10 +712,19 @@
 	},
 	"file_history":
 	[
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/ApiErrorSvc.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/AuthSvc.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/index.html",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SliceNewCtrl.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/DeviceNewCtrl.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/app.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/.gitignore",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/bower_components/bootstrap-sass/lib/bootstrap.scss",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/bower_components/bootstrap-sass/lib/_panels.scss",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/bower_components/bootstrap-sass/lib/_variables.scss",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/modules/Constants.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/LoginCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SignupCtrl.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/AuthSvc.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/server.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/test/spec/server-tests.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/test/karma-e2e.conf.js",
@@ -683,8 +740,6 @@
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/modules/Config.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/config.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/express.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/index.html",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/app.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/controllers/api.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/routes.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/controllers/index.js",
@@ -703,7 +758,6 @@
 		"/Users/vivanov/repos/pifarm/pifarm-platform/bower.json",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/styles/main.scss",
 		"/Users/vivanov/repos/tmp/my-new-project/app/views/index.html",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/.gitignore",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/env/development.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/env/production.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/config.json",
@@ -785,13 +839,7 @@
 		"/Users/vivanov/repos/pinaple/pinaple-puppet/Puppetfile",
 		"/Users/vivanov/Downloads/html5-boilerplate-4.3.0/humans.txt",
 		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/modules/Config.js",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/app.js",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/controllers/DatastreamNewCtrl.js",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/controllers/DatastreamsCtrl.js",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/controllers/RepositoryNewCtrl.js",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/repositories/DatastreamsRepoSvc.js",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/views/datastream.new.html",
-		"/Users/vivanov/repos/pinaple/pinaple-platform/app/views/repositories.html"
+		"/Users/vivanov/repos/pinaple/pinaple-platform/app/scripts/app.js"
 	],
 	"find":
 	{
@@ -799,7 +847,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/vivanov/repos/pifarm/pifarm-platform",
@@ -824,6 +872,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"DataSvc",
+			"$log",
+			"email",
+			"user",
+			"Constants",
+			"user",
+			"signupForm",
 			"SESSION_TOKEN_NAME",
 			"MIN_SESSION_TOKEN_LENGTH",
 			"SESSION_TOKEN_NAME",
@@ -944,14 +999,7 @@
 			"multiply",
 			"devide",
 			"subtract",
-			"add",
-			"pinaple",
-			"pina",
-			"RepositorySlicesCtrl",
-			"farm",
-			"slice",
-			"slice_form",
-			"device_sid"
+			"add"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -974,13 +1022,184 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/scripts/directives/LoadingBtn.js",
+					"settings":
+					{
+						"buffer_size": 551,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								458,
+								458
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/partials/signup.html",
+					"settings":
+					{
+						"buffer_size": 2135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								887,
+								887
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 64.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/controllers/api.js",
+					"settings":
+					{
+						"buffer_size": 1058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								777,
+								777
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 185.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 3,
+					"file": "app/scripts/controllers/SignupCtrl.js",
+					"settings":
+					{
+						"buffer_size": 1650,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								100,
+								100
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/scripts/services/AccountValidatorSvc.js",
+					"settings":
+					{
+						"buffer_size": 458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								220,
+								220
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/scripts/services/AuthSvc.js",
+					"settings":
+					{
+						"buffer_size": 2743,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								484,
+								484
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1045,6 +1264,30 @@
 				"app/scripts/services/AuthSvc.js"
 			],
 			[
+				"api",
+				"lib/controllers/api.js"
+			],
+			[
+				"index",
+				"app/views/index.html"
+			],
+			[
+				"sign",
+				"app/views/partials/signup.html"
+			],
+			[
+				"slicenew",
+				"app/scripts/controllers/SliceNewCtrl.js"
+			],
+			[
+				"app",
+				"app/scripts/app.js"
+			],
+			[
+				"devicenew",
+				"app/scripts/controllers/DeviceNewCtrl.js"
+			],
+			[
 				"signup",
 				"app/scripts/controllers/SignupCtrl.js"
 			],
@@ -1079,14 +1322,6 @@
 			[
 				"main.h",
 				"app/views/partials/main.html"
-			],
-			[
-				"index",
-				"app/views/index.html"
-			],
-			[
-				"app",
-				"app/scripts/app.js"
 			],
 			[
 				"cons",
@@ -1225,10 +1460,6 @@
 				"app/views/pinaple.slices.html"
 			],
 			[
-				"slicenew",
-				"app/scripts/controllers/SliceNewCtrl.js"
-			],
-			[
 				"slice.new",
 				"app/views/slice.new.html"
 			],
@@ -1277,10 +1508,6 @@
 				"app/views/device.new.html"
 			],
 			[
-				"devicenew",
-				"app/scripts/controllers/DeviceNewCtrl.js"
-			],
-			[
 				"devices",
 				"app/scripts/controllers/DevicesCtrl.js"
 			],
@@ -1323,10 +1550,6 @@
 			[
 				"devicesre",
 				"app/scripts/repositories/DevicesRepoSvc.js"
-			],
-			[
-				"sign",
-				"app/scripts/controllers/SignupCtrl.js"
 			],
 			[
 				"signu",
@@ -1547,10 +1770,6 @@
 			[
 				"subaccount.mo",
 				"app/scripts/controllers/subaccount.modal.js"
-			],
-			[
-				"channel.js",
-				"app/scripts/services/channel.js"
 			]
 		],
 		"width": 0.0
