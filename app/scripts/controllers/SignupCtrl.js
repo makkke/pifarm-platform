@@ -1,6 +1,6 @@
 'use strict';
 
-pifarmApp
+angular.module('pifarmApp')
   .controller('SignupCtrl',
   ['$scope', '$window', '$location', 'AuthSvc', 'ApiErrorSvc', 'AccountValidatorSvc',
   function ($scope, $window, $location, AuthSvc, ApiErrorSvc, AccountValidator) {
@@ -21,7 +21,7 @@ pifarmApp
         $scope.loading = true;
         $scope.error = '';
         
-        if( !AccountValidator.check_password_length( account.password ) ) {
+        if( ! AccountValidator.check_password_length(account.password) ) {
           $scope.loading = false;
           $scope.show_error( 'min' );
           return;

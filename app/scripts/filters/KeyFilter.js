@@ -1,6 +1,6 @@
 'use strict';
 
-pifarmApp
+angular.module('pifarmApp')
   .filter('keyFilter', [function () {
     
     return function (key) {

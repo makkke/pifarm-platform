@@ -1,6 +1,6 @@
 'use strict';
 
-pifarmApp
+angular.module('pifarmApp')
   .controller('NavCtrl',
   ['$scope', '$location', 'AuthSvc',
   function ($scope, $location, AuthSvc) {

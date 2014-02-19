@@ -1,6 +1,6 @@
 'use strict';
 
-pifarmApp
+angular.module('pifarmApp')
   .controller('DeviceCtrl',
   ['$scope',
   function ($scope) {

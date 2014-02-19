@@ -1,6 +1,6 @@
 'use strict';
 
-pifarmApp
+angular.module('pifarmApp')
   .factory('PinaplesRepoSvc',
   ['Restangular',
   function (Restangular) {

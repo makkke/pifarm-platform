@@ -1,6 +1,6 @@
 'use strict';
 
-pifarmApp
+angular.module('pifarmApp')
   .controller('AuthCtrl',
   ['$scope', 'Config',
   function ($scope, Config) {

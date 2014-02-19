@@ -1,6 +1,6 @@
 'use strict';
 
-pifarmApp
+angular.module('pifarmApp')
   .controller('PinapleNewCtrl',
   ['$scope', '$window', '$location', '$log', 'DevicesRepoSvc', 'PinaplesRepoSvc', 'ApiErrorSvc',
   function ($scope, $window, $location, $log, DevicesRepoSvc, PinaplesRepoSvc, ApiErrorSvc) {
