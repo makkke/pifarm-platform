@@ -9,7 +9,8 @@ angular.module('pifarmApp')
       if( !AuthSvc.account ) {
         return 'Sponge Bob';
       }
-      return AuthSvc.account.first_name + ' ' + AuthSvc.account.last_name;
+
+      return AuthSvc.account.name;
     };
 
     $scope.logout = function () {

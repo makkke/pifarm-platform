@@ -2,7 +2,7 @@
 
 angular.module('pifarmApp')
   .factory('AuthSvc', ['$http', '$q', '$cookies', 'Constants', 'Restangular', 'AccountsRepoSvc', 'LocalStorageSvc',
-    function ($http, $q, $cookies, Constants, Restangular, AccountsRepoSvc, LocalStorage) {
+    function ($http, $q, $cookies, Constants, Restangular, AccountsRepoSvc, LocalStorageSvc) {
 
     var Auth = {};
 
@@ -33,8 +33,9 @@ angular.module('pifarmApp')
         password: credentials.password
       })
       .success(function (account) {
+        console.log(account);
         var session_token = account.session_token;
-        LocalStorage.set( Constants.session_token_name, session_token );
+        LocalStorageSvc.set( Constants.session_token_name, session_token );
         that._set_http_headers( session_token );
         that._set_user_account( account );
 
@@ -48,12 +49,12 @@ angular.module('pifarmApp')
     };
 
     Auth.logout = function () {
-      LocalStorage.remove( Constants.session_token_name );
+      LocalStorageSvc.remove( Constants.session_token_name );
       delete this.account; 
     };
 
     Auth.set_session_token = function () {
-      this._set_http_headers( LocalStorage.get( Constants.session_token_name ) );
+      this._set_http_headers( LocalStorageSvc.get( Constants.session_token_name ) );
     };
 
     Auth.update_user_account = function () {
@@ -74,7 +75,7 @@ angular.module('pifarmApp')
     };
 
     Auth.logged_in = function () {
-      var session_token = LocalStorage.get( Constants.session_token_name );
+      var session_token = LocalStorageSvc.get( Constants.session_token_name );
       if( session_token ) {
         return session_token.length >= Constants.min_session_token_length;
       }
