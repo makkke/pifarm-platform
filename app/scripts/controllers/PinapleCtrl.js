@@ -1,6 +1,6 @@
 'use strict';
 
-pifarmApp
+angular.module('pifarmApp')
   .controller('PinapleCtrl',
   ['$scope', 'pinaple',
   function ($scope, pinaple) {

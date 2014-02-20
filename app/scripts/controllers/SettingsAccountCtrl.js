@@ -1,6 +1,6 @@
 'use strict';
 
-pifarmApp
+angular.module('pifarmApp')
   .controller('SettingsAccountCtrl',
   ['$scope', '$window',
   function ($scope, $window) {

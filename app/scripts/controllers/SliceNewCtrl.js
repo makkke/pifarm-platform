@@ -1,6 +1,6 @@
 'use strict';
 
-pifarmApp
+angular.module('pifarmApp')
   .controller('SliceNewCtrl',
   ['$scope', '$window', '$stateParams', '$log', '$location', 'DataSvc', 'SlicesRepoSvc', 'ApiErrorSvc',
   function ($scope, $window, $stateParams, $log, $location, DataSvc, SlicesRepoSvc, ApiErrorSvc) {

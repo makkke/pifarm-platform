@@ -1,6 +1,6 @@
 'use strict';
 
-var pifarmApp = angular.module('pifarmApp', [
+angular.module('pifarmApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',

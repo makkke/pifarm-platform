@@ -1,6 +1,6 @@
 'use strict';
 
-pifarmApp
+angular.module('pifarmApp')
   .factory('AuthSvc', ['$http', '$q', '$cookies', 'Constants', 'Restangular', 'AccountsRepoSvc', 'LocalStorageSvc',
     function ($http, $q, $cookies, Constants, Restangular, AccountsRepoSvc, LocalStorageSvc) {
 
@@ -28,11 +28,12 @@ pifarmApp
       var that = this;
       var deferred = $q.defer();
 
-      $http.post('/_login', {
+      $http.post('/api/login', {
         username: credentials.username,
         password: credentials.password
       })
       .success(function (account) {
+        console.log(account);
         var session_token = account.session_token;
         LocalStorageSvc.set( Constants.session_token_name, session_token );
         that._set_http_headers( session_token );
