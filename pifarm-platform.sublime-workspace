@@ -520,10 +520,26 @@
 	"buffers":
 	[
 		{
-			"file": "app/scripts/directives/LoadingBtn.js",
+			"file": "app/views/partials/device-new.html",
 			"settings":
 			{
-				"buffer_size": 551,
+				"buffer_size": 2886,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/controllers/DeviceNewCtrl.js",
+			"settings":
+			{
+				"buffer_size": 2186,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/scripts/services/DataSvc.js",
+			"settings":
+			{
+				"buffer_size": 2185,
 				"line_ending": "Unix"
 			}
 		},
@@ -536,82 +552,10 @@
 			}
 		},
 		{
-			"file": "app/views/partials/login.html",
-			"settings":
-			{
-				"buffer_size": 1882,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/app.js",
-			"settings":
-			{
-				"buffer_size": 6869,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/repositories/DevicesRepoSvc.js",
-			"settings":
-			{
-				"buffer_size": 461,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/repositories/PinaplesRepoSvc.js",
-			"settings":
-			{
-				"buffer_size": 554,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/repositories/SlicesRepoSvc.js",
-			"settings":
-			{
-				"buffer_size": 593,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/filters/KeyFilter.js",
-			"settings":
-			{
-				"buffer_size": 305,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/controllers/LoginCtrl.js",
-			"settings":
-			{
-				"buffer_size": 1598,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/scripts/controllers/SignupCtrl.js",
 			"settings":
 			{
 				"buffer_size": 1667,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/services/AuthSvc.js",
-			"settings":
-			{
-				"buffer_size": 2749,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/scripts/repositories/AccountsRepoSvc.js",
-			"settings":
-			{
-				"buffer_size": 467,
 				"line_ending": "Unix"
 			}
 		}
@@ -760,9 +704,27 @@
 	},
 	"file_history":
 	[
+		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/controllers/index.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/app.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/index.html",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/controllers/api.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/NavCtrl.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/nav.html",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/main.html",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/LocalStorageSvc.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/AuthSvc.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SignupCtrl.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/repositories/AccountsRepoSvc.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/filters/KeyFilter.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/repositories/SlicesRepoSvc.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/repositories/PinaplesRepoSvc.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/repositories/DevicesRepoSvc.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/login.html",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/signup.html",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/directives/LoadingBtn.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/LoginCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/ApiErrorSvc.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/AccountValidatorSvc.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/AuthSvc.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SettingsAccountCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SettingsKeysCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SettingsNotificationsCtrl.js",
@@ -778,8 +740,6 @@
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/DevicesCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/AuthCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/ForgotCtrl.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SignupCtrl.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/LoginCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SliceNewCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SlicesCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/PinapleDataCtrl.js",
@@ -787,11 +747,7 @@
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/PinapleCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/PinapleNewCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/PinaplesCtrl.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/NavCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/MainCtrl.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/app.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/controllers/api.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/index.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/.gitignore",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/bower_components/bootstrap-sass/lib/bootstrap.scss",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/bower_components/bootstrap-sass/lib/_panels.scss",
@@ -813,12 +769,9 @@
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/config.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/express.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/routes.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/controllers/index.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/env/test.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/auth.html",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/LocalStorageSvc.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/DataSvc.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/main.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/env/all.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/.jshintrc",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/.jshintrc",
@@ -878,16 +831,7 @@
 		"/Users/vivanov/repos/pifarm/pifarm-api/app/config/database.php",
 		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/services/validators/Validator.php",
 		"/Users/vivanov/repos/pifarm/pifarm-api/app/enums/BaseEnum.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/enums/CustomError.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/enums/CustomErrorType.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/enums/HttpResponseStatus.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/enums/DeviceType.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/enums/LoginType.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/storage/account/EloquentUserRepository.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/enums/BaseEnum.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/enums/CustomError.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/enums/CustomErrorType.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/enums/DeviceType.php"
+		"/Users/vivanov/repos/pifarm/pifarm-api/app/enums/CustomError.php"
 	],
 	"find":
 	{
@@ -920,6 +864,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"LocalStorage",
+			"nav",
+			"stripped",
 			"Constants",
 			"LocalStorageSvc",
 			"$log",
@@ -1044,10 +991,7 @@
 			"mod '",
 			"passport",
 			"idebar",
-			"id",
-			"sid",
-			"add",
-			"multiply"
+			"id"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1070,28 +1014,56 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/scripts/directives/LoadingBtn.js",
+					"file": "app/views/partials/device-new.html",
 					"settings":
 					{
-						"buffer_size": 551,
+						"buffer_size": 2886,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								236,
-								236
+								1788,
+								1788
 							]
 						],
 						"settings":
 						{
 							"is_xml": false,
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 91.0,
+						"translation.y": 639.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/scripts/controllers/DeviceNewCtrl.js",
+					"settings":
+					{
+						"buffer_size": 2186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1103,7 +1075,41 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
+					"file": "app/scripts/services/DataSvc.js",
+					"settings":
+					{
+						"buffer_size": 2185,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								700,
+								700
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 7.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
 					"file": "app/views/partials/signup.html",
 					"settings":
 					{
@@ -1114,8 +1120,8 @@
 						"selection":
 						[
 							[
-								1451,
-								1451
+								1772,
+								1851
 							]
 						],
 						"settings":
@@ -1124,214 +1130,14 @@
 							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/partials/login.html",
-					"settings":
-					{
-						"buffer_size": 1882,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								312,
-								312
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 91.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/scripts/app.js",
-					"settings":
-					{
-						"buffer_size": 6869,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1589,
-								1589
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 902.0,
+						"translation.x": 89.0,
+						"translation.y": 343.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "app/scripts/repositories/DevicesRepoSvc.js",
-					"settings":
-					{
-						"buffer_size": 461,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								42,
-								42
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/scripts/repositories/PinaplesRepoSvc.js",
-					"settings":
-					{
-						"buffer_size": 554,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								42,
-								42
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/scripts/repositories/SlicesRepoSvc.js",
-					"settings":
-					{
-						"buffer_size": 593,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								42,
-								42
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/scripts/filters/KeyFilter.js",
-					"settings":
-					{
-						"buffer_size": 305,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								42,
-								42
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/scripts/controllers/LoginCtrl.js",
-					"settings":
-					{
-						"buffer_size": 1598,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1141,
-								1141
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 2,
-			"sheets":
-			[
-				{
-					"buffer": 9,
 					"file": "app/scripts/controllers/SignupCtrl.js",
 					"settings":
 					{
@@ -1342,64 +1148,8 @@
 						"selection":
 						[
 							[
-								718,
-								718
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 73.0,
-						"translation.y": 208.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "app/scripts/services/AuthSvc.js",
-					"settings":
-					{
-						"buffer_size": 2749,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								499,
-								499
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "app/scripts/repositories/AccountsRepoSvc.js",
-					"settings":
-					{
-						"buffer_size": 467,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								42,
-								42
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1474,16 +1224,52 @@
 		"selected_items":
 		[
 			[
-				"api",
-				"app/scripts/services/ApiErrorSvc.js"
+				"data",
+				"app/scripts/services/DataSvc.js"
 			],
 			[
-				"login",
-				"app/scripts/controllers/LoginCtrl.js"
+				"devicen",
+				"app/scripts/controllers/DeviceNewCtrl.js"
+			],
+			[
+				"sign",
+				"app/scripts/controllers/SignupCtrl.js"
+			],
+			[
+				"index",
+				"lib/controllers/index.js"
+			],
+			[
+				"api",
+				"lib/controllers/api.js"
+			],
+			[
+				"device.new",
+				"app/views/partials/device.new.html"
 			],
 			[
 				"app",
 				"app/scripts/app.js"
+			],
+			[
+				"nav",
+				"app/scripts/controllers/NavCtrl.js"
+			],
+			[
+				"local",
+				"app/scripts/services/LocalStorageSvc.js"
+			],
+			[
+				"authsvc",
+				"app/scripts/services/AuthSvc.js"
+			],
+			[
+				"main",
+				"app/views/partials/main.html"
+			],
+			[
+				"login",
+				"app/scripts/controllers/LoginCtrl.js"
 			],
 			[
 				"auth",
@@ -1522,10 +1308,6 @@
 				"app/scripts/controllers/ForgotCtrl.js"
 			],
 			[
-				"sign",
-				"app/scripts/controllers/SignupCtrl.js"
-			],
-			[
 				"pinaplese",
 				"app/scripts/controllers/PinapleSettingsCtrl.js"
 			],
@@ -1554,24 +1336,8 @@
 				"app/scripts/controllers/PinaplesCtrl.js"
 			],
 			[
-				"nav",
-				"app/scripts/controllers/NavCtrl.js"
-			],
-			[
-				"main",
-				"app/scripts/controllers/MainCtrl.js"
-			],
-			[
 				"loginct",
 				"app/scripts/controllers/LoginCtrl.js"
-			],
-			[
-				"authsvc",
-				"app/scripts/services/AuthSvc.js"
-			],
-			[
-				"index",
-				"app/views/index.html"
 			],
 			[
 				"slicenew",
@@ -1584,10 +1350,6 @@
 			[
 				"consta",
 				"app/scripts/modules/Constants.js"
-			],
-			[
-				"data",
-				"app/scripts/services/DataSvc.js"
 			],
 			[
 				"localsto",
@@ -1786,10 +1548,6 @@
 				"app/views/farm.html"
 			],
 			[
-				"device.new",
-				"app/views/device.new.html"
-			],
-			[
 				"pinaple.new",
 				"app/views/pinaple.new.html"
 			],
@@ -1976,14 +1734,6 @@
 			[
 				"import.modal",
 				"app/scripts/controllers/import.modal.js"
-			],
-			[
-				"device.js",
-				"app/scripts/services/device.js"
-			],
-			[
-				"device.modal",
-				"app/scripts/controllers/device.modal.js"
 			]
 		],
 		"width": 0.0

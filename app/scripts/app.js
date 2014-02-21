@@ -89,7 +89,7 @@ angular.module('pifarmApp', [
       })
       .state('main.new_pinaple', {
         url: '/pinaples/new',
-        templateUrl: 'partials/pinaple.new',
+        templateUrl: 'partials/pinaple-new',
         controller: 'PinapleNewCtrl',
       })
       .state('main.pinaple', {
@@ -116,31 +116,31 @@ angular.module('pifarmApp', [
       })
       .state('main.pinaple.dashboard', {
         url: '/dashboard',
-        templateUrl: 'partials/pinaple.dashboard',
+        templateUrl: 'partials/pinaple-dashboard',
         controller: 'PinapleDashboardCtrl',
       })
 
       .state('main.pinaple.data', {
         url: '/data',
-        templateUrl: 'partials/pinaple.data',
+        templateUrl: 'partials/pinaple-data',
         controller: 'PinapleDataCtrl',
       })
 
       // slices
       .state('main.pinaple.slices', {
         url: '/slices',
-        templateUrl: 'partials/pinaple.slices',
+        templateUrl: 'partials/pinaple-slices',
         controller: 'SlicesCtrl',
       })
       .state('main.new_slice', {
         url: '/pinaples/:pinaple_id/slices/new',
-        templateUrl: 'partials/slice.new',
+        templateUrl: 'partials/slice-new',
         controller: 'SliceNewCtrl',
       })
 
       .state('main.pinaple.settings', {
         url: '/settings',
-        templateUrl: 'partials/pinaple.settings',
+        templateUrl: 'partials/pinaple-settings',
         controller: 'PinapleSettingsCtrl',
       })
 
@@ -152,28 +152,44 @@ angular.module('pifarmApp', [
       })
       .state('main.new_device', {
         url: '/devices/new',
-        templateUrl: 'partials/device.new',
+        templateUrl: 'partials/device-new',
         controller: 'DeviceNewCtrl',
       })
       .state('main.device', {
         abstract: true,
         url: '/devices/:device_id',
         templateUrl: 'partials/device',
-        controller: 'DeviceCtrl'
+        controller: 'DeviceCtrl',
+        resolve: {
+          device: function ($stateParams, $q, DevicesRepoSvc) {
+            var deferred = $q.defer();
+
+            DevicesRepoSvc.find( $stateParams.device_id ).then(
+              function (device) {
+                deferred.resolve( device );
+              },
+              function (error, status) {
+                console.log( 'error:', error );
+                deferred.reject( error );
+              });
+
+            return deferred.promise;
+          }
+        }
       })
       .state('main.device.general', {
         url: '/general',
-        templateUrl: 'partials/device.general',
+        templateUrl: 'partials/device-general',
         controller: 'DeviceGeneralCtrl',
       })
       .state('main.device.delete', {
         url: '/delete',
-        templateUrl: 'partials/device.delete',
+        templateUrl: 'partials/device-delete',
         controller: 'DeviceDeleteCtrl',
       })
       .state('main.device.key', {
         url: '/key',
-        templateUrl: 'partials/device.key',
+        templateUrl: 'partials/device-key',
         controller: 'DeviceKeyCtrl',
       })
 
@@ -186,27 +202,27 @@ angular.module('pifarmApp', [
       })
       .state('main.settings.profile', {
         url: '/profile',
-        templateUrl: 'partials/settings.profile',
+        templateUrl: 'partials/settings-profile',
         controller: 'SettingsProfileCtrl',
       })
       .state('main.settings.account', {
         url: '/account',
-        templateUrl: 'partials/settings.account',
+        templateUrl: 'partials/settings-account',
         controller: 'SettingsAccountCtrl',
       })
       .state('main.settings.keys', {
         url: '/keys',
-        templateUrl: 'partials/settings.keys',
+        templateUrl: 'partials/settings-keys',
         controller: 'SettingsKeysCtrl',
       })
       .state('main.settings.notifications', {
         url: '/notifications',
-        templateUrl: 'partials/settings.notifications',
+        templateUrl: 'partials/settings-notifications',
         controller: 'SettingsNotificationsCtrl',
       })
       .state('main.settings.delete_account', {
         url: '/delete',
-        templateUrl: 'partials/settings.delete',
+        templateUrl: 'partials/settings-delete',
         controller: 'SettingsDeleteAccountCtrl',
       });
 

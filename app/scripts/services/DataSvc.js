@@ -17,7 +17,7 @@ angular.module('pifarmApp')
       device_types: [
         { key: 'raspberry_pi',  value: 'Raspberry Pi' },
         { key: 'arduino',       value: 'Arduino' },
-        { key: 'custom',        value: 'Custom' }
+        { key: 'computer',      value: 'Computer' }
       ],
 
       slice_directions: [

@@ -16,8 +16,16 @@ angular.module('pifarmApp')
       return Restangular.all( route ).getList();
     };
 
+    Repo.find = function (id) {
+      return Restangular.one( route, id ).get();
+    };
+
     Repo.create = function (device) {
       return Restangular.all( route ).post( device );
+    };
+
+    Repo.remove = function (device) {
+      return Restangular.one( route, device.id ).remove();
     };
 
     return Repo;

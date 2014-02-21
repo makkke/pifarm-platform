@@ -2,7 +2,9 @@
 
 angular.module('pifarmApp')
   .controller('DeviceCtrl',
-  ['$scope',
-  function ($scope) {
+  ['$scope', 'device',
+  function ($scope, device) {
+
+    $scope.device = device;
 
   }]);

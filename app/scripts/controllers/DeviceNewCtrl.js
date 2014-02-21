@@ -33,7 +33,7 @@ angular.module('pifarmApp')
           },
           function (error, status) {
             $scope.stop_spinner();
-            if( ApiErrorSvc.is_server_error( status ) ) {
+            if( ApiErrorSvc.server_error( status ) ) {
               $scope.show_error( 'server' );
               return;
             }
