@@ -29,7 +29,7 @@
               <small>optional</small>
             </label>
             <div class="col-sm-10">
-              <input type="text" class="form-control input-lg" placeholder="Serial number" ng-model="device.serial_number">
+              <input type="text" class="form-control input-lg" placeholder="Serial number" maxlength="64" ng-model="device.serial_number">
               <span class="help-block" ng-switch-when="format">Should contain only alpha-numeric characters, as well as dashes and underscores.</span>
             </div>
           </div>
@@ -40,7 +40,7 @@
               <small>optional</small>
             </label>
             <div class="col-sm-10">
-              <textarea class="form-control input-lg" rows="5" placeholder="About your device" ng-model="device.description"></textarea>
+              <textarea class="form-control input-lg" rows="5" placeholder="About your device" maxlength="128" ng-model="device.description"></textarea>
             </div>
           </div>
           

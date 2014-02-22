@@ -50,12 +50,12 @@
 					  	<a class="link-style" style="text-decoration:none;" ng-href="#/devices/{{device.id}}/general"><p class="margin-0" ng-bind="device.name"></p></a>
 					  </div>
 					  <div class="col-xs-3">
-					  	<p class="margin-0" ng-bind="device.serial_number"></p>
+					  	<p class="margin-0" ng-bind="device.serial_number | keyFilter"></p>
 					  </div>
 					  <div class="col-xs-2">
 					  	<p class="margin-0"><span ng-bind="device.key | keyFilter"></span> </p>
 					  </div>
-					  <div class="col-xs-2 text-center">
+					  <div class="col-xs-2 col-md-2 text-center">
 					  	<i class="fa fa-files-o copy-icon" clip-copy="device.key" clip-click="change_text(device)"> {{device.copy_text}}</i>
 					  </div>
 					</div>

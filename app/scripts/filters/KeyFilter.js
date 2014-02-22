@@ -4,7 +4,7 @@ angular.module('pifarmApp')
   .filter('keyFilter', [function () {
     
     return function (key) {
-      var MAX_LENGTH = 8;
+      var MAX_LENGTH = 18;
 
       if( angular.isUndefined( key ) ) return;
 
