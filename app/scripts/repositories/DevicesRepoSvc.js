@@ -24,6 +24,10 @@ angular.module('pifarmApp')
       return Restangular.all( route ).post( device );
     };
 
+    Repo.update = function (device) {
+      return device.put();
+    };
+
     Repo.remove = function (device) {
       return Restangular.one( route, device.id ).remove();
     };

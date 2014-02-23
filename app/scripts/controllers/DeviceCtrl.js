@@ -1,10 +1,13 @@
 'use strict';
 
 angular.module('pifarmApp')
-  .controller('DeviceCtrl',
-  ['$scope', 'device',
-  function ($scope, device) {
+.controller('DeviceCtrl',
+['$scope', '$window', 'device',
+function ($scope, $window, device) {
 
-    $scope.device = device;
+  $scope.title = 'Edit Your Device | Pinaple Farm';
+  $window.document.title = $scope.title;
+  
+  $scope.device = device;
 
-  }]);
+}]);

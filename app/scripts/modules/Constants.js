@@ -1,8 +1,13 @@
 'use strict';
 
 angular.module('pifarm.constants', [])
-  .constant('Constants', {
-    min_password_length: 6,
-    min_session_token_length: 32,
-    session_token_name: 'pifarm.session'
-  });
+.constant('Constants', {
+
+  session_token_name: 'pifarm.session',
+  min_session_token_length: 32,
+
+  min_password_length: 6,
+
+  max_serial_number_length: 64
+  
+});
