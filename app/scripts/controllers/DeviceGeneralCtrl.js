@@ -11,7 +11,7 @@ function ($scope, $location, DevicesRepo, DeviceValidator, Data, ApiErrorSvc, de
   $scope.error = '';
   $scope.types = Data.device_types;
 
-  $scope.save = function(form, device) {
+  $scope.update = function(form, device) {
     $scope.error = '';
     
     if( form.$valid ) {

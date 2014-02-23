@@ -198,7 +198,23 @@ angular.module('pifarmApp', [
         abstract: true,
         url: '/settings',
         templateUrl: 'partials/settings',
-        controller: 'SettingsCtrl'
+        controller: 'SettingsCtrl',
+        resolve: {
+          account: function ($stateParams, $q, AccountsRepoSvc) {
+            var deferred = $q.defer();
+
+            AccountsRepoSvc.me().then(
+              function (account) {
+                deferred.resolve( account );
+              },
+              function (error, status) {
+                console.log( 'error:', error );
+                deferred.reject( error );
+              });
+
+            return deferred.promise;
+          }
+        }
       })
       .state('main.settings.profile', {
         url: '/profile',

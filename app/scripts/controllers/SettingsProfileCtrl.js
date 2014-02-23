@@ -1,11 +1,25 @@
 'use strict';
 
 angular.module('pifarmApp')
-  .controller('SettingsProfileCtrl',
-  ['$scope', '$window',
-  function ($scope, $window) {
+.controller('SettingsProfileCtrl',
+['$scope', '$window', 'AccountsRepoSvc', 'account',
+function ($scope, $window, AccountsRepo, account) {
 
-    $scope.title = 'Profile Settings | Pinaple Farm';
-    $window.document.title = $scope.title;
-    
-  }]);
+  $scope.account = account;
+  $scope.loading = false;
+
+  $scope.update = function (form, account) {
+    if( form.$valid ) {
+      $scope.loading = true;
+
+      AccountsRepo.update(account).then(
+      function (account) {
+        $scope.loading = false;        
+      },
+      function (error, code) {
+        $scope.loading = false;
+      });
+    }
+  };
+  
+}]);

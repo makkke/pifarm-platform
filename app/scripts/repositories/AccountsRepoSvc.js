@@ -24,6 +24,10 @@ angular.module('pifarmApp')
       return Restangular.all( route ).all('check').post({password: password});
     };
 
+    Repo.update = function (account) {
+      return account.put();
+    };
+
     return Repo;
 
   }]);

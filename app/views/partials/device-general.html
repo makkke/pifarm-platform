@@ -1,65 +1,61 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
+<div class="panel panel-default">
 
-      <div class="panel-heading"> 
-        <h3 class="panel-title">General Info</h3>
-      </div><!-- /.panel heading -->
+  <div class="panel-heading"> 
+    <h3 class="panel-title">General Info</h3>
+  </div><!-- /.panel heading -->
 
-      <div class="panel-body">
-        <form class="form-horizontal" role="form" name="deviceForm" ng-submit="save(deviceForm, device)" ng-switch on="error">
-          <div class="form-group">
-            <label for="name" class="col-md-2 control-label">Device Name</label>
-            <div class="col-md-10">
-              <input type="text" class="form-control input-lg" required maxlength="32" placeholder="Name" ng-model="device.name">
-            </div>
+  <div class="panel-body">
+    <form class="form-horizontal" role="form" name="deviceForm" ng-submit="update(deviceForm, device)" ng-switch on="error">
+      <div class="form-group">
+        <label for="name" class="col-md-2 control-label">Device Name</label>
+        <div class="col-md-10">
+          <input type="text" class="form-control input-lg" required maxlength="32" placeholder="Name" ng-model="device.name">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="type" class="col-md-2 control-label">Device Type</label>
+        <div class="col-md-10">
+          <select class="form-control input-lg" ng-options="type.key as type.value for type in types" ng-model="device.type">
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-error': error == 'format' }">
+        <label for="serialNumber" class="col-md-2 control-label">
+          Serial Number<br>
+          <small>optional</small>
+        </label>
+        <div class="col-md-10">
+          <input type="text" class="form-control input-lg" placeholder="Serial number" maxlength="64" ng-model="device.serial_number">
+          <span class="help-block" ng-switch-when="format">Should contain only alpha-numeric characters, as well as dashes and underscores.</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label">
+          Description<br>
+          <small>optional</small>
+        </label>
+        <div class="col-md-10">
+          <textarea class="form-control input-lg" rows="5" placeholder="About your device" maxlength="128" ng-model="device.description"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group" ng-switch-when="server">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="alert alert-danger">
+            <strong>Oops</strong>, something happened with our server. Please try again.
           </div>
+        </div>
+      </div>
 
-          <div class="form-group">
-            <label for="type" class="col-md-2 control-label">Device Type</label>
-            <div class="col-md-10">
-              <select class="form-control input-lg" ng-options="type.key as type.value for type in types" ng-model="device.type">
-              </select>
-            </div>
-          </div>
+      <div class="form-group margin-bottom-0">
+        <div class="col-md-offset-2 col-md-3">
+            <button type="submit" class="btn btn-success btn-lg btn-block" loading-btn loading="loading" text="Update" loading-text="Updating...">Update</button>
+        </div>
+      </div>
 
-          <div class="form-group" ng-class="{ 'has-error': error == 'format' }">
-            <label for="serialNumber" class="col-md-2 control-label">
-              Serial Number<br>
-              <small>optional</small>
-            </label>
-            <div class="col-md-10">
-              <input type="text" class="form-control input-lg" placeholder="Serial number" maxlength="64" ng-model="device.serial_number">
-              <span class="help-block" ng-switch-when="format">Should contain only alpha-numeric characters, as well as dashes and underscores.</span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-md-2 control-label">
-              Description<br>
-              <small>optional</small>
-            </label>
-            <div class="col-md-10">
-              <textarea class="form-control input-lg" rows="5" placeholder="About your device" maxlength="128" ng-model="device.description"></textarea>
-            </div>
-          </div>
-
-          <div class="form-group" ng-switch-when="server">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="alert alert-danger">
-                <strong>Oops</strong>, something happened with our server. Please try again.
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group margin-bottom-0">
-            <div class="col-md-offset-2 col-md-3">
-                <button type="submit" class="btn btn-success btn-lg btn-block" loading-btn loading="loading" text="Save" loading-text="Saving...">Save</button>
-            </div>
-          </div>
-
-        </form><!-- /.form-horizontal -->
-      </div><!-- /.panel-body -->
-    </div><!-- /.panel -->
-  </div>
-</div><!-- /.row -->
+    </form><!-- /.form-horizontal -->
+  </div><!-- /.panel-body -->
+</div><!-- /.panel -->
