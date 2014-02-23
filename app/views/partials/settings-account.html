@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-md-12">
     <div class="panel panel-default">
 
       <div class="panel-heading"> 
@@ -7,54 +7,44 @@
       </div>
 
       <div class="panel-body">
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" name="passwordForm" ng-submit="update(passwordForm, password)">
           <div class="form-group">
-            <label for="inputName" class="col-sm-2 control-label">Old password</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control input-lg" placeholder="">
+            <label for="oldPassword" class="col-md-2 control-label">Old password</label>
+            <div class="col-md-10">
+              <input type="password" class="form-control input-lg" required ng-model="password.old">
             </div>
-          </div><!-- /.old password -->
+          </div>
 
           <div class="form-group">
-            <label for="inputSerialNumber" class="col-sm-2 control-label">New password
+            <label for="newPassword" class="col-md-2 control-label">New password
             </label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control input-lg" placeholder="">
+            <div class="col-md-10">
+              <input type="password" class="form-control input-lg" required ng-model="password.new">
             </div>
-          </div><!-- /.new_password -->  
-
-          <div class="form-group">
-            <label for="inputSerialNumber" class="col-sm-2 control-label">Confirm new password
-            </label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control input-lg" placeholder="">
-            </div>
-          </div><!-- /.confirm password --> 
-
+          </div>
 
           <div class="form-group margin-bottom-0">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="col-md-offset-2 col-md-10">
               <div class="row">
-                <div class="col-xs-4">
-                  <button type="button" class="btn btn-success btn-lg btn-block">Update Password
-                  </button>
+                <div class="col-md-4">
+                  <button type="submit" class="btn btn-success btn-lg btn-block" loading-btn loading="loading" text="Update Password" loading-text="Updating...">Update Password</button>
                 </div>
-                <div class="col-xs-3">
+                <div class="col-md-3">
                 	<a href="" class="line-height-45"><em>Forgot Password?</em></a>
                 </div>
               </div>
             </div>
-          </div><!-- /.btn upfate password -->
+          </div>
 
-        </form><!-- /.form-horizontal -->
+        </form>
       </div><!-- /.panel-body -->
 
     </div><!-- /.panel -->
   </div>
 </div><!-- /.row -->
-
+<!--
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-md-12">
     <div class="panel panel-default">
 
       <div class="panel-heading"> 
@@ -65,44 +55,45 @@
         <form class="form-horizontal" role="form">
 
           <div class="form-group">
-            <div class="col-sm-12">
-            	<div class="col-xs-6 line-height-45">
+            <div class="col-md-12">
+            	<div class="col-md-6 line-height-45">
             		You've linked your Githup account
             	</div>
-            	<div class="col-xs-3">
+            	<div class="col-md-3">
             		<button type="button" class="btn btn-default btn-block"><i class="fa fa-github-alt"></i>&nbsp; Unlink Account
             		</button>
             	</div>
             </div>
-          </div><!-- /.github -->
+          </div>
 
           <div class="form-group">
-            <div class="col-sm-12">
-            	<div class="col-xs-6 line-height-45">
+            <div class="col-md-12">
+            	<div class="col-md-6 line-height-45">
             		You've linked your Facebook account
             	</div>
-            	<div class="col-xs-3">
+            	<div class="col-md-3">
             		<button type="button" class="btn btn-default btn-block"><i class="fa fa-facebook-square"></i>&nbsp; Unlink Account
             		</button>
             	</div>
             </div>
-          </div><!-- /.facebook -->
+          </div>
 
           <div class="form-group">
-            <div class="col-sm-12">
-            	<div class="col-xs-6 line-height-45">
+            <div class="col-md-12">
+            	<div class="col-md-6 line-height-45">
             		<a href=""><strong>Twitter account</strong></a>
             	</div>
-              <div class="col-xs-3">
+              <div class="col-md-3">
                 <button type="button" class="btn btn-primary btn-block"><i class="fa fa-twitter"></i>&nbsp; Link Account
                 </button>
               </div>
             </div>
-          </div><!-- /.twitter -->
+          </div>
 
-        </form><!-- /.form-horizontal -->
-      </div><!-- /.panel-body -->
+        </form>
+      </div>
 
-    </div><!-- /.panel -->
+    </div>
   </div>
-</div><!-- /.row -->
+</div>
+-->
