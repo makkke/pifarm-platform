@@ -20,6 +20,10 @@ angular.module('pifarmApp')
       return Restangular.one( route, 'me' ).get();
     };
 
+    Repo.check_password = function (password) {
+      return Restangular.all( route ).all('check').post({password: password});
+    };
+
     return Repo;
 
   }]);

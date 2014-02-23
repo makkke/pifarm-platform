@@ -24,6 +24,10 @@ angular.module('pifarmApp')
       return Restangular.all( route ).post( pinaple );
     };
 
+    Repo.remove = function (pinaple) {
+      return Restangular.one( route, pinaple.id ).remove();
+    };
+
     return Repo;
 
   }]);
