@@ -1,19 +1,15 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Panel title</h3>
+    <h3 class="panel-title">Device Access Keys</h3>
   </div>
 
   <div class="panel-body">
-    <div class="well">
-    	<div class="row">
-    		<div class="col-xs-5">
-    			4e31774c976433436d1480c0976daac1
-    		</div>
-    		<div class="col-xs-2">
-    			<i class="fa fa-refresh copy-icon"></i>
-    		</div>
-    	</div>
-    </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <span class="badge"><a href ng-click="regenerate(device)"><i class="fa fa-refresh"></i> Regenerate</a></span>
+        {{device.key}}
+      </li>
+    </ul>
   </div>
   
 </div>

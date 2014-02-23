@@ -9,6 +9,10 @@ angular.module('pifarmApp')
     var route = 'devices';
 
     Restangular.extendModel( route, function (model) {
+      model.regenerate_key = function() {
+        return model.all('keys').post();
+      };
+
       return model;
     });
 
