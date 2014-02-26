@@ -11,7 +11,6 @@ angular.module('pifarmApp')
     PinaplesRepoSvc.query().then(
       function (pinaples) {
         $scope.pinaples = pinaples;
-        console.log(pinaples);
       },
       function (error, status) {
         console.log( 'error:', error );

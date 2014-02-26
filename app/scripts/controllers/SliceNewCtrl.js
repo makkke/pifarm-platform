@@ -3,13 +3,12 @@
 angular.module('pifarmApp')
   .controller('SliceNewCtrl',
   ['$scope', '$window', '$stateParams', '$log', '$location', 'DataSvc', 'SlicesRepoSvc', 'ApiErrorSvc',
-  function ($scope, $window, $stateParams, $log, $location, DataSvc, SlicesRepoSvc, ApiErrorSvc) {
+  function ($scope, $window, $stateParams, $log, $location, DataSvc, SlicesRepo, ApiErrorSvc) {
 
     $scope.title = 'Create a New Slice | Pinaple Farm';
     $window.document.title = $scope.title;
 
     $scope.loading = false;
-    $scope.button_text = 'Create Slice';
     $scope.error = '';
 
     $scope.pinaple_id = $stateParams.pinaple_id;
@@ -27,24 +26,25 @@ angular.module('pifarmApp')
       type: $scope.types[0].key
     };
 
-    $scope.add_slice = function(slice, form) {
+    $scope.create = function(form, slice) {
       if( form.$valid ) {
-        $scope.start_creating();
+        $scope.loading = true;
 
-        SlicesRepoSvc.create( slice ).then(
-          function (slice) {
-            $scope.stop_creating();
-            $location.url( 'pinaples/' + $scope.pinaple_id + '/slices' );
-          },
-          function (error, status) {
-            $scope.stop_creating();
-            if( ApiErrorSvc.is_server_error( status ) ) {
-              $scope.show_error( 'server' );
-              return;
-            }
+        SlicesRepo.create( slice ).then(
+        function (slice) {
+          $scope.loading = false;
+          $location.url( 'pinaples/' + $scope.pinaple_id + '/slices' );
+        },
+        function (error) {
+          $scope.loading = false;
 
-            $log.error( error );
-          });
+          if( ApiErrorSvc.server_error( error.status ) ) {
+            $scope.show_error( 'server' );
+          }
+          else {
+            console.log(error.status, error);
+          }
+        });
       }
     };
 
@@ -54,16 +54,6 @@ angular.module('pifarmApp')
         $scope.units = type.units;
         $scope.slice.unit = type.units[0].key;
       }
-    };
-
-    $scope.start_creating = function () {
-      $scope.button_text = 'Creating Slice...';
-      return $scope.loading = true;
-    };
-
-    $scope.stop_creating = function () {
-      $scope.button_text = 'Create Slice';
-      return $scope.loading = false;
     };
 
     /*

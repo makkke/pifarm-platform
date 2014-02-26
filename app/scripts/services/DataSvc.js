@@ -27,15 +27,15 @@ angular.module('pifarmApp')
       ],
 
       slice_types: [
-        {
-          key: 'custom',
-          value: 'Custom',
-          units: [
-            { key: 'numeric', value: 'Numeric' },
-            { key: 'text',    value: 'Text' },
-            { key: 'boolean', value: 'Boolean' }
-          ]
-        },
+        // {
+        //   key: 'custom',
+        //   value: 'Custom',
+        //   units: [
+        //     { key: 'numeric', value: 'Numeric' },
+        //     { key: 'text',    value: 'Text' },
+        //     { key: 'boolean', value: 'Boolean' }
+        //   ]
+        // },
         {
           key: 'temperature',
           value: 'Temperature',
@@ -44,22 +44,22 @@ angular.module('pifarmApp')
             { key: 'f', value: 'F' }
           ]
         },
-        {
-          key: 'pressure',
-          value: 'Pressure',
-          units: [
-            { key: 'b',   value: 'Bar' },
-            { key: 'pa',  value: 'Pascal' },
-            { key: 'hpa', value: 'Hectopascal' }
-          ]
-        },
-        {
-          key: 'humidity',
-          value: 'Humidity',
-          units: [
-            { key: 'percent', value: 'Percent(%)' }
-          ]
-        }
+        // {
+        //   key: 'pressure',
+        //   value: 'Pressure',
+        //   units: [
+        //     { key: 'b',   value: 'Bar' },
+        //     { key: 'pa',  value: 'Pascal' },
+        //     { key: 'hpa', value: 'Hectopascal' }
+        //   ]
+        // },
+        // {
+        //   key: 'humidity',
+        //   value: 'Humidity',
+        //   units: [
+        //     { key: 'percent', value: 'Percent(%)' }
+        //   ]
+        // }
       ],
 
       units: [

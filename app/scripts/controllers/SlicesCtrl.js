@@ -1,19 +1,16 @@
 'use strict';
 
 angular.module('pifarmApp')
-  .controller('SlicesCtrl',
-  ['$scope', '$window', 'SlicesRepoSvc', 'pinaple',
-  function ($scope, $window, SlicesRepoSvc, pinaple) {
+.controller('SlicesCtrl',
+['$scope', 'SlicesRepoSvc', 'pinaple',
+function ($scope, SlicesRepo, pinaple) {
 
-    $scope.title = 'Slices | Pinaple Farm';
-    $window.document.title = $scope.title;
+  SlicesRepo.all( pinaple.id ).then(
+    function (slices) {
+      $scope.slices = slices;
+    },
+    function (error, status) {
+      console.log( 'error:', error );
+    });
 
-    SlicesRepoSvc.query( pinaple.id ).then(
-      function (slices) {
-        $scope.slices = slices;
-      },
-      function (error, status) {
-        console.log( 'error:', error );
-      });
-
-  }]);
+}]);

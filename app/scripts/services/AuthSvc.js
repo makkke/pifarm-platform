@@ -33,7 +33,6 @@ angular.module('pifarmApp')
         password: credentials.password
       })
       .success(function (account) {
-        console.log(account);
         var session_token = account.session_token;
         LocalStorageSvc.set( Constants.session_token_name, session_token );
         that._set_http_headers( session_token );

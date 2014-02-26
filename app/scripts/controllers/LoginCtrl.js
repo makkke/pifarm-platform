@@ -30,19 +30,20 @@ angular.module('pifarmApp')
         }
 
         AuthSvc.login( credentials ).then(
-          function (account) {
-            $scope.loading = false;
-            $location.url( 'pinaples' );
-          },
-          function (error, status) {
-            $scope.loading = false;
-            if( ApiErrorSvc.server_error(status) ) {
-              $scope.show_error( 'server' );
-              return;
-            }
-            
+        function (account) {
+          $scope.loading = false;
+          $location.url( 'pinaples' );
+        },
+        function (error, status) {
+          $scope.loading = false;
+
+          if( error === 'Internal Server Error' ) {
+            $scope.show_error( 'server' );
+          }
+          else {
             $scope.show_error( 'invalid' );
-          });
+          }
+        });
       }
     };
 

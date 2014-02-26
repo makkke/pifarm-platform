@@ -12,7 +12,7 @@ angular.module('pifarmApp')
       return model;
     });
 
-    Repo.query = function (pinaple_id) {
+    Repo.all = function (pinaple_id) {
       return Restangular.all( route ).getList({
         pinaple: pinaple_id
       });
