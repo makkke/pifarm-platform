@@ -22,6 +22,7 @@ angular.module('pifarmApp')
     $scope.login = function(credentials, form) {
       if( form.$valid ) {
         $scope.loading = true;
+        $scope.error = '';
 
         if( ! AccountValidator.check_password_length(credentials.password) ) {
           $scope.loading = false;
@@ -37,11 +38,11 @@ angular.module('pifarmApp')
         function (error, status) {
           $scope.loading = false;
 
-          if( error === 'Internal Server Error' ) {
-            $scope.show_error( 'server' );
+          if( ApiErrorSvc.unauthorized(error) ) {
+            $scope.show_error( 'invalid' );
           }
           else {
-            $scope.show_error( 'invalid' );
+            $scope.show_error( 'server' );
           }
         });
       }

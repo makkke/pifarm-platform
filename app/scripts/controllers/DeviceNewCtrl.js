@@ -16,47 +16,28 @@ function ($scope, $window, $location, $log, DataSvc, ApiErrorSvc, DevicesRepoSvc
     type: $scope.types[0].key
   };
 
-  $scope.add_device = function(device, form) {
+  $scope.create = function(device, form) {
     if( form.$valid ) {
-      $scope.start_spinner();
+      $scope.loading = true;
+      $scope.error = '';
 
       if( !DeviceValidator.check_serial_number_format( device.serial_number ) ) {
-        $scope.stop_spinner();
+        $scope.loading = false;
         $scope.show_error( 'format' );
         return;
       }
 
       DevicesRepoSvc.create( device ).then(
         function (device) {
-          $scope.stop_spinner();
+          $scope.loading = false;
           $location.url( 'devices' );
         },
         function (error, status) {
-          $scope.stop_spinner();
-          if( ApiErrorSvc.server_error( status ) ) {
-            $scope.show_error( 'server' );
-            return;
-          }
+          $scope.loading = false;
 
-          $log.error( error );
+          $scope.show_error( 'server' );
         });
     }
-  };
-
-  /*
-   * Starts a loading spinner
-   * @return bool New spinner status
-   */
-  $scope.start_spinner = function () {
-    return $scope.loading = true;
-  };
-
-  /*
-   * Stops a loading spinner
-   * @return bool New spinner status
-   */
-  $scope.stop_spinner = function () {
-    return $scope.loading = false;
   };
 
   /*

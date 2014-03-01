@@ -1,36 +1,48 @@
 'use strict';
 
 angular.module('pifarmApp')
-  .factory('ApiErrorSvc', [function () {
+.factory('ApiErrorSvc', [function () {
 
-    var ApiError = {
-      // http status codes
-      Ok: 200,
-      Created: 201,
+  var ApiError = {
+    // http status codes
+    ok: 200,
+    created: 201,
 
-      BadRequest: 400,
-      Unauthorized: 401,
-      NotFound: 404,
-      NotAcceptable: 406,
-      UnprocessableEntity: 422,
+    bad_request: 400,
+    unauthorized: 401,
+    not_found: 404,
+    NotAcceptable: 406,
+    UnprocessableEntity: 422,
 
-      InternalServerError: 500,
-      BadGateway: 502,
-      ServiceUnavailable: 503,
+    internal_server_error: 500,
+    BadGateway: 502,
+    ServiceUnavailable: 503,
 
-      // custom error codes
-      AccountInvalidCredentials:  'account_invalid_credentials',
-      AccountAlreadyExists:       'account_already_exists',
-      AccountValidationFailed:    'account_validation_failed',
+    // custom error codes
+    AccountInvalidCredentials:  'account_invalid_credentials',
+    AccountAlreadyExists:       'account_already_exists',
+    AccountValidationFailed:    'account_validation_failed',
 
-      SessionInvalid:             'session_invalid',
-      SessionNotProvided:         'session_not_provided',
-    };
+    SessionInvalid:             'session_invalid',
+    SessionNotProvided:         'session_not_provided',
+  };
 
-    ApiError.server_error = function (status) {
-      return status >= this.InternalServerError;
+  ApiError.server_error = function (error) {
+    if( error.status ) {
+      return error.status >= this.internal_server_error;  
     }
 
-    return ApiError;
+    return error == 'Internal Server Error' || error >= this.internal_server_error;
+  };
 
-  }]);
+  ApiError.unauthorized = function (error) {
+    if( error.status ) {
+      return error.status === this.unauthorized;
+    }
+
+    return error == 'Unauthorized' || error === this.unauthorized;
+  }
+
+  return ApiError;
+
+}]);
