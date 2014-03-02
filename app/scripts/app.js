@@ -142,7 +142,7 @@ angular.module('pifarmApp', [
       .state('main.pinaple.slices', {
         url: '/slices',
         templateUrl: 'partials/pinaple-slices',
-        controller: 'SlicesCtrl',
+        controller: 'PinapleSlicesCtrl',
       })
       .state('main.new_slice', {
         url: '/pinaples/:pinaple_id/slices/new',
