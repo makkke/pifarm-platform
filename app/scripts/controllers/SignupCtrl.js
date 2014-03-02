@@ -32,8 +32,9 @@ angular.module('pifarmApp')
             $scope.loading = false;
             $location.url( 'login?username=' + account.username );
           },
-          function (error, status) {
+          function (error) {
             $scope.loading = false;
+            
             if( ApiErrorSvc.server_error( status ) ) {
               $scope.show_error( 'server' );
               return;

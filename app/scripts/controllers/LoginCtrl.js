@@ -5,14 +5,15 @@ angular.module('pifarmApp')
   ['$scope', '$window', '$location', '$stateParams', 'AuthSvc', 'ApiErrorSvc', 'AccountValidatorSvc',
   function ($scope, $window, $location, $stateParams, AuthSvc, ApiErrorSvc, AccountValidator) {
 
+    $scope.title = 'Log In | Pinaple Farm';
+    $window.document.title = $scope.title;
+
     $scope.loading = false;
     $scope.error = '';
     $scope.credentials = {
       username: $stateParams.username || ''
     };
 
-    $scope.title = 'Log In | Pinaple Farm';
-    $window.document.title = $scope.title;
     
     /*
      * Logs user in
@@ -35,7 +36,7 @@ angular.module('pifarmApp')
           $scope.loading = false;
           $location.url( 'pinaples' );
         },
-        function (error, status) {
+        function (error) {
           $scope.loading = false;
 
           if( ApiErrorSvc.unauthorized(error) ) {
