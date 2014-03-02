@@ -10,7 +10,8 @@ angular.module('pifarmApp', [
   'ui.router',
   'restangular',
   'ngClipboard',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.select2'
 ])
 
 .config(['Config', '$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'RestangularProvider', 'ngClipProvider',
