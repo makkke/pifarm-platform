@@ -131,7 +131,14 @@ angular.module('pifarmApp', [
         controller: 'PinapleDataCtrl',
       })
 
-      // slices
+      // pinaple devices
+      .state('main.pinaple.devices', {
+        url: '/devices',
+        templateUrl: 'partials/pinaple-devices',
+        controller: 'PinapleDevicesCtrl',
+      })
+
+      // pinaple slices
       .state('main.pinaple.slices', {
         url: '/slices',
         templateUrl: 'partials/pinaple-slices',
