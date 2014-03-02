@@ -3,7 +3,7 @@
   [
     {
       "path": "/Users/vivanov/repos/pifarm/pifarm-platform",
-      "folder_exclude_patterns": [".sass-cache", ".tmp", "node_modules"]
+      "folder_exclude_patterns": [".sass-cache", ".tmp", "node_modules", "dist"]
     }
   ]
 }

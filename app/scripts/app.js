@@ -73,6 +73,11 @@ angular.module('pifarmApp', [
         templateUrl: 'partials/forgot',
         controller: 'ForgotCtrl'
       })
+      .state('auth.new_password', {
+        url: '/new-password',
+        templateUrl: 'partials/new-password',
+        controller: 'NewPasswordCtrl'
+      })
 
       .state('main', {
         abstract: true,
