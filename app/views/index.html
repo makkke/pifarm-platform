@@ -16,8 +16,8 @@
   <!-- build:css(app) styles/vendor.css -->
   <!-- bower:css -->
   <!-- endbower -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
   <!-- endbuild -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
 
   <!-- build:css({.tmp,app}) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
@@ -36,8 +36,8 @@
   <!-- Add your site or application content here -->
   <div class="container" ui-view></div>
 
-  <!-- build:js(app) scripts/vendor.js -->
-  <!-- bower:js -->
+  <!-- xbuild:js(app) scripts/vendor.js -->
+  <!-- xbower:js -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -47,13 +47,13 @@
   <script src="bower_components/restangular/dist/restangular.js"></script>
   <script src="bower_components/zeroclipboard/ZeroClipboard.js"></script>
   <script src="bower_components/ng-clip/src/ngClip.js"></script>
-  <!-- endbower -->
+  <!-- xendbower -->
   <script src="external_components/angular-ui-router/angular-ui-router.js"></script>
   <script src="external_components/angular-ui-bootstrap/ui-bootstrap.min.js"></script>
   <script src="external_components/angular-ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
-  <!-- endbuild -->
+  <!-- xendbuild -->
 
-  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <!-- xbuild:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/modules/Config.js"></script>
   <script src="scripts/modules/Constants.js"></script>
 
@@ -107,7 +107,7 @@
   <script src="scripts/filters/KeyFilter.js"></script>
 
   <script src="scripts/directives/LoadingBtn.js"></script>
-  <!-- endbuild -->
+  <!-- xendbuild -->
 
   <script>
     angular.module( 'pifarm.config' ).constant( 'Config', {
