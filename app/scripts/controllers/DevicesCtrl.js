@@ -3,14 +3,14 @@
 angular.module('pifarmApp')
   .controller('DevicesCtrl',
   ['$scope', '$window', 'DevicesRepoSvc', 'DataSvc',
-  function ($scope, $window, DevicesRepoSvc, DataSvc) {
+  function ($scope, $window, DevicesRepo, DataSvc) {
 
     $scope.title = 'Devices | Pinaple Farm';
     $window.document.title = $scope.title;
 
     $scope.types = DataSvc.device_types;
     
-    DevicesRepoSvc.query().then(
+    DevicesRepo.all().then(
       function (devices) {
         _.each(devices, function (device) {
           device.copy_text = 'copy';
