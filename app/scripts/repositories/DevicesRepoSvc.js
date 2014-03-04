@@ -16,7 +16,7 @@ angular.module('pifarmApp')
       return model;
     });
 
-    Repo.query = function () {
+    Repo.all = function () {
       return Restangular.all( route ).getList();
     };
 

@@ -10,7 +10,10 @@ angular.module('pifarmApp', [
   'ui.router',
   'restangular',
   'ngClipboard',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.select2',
+  'chieffancypants.loadingBar',
+  'angularMoment'
 ])
 
 .config(['Config', '$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'RestangularProvider', 'ngClipProvider',
@@ -131,11 +134,18 @@ angular.module('pifarmApp', [
         controller: 'PinapleDataCtrl',
       })
 
-      // slices
+      // pinaple devices
+      .state('main.pinaple.devices', {
+        url: '/devices',
+        templateUrl: 'partials/pinaple-devices',
+        controller: 'PinapleDevicesCtrl',
+      })
+
+      // pinaple slices
       .state('main.pinaple.slices', {
         url: '/slices',
         templateUrl: 'partials/pinaple-slices',
-        controller: 'SlicesCtrl',
+        controller: 'PinapleSlicesCtrl',
       })
       .state('main.new_slice', {
         url: '/pinaples/:pinaple_id/slices/new',

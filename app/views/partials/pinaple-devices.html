@@ -1,0 +1,41 @@
+<section>
+  <div class="panel panel-default">
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Allowed Devices</h3>
+    </div>
+
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <select class="form-control input-lg" ui-select2 ng-model="selected_device" data-placeholder="Add device">
+            <option value=""></option>
+            <option ng-repeat="device in devices | filter:available(pinaple.devices)" value="{{device.id}}">{{device.name}}</option>
+          </select>    
+        </div>
+      </div>
+
+      <div class="margin-top-20" ng-repeat="device in pinaple_devices(devices, pinaple)">
+        <div class="row allowed-device-row">
+          <div class="col-md-2" ng-switch on="device.type">
+            <a ng-href="#/devices/{{device.id}}/general">
+              <img src="images/raspberrypi.png" alt="raspberry pi" class="img-rounded" ng-switch-when="raspberry_pi">
+              <img src="images/arduino.png" alt="arduino" class="img-rounded" ng-switch-when="arduino">
+              <img src="images/custom.png" alt="computer" class="img-rounded" ng-switch-when="computer">
+            </a>
+          </div>
+          <div class="col-md-9">
+            <a ng-href="#/devices/{{device.id}}/general">{{device.name}}</a>
+            <p><strong>Key:</strong> {{device.key}}</p>
+            <p class="last-datapoint">Received last datapoint <strong><span am-time-ago="last_datapoint.at || now"></span></strong></p>
+          </div>
+          <div class="col-md-1 remove-icon">
+            <a href tooltip="Turn off device" tooltip-popup-delay="500" ng-click="remove(device, pinaple)" >
+              <i class="fa fa-power-off fa-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.panel-body -->
+
+  </div><!-- /.panel -->
+</section>

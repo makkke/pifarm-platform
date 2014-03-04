@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pifarmApp')
-.controller('SlicesCtrl',
+.controller('PinapleSlicesCtrl',
 ['$scope', 'SlicesRepoSvc', 'pinaple',
 function ($scope, SlicesRepo, pinaple) {
 

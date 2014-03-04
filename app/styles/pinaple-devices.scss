@@ -1,0 +1,15 @@
+.allowed-device-row {
+  font-size: 18px;
+
+  .remove-icon {
+    line-height: 80px;
+
+    a {
+      color: $gray-light;
+    }
+  }
+
+  .last-datapoint {
+    font-size: 70%;
+  }
+}
