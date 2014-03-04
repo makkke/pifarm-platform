@@ -11,7 +11,8 @@ angular.module('pifarmApp', [
   'restangular',
   'ngClipboard',
   'ui.bootstrap',
-  'ui.select2'
+  'ui.select2',
+  'chieffancypants.loadingBar'
 ])
 
 .config(['Config', '$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'RestangularProvider', 'ngClipProvider',

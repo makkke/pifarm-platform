@@ -2,8 +2,8 @@
 
 angular.module('pifarmApp')
 .controller('PinapleDevicesCtrl',
-['$scope', 'DevicesRepoSvc', 'pinaple',
-function ($scope, DevicesRepo, pinaple) {
+['$scope', 'DevicesRepoSvc', 'PinaplesRepoSvc', 'pinaple',
+function ($scope, DevicesRepo, PinaplesRepo, pinaple) {
 
   $scope.pinaple = pinaple;
   
@@ -15,7 +15,26 @@ function ($scope, DevicesRepo, pinaple) {
     console.log(error);
   });
 
+  $scope.$watch('selected_device', function (new_value, old_value) {
+    if( new_value ) {
+      if( ! _.contains(pinaple.devices, new_value) ) {
+        pinaple.devices.push(new_value);
+        $scope.selected_device = null;
+
+        PinaplesRepo.add_device( pinaple, new_value ).then(
+        function (device) {
+
+        },
+        function (error) {
+          console.log(error);
+        });
+      }
+    }
+  });
+
   $scope.pinaple_devices = function (devices, pinaple) {
+    if( ! devices || ! pinaple ) return [];
+
     var pinaple_devices = [];
     _.each(pinaple.devices, function (device_id) {
       var device = _.find( devices, { id: device_id } );
@@ -25,8 +44,24 @@ function ($scope, DevicesRepo, pinaple) {
     return pinaple_devices;
   };
 
-  $scope.show_remove = function (device) {
+  $scope.remove = function (device, pinaple) {
+    _.remove(pinaple.devices, function (value) {
+      return value == device.id;
+    });
 
+    PinaplesRepo.remove_device( pinaple, device.id ).then(
+    function (device) {
+
+    },
+    function (error) {
+      console.log(error);
+    });
+  };
+
+  $scope.available = function (pinaple_devices) {
+    return function (device) {
+      return ! _.contains(pinaple_devices, device.id);
+    };
   };
 
 }]);

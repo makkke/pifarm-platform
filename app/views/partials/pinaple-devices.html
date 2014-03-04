@@ -9,7 +9,7 @@
         <div class="col-md-12">
           <select class="form-control input-lg" ui-select2 ng-model="selected_device" data-placeholder="Add device">
             <option value=""></option>
-            <option ng-repeat="device in devices" value="{{device.id}}">{{device.name}}</option>
+            <option ng-repeat="device in devices | filter:available(pinaple.devices)" value="{{device.id}}">{{device.name}}</option>
           </select>    
         </div>
       </div>
@@ -29,7 +29,7 @@
             <p class="last-datapoint"><strong>1 min ago</strong> received last datapoint</p>
           </div>
           <div class="col-md-1 remove-icon">
-            <a href="#" tooltip="Turn off device" tooltip-popup-delay="500" ng-click="show_remove(device)" >
+            <a href tooltip="Turn off device" tooltip-popup-delay="500" ng-click="remove(device, pinaple)" >
               <i class="fa fa-power-off fa-lg"></i>
             </a>
           </div>
