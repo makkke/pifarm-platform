@@ -6,6 +6,7 @@ angular.module('pifarmApp')
 function ($scope, DevicesRepo, PinaplesRepo, pinaple) {
 
   $scope.pinaple = pinaple;
+  $scope.now = new Date();
   
   DevicesRepo.all().then(
   function (devices) {

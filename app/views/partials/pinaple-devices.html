@@ -26,7 +26,7 @@
           <div class="col-md-9">
             <a ng-href="#/devices/{{device.id}}/general">{{device.name}}</a>
             <p><strong>Key:</strong> {{device.key}}</p>
-            <p class="last-datapoint"><strong>1 min ago</strong> received last datapoint</p>
+            <p class="last-datapoint">Received last datapoint <strong><span am-time-ago="last_datapoint.at || now"></span></strong></p>
           </div>
           <div class="col-md-1 remove-icon">
             <a href tooltip="Turn off device" tooltip-popup-delay="500" ng-click="remove(device, pinaple)" >
