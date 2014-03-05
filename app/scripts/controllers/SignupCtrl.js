@@ -30,7 +30,7 @@ function ($scope, $window, $location, AuthSvc, ApiErrorSvc, AccountValidator) {
       AuthSvc.signup( account ).then(
       function (account) {
         $scope.loading = false;
-        $location.url( 'login?username=' + account.username );
+        //$location.url( 'login?username=' + account.username );
       },
       function (error) {
         $scope.loading = false;
@@ -40,6 +40,7 @@ function ($scope, $window, $location, AuthSvc, ApiErrorSvc, AccountValidator) {
         }
         else {
           $scope.show_error( 'server' );
+          console.log(error);
         }
       });
     }

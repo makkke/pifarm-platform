@@ -81,6 +81,29 @@ angular.module('pifarmApp', [
         templateUrl: 'partials/new-password',
         controller: 'NewPasswordCtrl'
       })
+      .state('auth.confirm', {
+        url: '/confirm?token',
+        templateUrl: 'partials/confirm',
+        controller: 'ConfirmCtrl',
+        resolve: {
+          confirmation: function ($stateParams, $q, $http) {
+            var deferred = $q.defer();
+
+            $http.post('/api/confirm', {
+              token:    $stateParams.token
+            })
+            .success(function (data) {
+              deferred.resolve( data );
+            })
+            .error(function (error, status) {
+              console.log(error, status);
+              deferred.reject( error, status );
+            });
+
+            return deferred.promise;
+          }
+        }
+      })
 
       .state('main', {
         abstract: true,
