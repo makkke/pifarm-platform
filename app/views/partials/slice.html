@@ -1,0 +1,69 @@
+<div class="row">
+
+  <div class="col-md-3">
+    <div class="list-group">
+
+      <div class="media list-group-item bg-grey">
+        <a class="pull-left" href="#">
+          <img class="media-object" src="images/customxs.png" alt="...">
+        </a>
+        <div class="media-body">
+          <h4>{{slice.name}}</h4>
+        </div>
+      </div>
+
+      <a ng-href="#/pinaples/{{pinaple.id}}/slices/{{slice.id}}/general" class="list-group-item bg-grey">
+        <div class="row">
+          <div class="col-md-2">
+            <i class="fa fa-cog fa-lg sidebar-icon"></i>
+          </div>
+          <div class="col-md-10">
+            <h4 class="list-group-item-heading">General Info</h4>
+            <p class="list-group-item-text">Edit or delete your slice.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#/pinaples/{{pinaple.id}}/slices/{{slice.id}}/boundaries" class="list-group-item bg-grey">
+        <div class="row">
+          <div class="col-md-2">
+            <i class="fa fa-arrows-h fa-lg sidebar-icon"></i>
+          </div>
+          <div class="col-md-10">
+            <h4 class="list-group-item-heading">Boundaries</h4>
+            <p class="list-group-item-text">Min and max.</p>
+          </div>
+        </div>
+      </a> 
+
+      <a href="#/pinaples/{{pinaple.id}}/slices/{{slice.id}}/alarms" class="list-group-item bg-grey">
+        <div class="row">
+          <div class="col-md-2">
+            <i class="fa fa-warning fa-lg sidebar-icon"></i>
+          </div>
+          <div class="col-md-10">
+            <h4 class="list-group-item-heading">Alarms</h4>
+            <p class="list-group-item-text">In case something goes wrong.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#/pinaples/{{pinaple.id}}/slices/{{slice.id}}/triggers" class="list-group-item bg-grey">
+        <div class="row">
+          <div class="col-md-2">
+            <i class="fa fa-superscript fa-lg sidebar-icon"></i>
+          </div>
+          <div class="col-md-10">
+            <h4 class="list-group-item-heading">Triggers</h4>
+            <p class="list-group-item-text">Makes your slice smart.</p>
+          </div>
+        </div>
+      </a> 
+    </div><!-- /.list-group -->
+  </div>
+
+  <div class="col-md-9">
+    <div ui-view></div>
+  </div>
+
+</div><!-- /.row -->

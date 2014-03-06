@@ -4,24 +4,6 @@
   </div>
 </div>
 
-<!-- <div class="row strong margin-left-0 margin-right-0">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-2 text-center">
-          <p>Type</p>
-        </div>
-        <div class="col-md-3">
-          <p>Unit</p>
-        </div>
-        <div class="col-md-3">
-          <p>Name</p>
-        </div>
-        <div class="col-md-4">
-          <p>Device Key</p>
-        </div>
-      </div>
-    </div>
-  </div> -->
 <div class="margin-top-20">
   <div class="row" ng-repeat="slice in slices">
     <div class="col-md-12">
@@ -29,7 +11,7 @@
         <div class="panel-body pi-panel-body">
           <div class="row size">
             <div class="col-md-2 text-center" ng-switch on="slice.type">
-              <a ng-href="#/pinaples/{{pinaple.id}}/slices/{{slice.id}}">
+              <a ng-href="#/pinaples/{{pinaple.id}}/slices/{{slice.id}}/general">
                 <img src="images/temperature.jpg" width="80" height="80" alt="temperature" class="img-rounded" ng-switch-when="temperature">
               </a>
             </div>
@@ -37,7 +19,7 @@
               <p class="margin-0" ng-bind="slice.unit"></p>
             </div>
             <div class="col-md-3">
-              <a class="link-style" style="text-decoration:none;" ng-href="#/pinaples/{{pinaple.id}}/slices/{{slice.id}}"><p class="margin-0" ng-bind="slice.name"></p></a>
+              <a class="link-style" style="text-decoration:none;" ng-href="#/pinaples/{{pinaple.id}}/slices/{{slice.id}}/general"><p class="margin-0" ng-bind="slice.name"></p></a>
             </div>
           </div>
         </div><!-- /.panel-body -->
