@@ -175,6 +175,48 @@ angular.module('pifarmApp', [
         templateUrl: 'partials/slice-new',
         controller: 'SliceNewCtrl',
       })
+      .state('main.slice', {
+        abstract: true,
+        url: '/pinaples/:pinaple_id/slices/:slice_id',
+        templateUrl: 'partials/slice',
+        controller: 'SliceCtrl',
+        resolve: {
+          slice: function ($stateParams, $q, SlicesRepoSvc) {
+            var deferred = $q.defer();
+
+            SlicesRepoSvc.find( $stateParams.slice_id ).then(
+              function (slice) {
+                deferred.resolve( slice );
+              },
+              function (error, status) {
+                console.log( error, status );
+                deferred.reject( error );
+              });
+
+            return deferred.promise;
+          }
+        }
+      })
+      .state('main.slice.general', {
+        url: '/general',
+        templateUrl: 'partials/slice-general',
+        controller: 'SliceGeneralCtrl',
+      })
+      .state('main.slice.boundaries', {
+        url: '/boundaries',
+        templateUrl: 'partials/slice-boundaries',
+        controller: 'SliceBoundariesCtrl',
+      })
+      .state('main.slice.alarms', {
+        url: '/alarms',
+        templateUrl: 'partials/slice-alarms',
+        controller: 'SliceAlarmsCtrl',
+      })
+      .state('main.slice.triggers', {
+        url: '/triggers',
+        templateUrl: 'partials/slice-triggers',
+        controller: 'SliceAlarmsCtrl',
+      })
 
       .state('main.pinaple.settings', {
         url: '/settings',
