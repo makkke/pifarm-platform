@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"accoun",
+				"account_id"
+			],
+			[
 				"device",
 				"device_id"
 			],
@@ -510,76 +514,64 @@
 			[
 				"get_team",
 				"get_team_links"
-			],
-			[
-				"stri",
-				"stristr"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/views/partials/pinaple.html",
+			"file": "app/views/partials/signup.html",
 			"settings":
 			{
-				"buffer_size": 2335,
+				"buffer_size": 2135,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/partials/pinaple-devices.html",
+			"file": "app/scripts/controllers/SignupCtrl.js",
 			"settings":
 			{
-				"buffer_size": 1838,
+				"buffer_size": 1507,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/scripts/controllers/PinapleDevicesCtrl.js",
+			"file": "app/views/partials/confirm.html",
 			"settings":
 			{
-				"buffer_size": 1571,
+				"buffer_size": 135,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/scripts/repositories/DevicesRepoSvc.js",
+			"file": "app/scripts/controllers/ConfirmCtrl.js",
 			"settings":
 			{
-				"buffer_size": 819,
+				"buffer_size": 296,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/partials/devices.html",
+			"file": "app/scripts/app.js",
 			"settings":
 			{
-				"buffer_size": 2439,
+				"buffer_size": 8935,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/styles/main.scss",
+			"file": "lib/controllers/api.js",
 			"settings":
 			{
-				"buffer_size": 3069,
+				"buffer_size": 1485,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/styles/pinaple-devices.scss",
+			"file": "/Users/vivanov/Desktop/test.html",
 			"settings":
 			{
-				"buffer_size": 173,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/styles/variables.scss",
-			"settings":
-			{
-				"buffer_size": 162,
+				"buffer_size": 27443,
 				"line_ending": "Unix"
 			}
 		}
@@ -728,9 +720,22 @@
 	},
 	"file_history":
 	[
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/repositories/PinaplesRepoSvc.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/index.html",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/routes.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/LoginCtrl.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/AuthSvc.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/controllers/api.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/app.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/index.html",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/styles/variables.scss",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/styles/main.scss",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/styles/pinaple-devices.scss",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/devices.html",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/repositories/DevicesRepoSvc.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/PinapleDevicesCtrl.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/pinaple.html",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/pinaple-devices.html",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/Gruntfile.js",
+		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/repositories/PinaplesRepoSvc.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/pinaple-settings.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/bower.json",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/PinapleNewCtrl.js",
@@ -738,25 +743,19 @@
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/external_components/select2-bootstrap-css/select2-bootstrap.css",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/PinapleSlicesCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/ApiErrorSvc.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/LoginCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SignupCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/Changelog.md",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/LATEST.md",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/new-password.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/NewPasswordCtrl.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/Gruntfile.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/pifarm-platform.sublime-project",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/express.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/env/svetik.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/DeviceNewCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/device-new.html",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/devices.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/.gitignore",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/pinaple.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/pinaple-slices.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SlicesCtrl.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/AuthSvc.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/controllers/api.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/login.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/controllers/index.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/services/DataSvc.js",
@@ -774,7 +773,6 @@
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/settings-profile.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/SettingsCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/repositories/AccountsRepoSvc.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/repositories/DevicesRepoSvc.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/controllers/DeviceGeneralCtrl.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/device-general.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/device.html",
@@ -819,7 +817,6 @@
 		"/Users/vivanov/repos/pifarm/pifarm-platform/test/.jshintrc",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts/modules/Config.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/config.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/routes.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/env/test.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/views/partials/auth.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/env/all.js",
@@ -827,7 +824,6 @@
 		"/Users/vivanov/repos/pifarm/pifarm-platform/.jshintrc",
 		"/Users/vivanov/repos/tmp/my_pr/lib/controllers/index.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/app/external_components/angular-ui-router/angular-ui-router.js",
-		"/Users/vivanov/repos/pifarm/pifarm-platform/app/styles/main.scss",
 		"/Users/vivanov/repos/tmp/my-new-project/app/views/index.html",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/env/development.js",
 		"/Users/vivanov/repos/pifarm/pifarm-platform/lib/config/env/production.js",
@@ -851,11 +847,7 @@
 		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/repositories/account/AbstractAccountRepositoryDecorator.php",
 		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/repositories/account/CacheDecorator.php",
 		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/repositories/account/MongoAccountRepository.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/repositories/account/AccountRepositoryInterface.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/repositories/RepositoryInterface.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/services/cache/laravel/LaravelCache.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/entities/EntityServiceProvider.php",
-		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/services/validation/laravel/AccountCreateValidator.php"
+		"/Users/vivanov/repos/pifarm/pifarm-api/app/library/pifarm/repositories/account/AccountRepositoryInterface.php"
 	],
 	"find":
 	{
@@ -863,7 +855,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/vivanov/repos/pifarm/pifarm-platform/app/scripts",
@@ -889,6 +881,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"confi",
 			"pinaple",
 			"xs",
 			"DevicesRepoSvc.query",
@@ -1015,8 +1008,7 @@
 			"setAttribute",
 			"mergeRules",
 			"isValid",
-			"isSaved",
-			"saved"
+			"isSaved"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1039,52 +1031,79 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/partials/pinaple.html",
+					"file": "app/views/partials/signup.html",
 					"settings":
 					{
-						"buffer_size": 2335,
+						"buffer_size": 2135,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2335,
-								2335
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"is_xml": false,
 							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 608.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/partials/pinaple-devices.html",
+					"file": "app/scripts/controllers/SignupCtrl.js",
 					"settings":
 					{
-						"buffer_size": 1838,
+						"buffer_size": 1507,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1411,
-								1411
+								710,
+								710
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 70.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/partials/confirm.html",
+					"settings":
+					{
+						"buffer_size": 135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								93,
+								93
 							]
 						],
 						"settings":
@@ -1093,25 +1112,25 @@
 							"syntax": "Packages/AngularJS/AngularJS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 149.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/scripts/controllers/PinapleDevicesCtrl.js",
+					"buffer": 3,
+					"file": "app/scripts/controllers/ConfirmCtrl.js",
 					"settings":
 					{
-						"buffer_size": 1571,
+						"buffer_size": 296,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								247,
-								247
+								289,
+								289
 							]
 						],
 						"settings":
@@ -1125,19 +1144,47 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/scripts/repositories/DevicesRepoSvc.js",
+					"buffer": 4,
+					"file": "app/scripts/app.js",
 					"settings":
 					{
-						"buffer_size": 819,
+						"buffer_size": 8935,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								688,
-								621
+								2439,
+								2439
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 24.0,
+						"translation.y": 1276.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "lib/controllers/api.js",
+					"settings":
+					{
+						"buffer_size": 1485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1242,
+								1242
 							]
 						],
 						"settings":
@@ -1147,35 +1194,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 13.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/partials/devices.html",
-					"settings":
-					{
-						"buffer_size": 2439,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2202,
-								2318
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 618.0,
+						"translation.y": 557.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1183,86 +1202,47 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
-					"buffer": 5,
-					"file": "app/styles/main.scss",
+					"buffer": 6,
+					"file": "/Users/vivanov/Desktop/test.html",
 					"settings":
 					{
-						"buffer_size": 3069,
+						"buffer_size": 27443,
 						"regions":
 						{
+							"TagLint":
+							{
+								"flags": 52,
+								"icon": "dot",
+								"regions":
+								[
+									[
+										13630,
+										13653
+									]
+								],
+								"scope": "variable.parameter"
+							}
 						},
 						"selection":
 						[
 							[
-								249,
-								249
+								27443,
+								27443
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"is_xml": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/styles/pinaple-devices.scss",
-					"settings":
-					{
-						"buffer_size": 173,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								88,
-								88
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/styles/variables.scss",
-					"settings":
-					{
-						"buffer_size": 162,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								162,
-								162
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 12542.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1327,12 +1307,32 @@
 		"selected_items":
 		[
 			[
-				"index",
-				"app/views/index.html"
+				"login",
+				"app/scripts/controllers/LoginCtrl.js"
+			],
+			[
+				"authsvc",
+				"app/scripts/services/AuthSvc.js"
 			],
 			[
 				"app",
 				"app/scripts/app.js"
+			],
+			[
+				"index",
+				"app/views/index.html"
+			],
+			[
+				"signc",
+				"app/scripts/controllers/SignupCtrl.js"
+			],
+			[
+				"sign",
+				"app/views/partials/signup.html"
+			],
+			[
+				"grunt",
+				"Gruntfile.js"
 			],
 			[
 				"pinaplesre",
@@ -1365,10 +1365,6 @@
 			[
 				"api",
 				"app/scripts/services/ApiErrorSvc.js"
-			],
-			[
-				"login",
-				"app/scripts/controllers/LoginCtrl.js"
 			],
 			[
 				"grun",
@@ -1405,10 +1401,6 @@
 			[
 				"slicenew",
 				"app/scripts/controllers/SliceNewCtrl.js"
-			],
-			[
-				"sign",
-				"app/views/partials/signup.html"
 			],
 			[
 				"datasvc",
@@ -1591,10 +1583,6 @@
 				"app/scripts/services/LocalStorageSvc.js"
 			],
 			[
-				"authsvc",
-				"app/scripts/services/AuthSvc.js"
-			],
-			[
 				"main",
 				"app/views/partials/main.html"
 			],
@@ -1649,10 +1637,6 @@
 			[
 				"server",
 				"server.js"
-			],
-			[
-				"grunt",
-				"Gruntfile.js"
 			],
 			[
 				"expres",
@@ -1833,10 +1817,6 @@
 			[
 				"authsc",
 				"app/scripts/services/AuthSvc.js"
-			],
-			[
-				"loginctr",
-				"app/scripts/controllers/LoginCtrl.js"
 			]
 		],
 		"width": 0.0
