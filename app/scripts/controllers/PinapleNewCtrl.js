@@ -3,7 +3,7 @@
 angular.module('pifarmApp')
 .controller('PinapleNewCtrl',
 ['$scope', '$window', '$location', 'DevicesRepoSvc', 'PinaplesRepoSvc', 'ApiErrorSvc',
-function ($scope, $window, $location, DevicesRepoSvc, PinaplesRepoSvc, ApiErrorSvc) {
+function ($scope, $window, $location, DevicesRepo, PinaplesRepoSvc, ApiErrorSvc) {
   
   $scope.title = 'Create a New Pinaple | Pinaple Farm';
   $window.document.title = $scope.title;
@@ -13,7 +13,7 @@ function ($scope, $window, $location, DevicesRepoSvc, PinaplesRepoSvc, ApiErrorS
 
   $scope.pinaple = {};
   
-  DevicesRepoSvc.query().then(
+  DevicesRepo.all().then(
     function (devices) {
       $scope.devices = devices;
       $scope.pinaple.device = devices[0].id;

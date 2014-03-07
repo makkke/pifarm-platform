@@ -16,20 +16,20 @@ angular.module('pifarmApp')
       return model;
     });
 
-    Repo.query = function () {
-      return Restangular.all( route ).getList();
-    };
-
-    Repo.find = function (id) {
-      return Restangular.one( route, id ).get();
-    };
-
     Repo.create = function (device) {
       return Restangular.all( route ).post( device );
     };
 
     Repo.update = function (device) {
       return device.put();
+    };
+
+    Repo.all = function () {
+      return Restangular.all( route ).getList();
+    };
+
+    Repo.find = function (id) {
+      return Restangular.one( route, id ).get();
     };
 
     Repo.remove = function (device) {

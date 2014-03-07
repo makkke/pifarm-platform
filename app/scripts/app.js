@@ -10,7 +10,10 @@ angular.module('pifarmApp', [
   'ui.router',
   'restangular',
   'ngClipboard',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.select2',
+  'chieffancypants.loadingBar',
+  'angularMoment'
 ])
 
 .config(['Config', '$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'RestangularProvider', 'ngClipProvider',
@@ -78,6 +81,29 @@ angular.module('pifarmApp', [
         templateUrl: 'partials/new-password',
         controller: 'NewPasswordCtrl'
       })
+      .state('auth.confirm', {
+        url: '/confirm?token',
+        templateUrl: 'partials/confirm',
+        controller: 'ConfirmCtrl',
+        resolve: {
+          confirmation: function ($stateParams, $q, $http) {
+            var deferred = $q.defer();
+
+            $http.post('/api/confirm', {
+              token:    $stateParams.token
+            })
+            .success(function (data) {
+              deferred.resolve( data );
+            })
+            .error(function (error, status) {
+              console.log(error, status);
+              deferred.reject( error, status );
+            });
+
+            return deferred.promise;
+          }
+        }
+      })
 
       .state('main', {
         abstract: true,
@@ -131,16 +157,65 @@ angular.module('pifarmApp', [
         controller: 'PinapleDataCtrl',
       })
 
-      // slices
+      // pinaple devices
+      .state('main.pinaple.devices', {
+        url: '/devices',
+        templateUrl: 'partials/pinaple-devices',
+        controller: 'PinapleDevicesCtrl',
+      })
+
+      // pinaple slices
       .state('main.pinaple.slices', {
         url: '/slices',
         templateUrl: 'partials/pinaple-slices',
-        controller: 'SlicesCtrl',
+        controller: 'PinapleSlicesCtrl',
       })
       .state('main.new_slice', {
         url: '/pinaples/:pinaple_id/slices/new',
         templateUrl: 'partials/slice-new',
         controller: 'SliceNewCtrl',
+      })
+      .state('main.slice', {
+        abstract: true,
+        url: '/pinaples/:pinaple_id/slices/:slice_id',
+        templateUrl: 'partials/slice',
+        controller: 'SliceCtrl',
+        resolve: {
+          slice: function ($stateParams, $q, SlicesRepoSvc) {
+            var deferred = $q.defer();
+
+            SlicesRepoSvc.find( $stateParams.slice_id ).then(
+              function (slice) {
+                deferred.resolve( slice );
+              },
+              function (error, status) {
+                console.log( error, status );
+                deferred.reject( error );
+              });
+
+            return deferred.promise;
+          }
+        }
+      })
+      .state('main.slice.general', {
+        url: '/general',
+        templateUrl: 'partials/slice-general',
+        controller: 'SliceGeneralCtrl',
+      })
+      .state('main.slice.boundaries', {
+        url: '/boundaries',
+        templateUrl: 'partials/slice-boundaries',
+        controller: 'SliceBoundariesCtrl',
+      })
+      .state('main.slice.alarms', {
+        url: '/alarms',
+        templateUrl: 'partials/slice-alarms',
+        controller: 'SliceAlarmsCtrl',
+      })
+      .state('main.slice.triggers', {
+        url: '/triggers',
+        templateUrl: 'partials/slice-triggers',
+        controller: 'SliceAlarmsCtrl',
       })
 
       .state('main.pinaple.settings', {
