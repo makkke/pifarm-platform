@@ -2,6 +2,64 @@
   <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading"> 
+        <h3 class="panel-title">Slice General Info</h3>
+      </div>
+
+      <div class="panel-body">
+        <form class="form-horizontal" role="form" name="sliceForm" ng-submit="update(sliceForm, slice)" ng-switch on="error">
+          <div class="form-group">
+            <label class="col-md-2 control-label">Slice Name</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control input-lg" required autofocus maxlength="32" placeholder="Name" ng-model="slice.name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-2 control-label">Type and Unit</label>
+            <div class="col-md-5">
+              <select class="form-control input-lg" ng-options="type.key as type.value for type in types" disabled ng-model="slice.type">
+              </select>
+            </div>
+            <div class="col-md-5">
+              <select class="form-control input-lg" ng-options="unit.key as unit.value for unit in units" disabled ng-model="slice.unit">
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-2 control-label">
+              Description<br>
+              <small>optional</small>
+            </label>
+            <div class="col-md-10">
+              <textarea class="form-control input-lg" rows="5" placeholder="About your slice" ng-model="slice.description"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-group" ng-switch-when="server">
+            <div class="col-md-offset-2 col-md-10">
+              <div class="alert alert-danger">
+                <strong>Oops</strong>, something happened with our server. Please try again.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-offset-2 col-md-3">
+              <button type="submit" class="btn btn-success btn-lg btn-block" loading-btn loading="loading" text="Update Slice" loading-text="Updating...">Update Slice</button>
+            </div>
+          </div>
+        </form>
+      </div><!-- /.panel-body -->
+
+    </div><!-- /.panel -->
+  </div>
+</div><!-- /.row -->
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"> 
         <h3 class="panel-title">Delete Slice</h3>
       </div>
 
