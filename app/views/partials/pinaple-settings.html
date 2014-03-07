@@ -2,6 +2,51 @@
   <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading"> 
+        <h3 class="panel-title">Settings</h3>
+      </div>
+
+      <div class="panel-body">
+        <form class="form-horizontal" name="pinapleForm" role="form" ng-submit="update(pinapleForm, pinaple)" ng-switch on="error">
+          <div class="form-group">
+            <label class="col-md-2 control-label">Pinaple Name</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control input-lg" required maxlength="32" placeholder="Name" ng-model="pinaple.name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-2 control-label">
+              Description<br>
+              <mdall>optional</mdall>
+            </label>
+            <div class="col-md-10">
+              <textarea class="form-control input-lg" rows="5" placeholder="About your pinaple" ng-model="pinaple.description"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-group" ng-switch-when="server">
+            <div class="col-md-offset-2 col-md-10">
+              <div class="alert alert-danger">
+                <strong>Oops</strong>, something happened with our server. Please try again.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-offset-2 col-xs-3">
+              <button type="submit" class="btn btn-success btn-lg btn-block" loading-btn loading="loading" text="Update Pinaple" loading-text="Updating...">Update Pinaple</button>
+            </div>
+          </div>
+        </form><!-- /.form-horizontal -->
+      </div><!-- /.panel-body -->
+    </div><!-- /.panel -->
+  </div>
+</div><!-- /.row -->
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"> 
         <h3 class="panel-title">Delete Pinaple</h3>
       </div>
 
