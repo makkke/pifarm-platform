@@ -20,7 +20,7 @@ function ($scope, $stateParams, $location, AccountValidator, AccountsRepo, Slice
   });
 
   $scope.update = function(form, slice) {
-    $scope.error = '';
+    $scope.error = false;
     
     if( form.$valid ) {
       $scope.loading = true;
