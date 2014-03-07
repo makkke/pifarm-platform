@@ -8,6 +8,24 @@ function ($scope, $location, AccountsRepo, PinaplesRepo, AccountValidator, pinap
   $scope.pinaple = pinaple;
   $scope.loading = false;
   $scope.error = false;
+
+  $scope.update = function(form, pinaple) {
+    $scope.error = false;
+    
+    if( form.$valid ) {
+      $scope.loading = true;
+
+      PinaplesRepo.update( pinaple ).then(
+      function (pinaple) {
+        $scope.loading = false;
+      },
+      function (error) {
+        $scope.loading = false;
+        
+        console.log(error);
+      });
+    }
+  };
   
   $scope.remove = function(form, password, pinaple) {
     if( form.$valid ) {

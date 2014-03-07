@@ -27,12 +27,10 @@ function ($scope, $location, DevicesRepo, DeviceValidator, Data, ApiErrorSvc, de
       function (device) {
         $scope.loading = false;
       },
-      function (error, status) {
+      function (error) {
         $scope.loading = false;
-        if( ApiErrorSvc.server_error( status ) ) {
-          $scope.show_error( 'server' );
-          return;
-        }
+        
+        console.log(error);
       });
     }
   };
